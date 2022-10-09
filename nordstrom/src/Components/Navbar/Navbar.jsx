@@ -1,10 +1,10 @@
-import { Box, Button, Flex, Image, Input, InputGroup, InputLeftElement, InputRightElement, Menu, MenuButton, MenuItem, MenuList, Portal, Spacer, Stack, VStack } from "@chakra-ui/react";
-import { CheckIcon, SearchIcon } from '@chakra-ui/icons'
-
-
+import { Box, Button, Flex, Heading, Image, Input, InputGroup, InputLeftElement, InputRightElement, Link, Menu, MenuButton, MenuItem, MenuList, Portal, Spacer, Stack, VStack } from "@chakra-ui/react";
+import { CheckIcon, ChevronDownIcon, SearchIcon } from '@chakra-ui/icons'
+ 
+import styles from "./navbarSignUp.module.css"
 export default function Navbar() {
     return <>
-        <VStack width={'95%'} m={'auto'} mt={'25px'}>
+        <VStack width={'95%'} m={'auto'} mt={'25px'} backgroundColor={'transparent'}>
             <Flex justifyContent={"space-between"} width={'100%'} mb={'15px'}>
                 <Box>
                     <Image w={'198px'} h={'30px'} src='https://i.imgur.com/ubtddUO.png' />
@@ -23,7 +23,19 @@ export default function Navbar() {
                     </Stack>
                 </Box>
                 <Box>
-                    <Image w={'198px'} h={'30px'} src='https://i.imgur.com/ubtddUO.png' />
+
+               <Box className={styles.dropdown} float={'right'}>
+
+                    <Button className={styles.dropbtn} p={'0px'} backgroundColor={'transparent'} _hover={{backgroundColor:'transparent'}} color={'#515151'} _focus={{backgroundColor:'transparent'}} fontSize={'16px'} fontWeight={'400'} >
+                      Sign up
+                    </Button><ChevronDownIcon ml={'5px'}/>
+                    <Box boxShadow={'lg'} className={styles.dropdownContent}>
+                      
+                      <Link>Kashi</Link>
+                    </Box>
+                   
+
+                </Box>
                 </Box>
             </Flex>
             <Box width={'100%'} h={'0.4px'} backgroundColor={'gray.300'}>
@@ -70,6 +82,8 @@ export default function Navbar() {
                         </MenuList>
                     </Portal>
                 </Menu>
+                
+        
             </Flex>
         </VStack>
 
