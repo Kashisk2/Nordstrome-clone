@@ -4,42 +4,36 @@ import { useEffect } from 'react'
 import { useState } from 'react'
 import { useRef } from 'react'
 import { Link } from 'react-router-dom'
-import styles from './FirstImageDIv.module.css'
+import AnimatatedImage from './AnimatatedImage'
+import BonusNote from './BonusNote'
 import MakeMarry from './make-marry'
+import Scroling from './Scroling'
 import TabsAll from './Tabs'
- 
+import TheThred from './TheThred'
+import Tranding1 from '../../Images/Tranding1.png'
+import Tranding2 from '../../Images/Tranding2.png'
+import Tranding3 from '../../Images/Tranding3.png'
+import Hispanic from '../../Images/Hispanic.png'
+import Service from '../../Images/Service.png'
+import NordyPord from '../../Images/NordyPord.png'
+import ShopByType from '../../Images/ShopByType.png'
+import ScrollingCurrent from './ScrolingCurrentlyLoving'
+
+const imageData = [
+    'https://i.postimg.cc/Gh3hF38D/Screenshot-2022-10-09-152831.png',
+    'https://i.postimg.cc/8z68WxHW/Screenshot-2022-10-09-152906.png',
+    'https://i.postimg.cc/fyLpbPyV/Screenshot-2022-10-09-152952.png',
+    'https://i.postimg.cc/T38N81VL/Screenshot-2022-10-09-153104.png'
+]
+const imageDataTranding = [
+    Tranding1,
+    Tranding2,
+    Tranding3
+
+]
 
 function FirstImageDiv() {
     const ref = useRef()
-    const imageData = [
-        'https://i.postimg.cc/Gh3hF38D/Screenshot-2022-10-09-152831.png',
-        'https://i.postimg.cc/8z68WxHW/Screenshot-2022-10-09-152906.png',
-        'https://i.postimg.cc/fyLpbPyV/Screenshot-2022-10-09-152952.png',
-        'https://i.postimg.cc/T38N81VL/Screenshot-2022-10-09-153104.png'
-    ]
-
-
-    const [count, setCount] = useState(0)
-    const [started, setStarted] = useState(false)
-
-    useEffect(() => {
-        if (started) {
-            return
-        }
-
-        setStarted(true)
-        const id = setInterval(() => {
-
-            setCount(pre => pre + 1)
-            // console.log("first")
-
-        }, 3000);
-    }, [])
-
-
-    if (count == 4) {
-        setCount(0)
-    }
 
     return (
         <VStack width={'95%'} m={'auto'} mt={'20px'}>
@@ -60,10 +54,7 @@ function FirstImageDiv() {
             </Flex>
 
             <MakeMarry />
-            <Box width={"100%"}>
-
-                <Image className={styles.fadeIn} width={"100%"} src={imageData[count]} />
-            </Box>
+            <AnimatatedImage imageData={imageData} />
             <Box width={"100%"}>
                 <Image src='https://n.nordstrommedia.com/id/5ec3d3de-9e8c-4317-bc28-3b42b503268e.png?h=17&w=1608' />
             </Box>
@@ -89,17 +80,37 @@ function FirstImageDiv() {
                         </Box>
                     </Box>
                     <Flex justifyContent={'flex-start'} width="100%">
- 
-                    <TabsAll/>
+
+                        <TabsAll />
                     </Flex>
 
 
 
                 </VStack>
             </Box>
-            
+            <BonusNote />
+            <TheThred />
+            <Scroling />
+            <Heading fontSize={'21px'} fontWeight={'700'} letterSpacing='4.2px' lineHeight={'23.94px'}>TRENDING NOW
 
+            </Heading>
 
+            <AnimatatedImage imageData={imageDataTranding} />
+            <Image _hover={{ cursor: "pointer" }} src={Hispanic} />
+            <Image src='https://n.nordstrommedia.com/id/5ec3d3de-9e8c-4317-bc28-3b42b503268e.png?h=17&w=1608' />
+            <Heading fontSize={'21px'} fontWeight={'700'} letterSpacing='4.2px' lineHeight={'23.94px'}>SERVICES & EVENTS
+
+            </Heading>
+            <Image _hover={{ cursor: "pointer" }} src={Service} />
+            <Image _hover={{ cursor: "pointer" }} src={NordyPord} />
+            <Image src='https://n.nordstrommedia.com/id/5ec3d3de-9e8c-4317-bc28-3b42b503268e.png?h=17&w=1608' />
+            <Heading fontSize={'21px'} fontWeight={'700'} letterSpacing='4.2px' lineHeight={'23.94px'}>SHOP BY CATEGORY
+
+            </Heading>
+            <Image _hover={{ cursor: "pointer" }} src={ShopByType} />
+            <Text fontSize={'21px'} fontWeight={'700'} letterSpacing='4.2px' lineHeight={'23.94px'}>CURRENTLY LOVING</Text>
+            <Text fontSize={'15px'} lineHeight={'21px'}>Explore favorite looks from Instagram. Tag @Nordstrom to show us your finds.</Text>
+            <ScrollingCurrent/>
         </VStack>
     )
 }
