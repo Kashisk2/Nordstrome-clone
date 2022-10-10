@@ -74,14 +74,17 @@ export default function Navbar() {
                 Sign up
               </Button>
               <ChevronDownIcon ml={"5px"} />
-              <Box boxShadow={"lg"} className={styles.dropdownContent}>
-                <Link>Kashi</Link>
+              <Box boxShadow={"lg"} padding="20px" className={styles.dropdownContent}>
+                <VStack>
+                  <Button fontWeight={'400ox'} backgroundColor={'black'} color={'white'} borderRadius='none'>Sign In|Create Account</Button>
+                </VStack>
               </Box>
             </Box>
+             
           </Box>
         </Flex>
         <Box width={"100%"} h={"0.4px"} backgroundColor={"gray.300"}></Box>
-        <Flex w={"100%"} justifyContent={"space-between"}>
+        <Flex w={"80%"} justifyContent={"space-between"}>
           <Menu>
             <MenuButton
               _hover={{ borderBottom: "2px solid black" }}
@@ -92,11 +95,13 @@ export default function Navbar() {
             >
               Open menu
             </MenuButton>
-            <Portal width={"120px"}>
-              <MenuList
+            <Portal>
+              <Box width={'100%'}>
+
+              <MenuList 
                 boxShadow="lg"
                 border={"none"}
-                width="1495px"
+                width="1200px"
                 p={"20px"}
               >
                 <Flex
@@ -109,6 +114,7 @@ export default function Navbar() {
                   </Box>
                 </Flex>
               </MenuList>
+              </Box>
             </Portal>
           </Menu>
           <Button

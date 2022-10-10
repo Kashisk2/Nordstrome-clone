@@ -43,6 +43,15 @@ function TabsAll() {
           >
             Kids
           </Tab>
+           <Tab
+            width={"25%"}
+            _active={{ backgroundColor: "transparent" }}
+            borderBottom={"4px solid"}
+            fontSize={"19px"}
+            lineHeight={"26.6px"}
+          >
+            Men
+          </Tab>
         </Flex>
       </TabList>
 
@@ -55,6 +64,9 @@ function TabsAll() {
         </TabPanel>
         <TabPanel>
           <Image _hover={{ cursor: "pointer" }} src={KidsProducs} />
+        </TabPanel>
+         <TabPanel>
+          <Image _hover={{ cursor: "pointer" }} src={MansProducs} />
         </TabPanel>
       </TabPanels>
     </Tabs>
