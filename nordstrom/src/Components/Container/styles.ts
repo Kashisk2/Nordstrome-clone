@@ -10,7 +10,6 @@ const Container = styled.div`
 `;
 
 const Title = styled.h1`
- 
   color: #fff;
   width: max-content;
 `;
@@ -20,7 +19,7 @@ interface ContentProps {
 }
 
 const Content = styled.div<ContentProps>`
-  background-image: url(${props => props.url});
+  background-image: url(${(props) => props.url});
   width: 264px;
     height: 354px;
   margin:5px;
@@ -35,7 +34,7 @@ const ContentWrapper = styled.div`
   display: flex;
   overflow: hidden;
   width: 100%;
-  height:400px;
+  height: 400px;
   // border: 5px solid #ffffff;
   // border-radius: 10px;
 
@@ -71,5 +70,5 @@ export default {
   ContentWrapper,
   Content,
   ButtonWrapper,
-  Button
+  Button,
 };

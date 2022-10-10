@@ -1,12 +1,8 @@
-import { Flex } from '@chakra-ui/react'
-import React from 'react'
+import { Flex } from "@chakra-ui/react";
+import React from "react";
 
 function WomenTab() {
-  return (
-    <Flex>
-        
-    </Flex>
-  )
+  return <Flex></Flex>;
 }
 
-export default WomenTab
+export default WomenTab;

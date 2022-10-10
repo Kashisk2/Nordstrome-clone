@@ -10,7 +10,6 @@ const Container = styled.div`
 `;
 
 const Title = styled.h1`
- 
   color: #fff;
   width: max-content;
 `;
@@ -18,13 +17,13 @@ const Title = styled.h1`
 interface ContentProps {
   url: string;
 }
-const Shop=styled.p`
-//   display:none;
-  position:absolute;
-  top:0
-`
+const Shop = styled.p`
+  //   display:none;
+  position: absolute;
+  top: 0;
+`;
 const Content = styled.div<ContentProps>`
-  background-image: url(${props => props.url});
+  background-image: url(${(props) => props.url});
   width: 336px;
     height: 336px;
   margin:5px;
@@ -35,12 +34,11 @@ const Content = styled.div<ContentProps>`
   flex-shrink: 0;
 `;
 
-
 const ContentWrapper = styled.div`
   display: flex;
   overflow: hidden;
   width: 100%;
-  height:400px;
+  height: 400px;
   // border: 5px solid #ffffff;
   // border-radius: 10px;
 
@@ -60,7 +58,7 @@ const Button = styled.button`
   // background: #ffffff;
   border: 0;
   color: #000000;
-   
+
   // border-radius: 8px;
   font-size: 15px;
   cursor: pointer;
@@ -77,5 +75,5 @@ export default {
   Content,
   Shop,
   ButtonWrapper,
-  Button
+  Button,
 };
