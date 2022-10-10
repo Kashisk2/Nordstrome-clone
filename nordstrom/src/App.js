@@ -1,23 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import Header from "./Components/Navbar/Header";
+import Navbar from "./Components/Navbar/Navbar";
+import { Box, Center, extendTheme, Text } from "@chakra-ui/react";
+import FirstImageDiv from "./Components/Container/FirstImageDiv";
+import Footer from "./Components/Footer/Footer";
+import ScrollToTop from "react-scroll-to-top";
+import { RiArrowUpSLine } from "react-icons/ri";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ScrollToTop
+        smooth={"true"}
+        viewBox={"0 0 30 30"}
+        
+        component={
+          <Box>
+            <Center>
+
+            <RiArrowUpSLine size={'20px'} width={'400'} />
+            </Center>
+            <Text color={"#393939"} fontSize={"13px"}>
+              Top
+            </Text>
+          </Box>
+        }
+      />
+      <Header />
+      <Navbar />
+      <FirstImageDiv />
+      <Footer />
     </div>
   );
 }
