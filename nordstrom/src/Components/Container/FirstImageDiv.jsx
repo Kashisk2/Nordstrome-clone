@@ -44,7 +44,7 @@ function FirstImageDiv() {
   const ref = useRef();
 
   return (
-    <VStack width={"95%"} m={"auto"} mt={"20px"}>
+    <VStack width={"95%"} m={"auto"} mt={"30px"}>
       <Flex mb={"50px"} width={"100%"} justifyContent={"space-between"}>
         <Image
           height={"14px"}
