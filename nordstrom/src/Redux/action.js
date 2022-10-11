@@ -21,10 +21,13 @@ export const geterrordata = () => {
   };
 };
 
-export const getData = (page) => (dispatch) => {
+export const getData = (url, setLength) => (dispatch) => {
   dispatch(getloaddata());
-  fetch(` http://localhost:4001/products?_limit=20&_page=${page}`)
-    .then((res) => res.json())
+  fetch(`${url}`)
+    .then((res) => {
+      setLength(Number(res.headers.get("X-Total-Count")));
+      return res.json();
+    })
     .then((res) => dispatch(getsuccessdata(res)))
     .catch(() => dispatch(geterrordata()));
 };

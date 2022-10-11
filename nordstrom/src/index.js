@@ -8,15 +8,13 @@ import { BrowserRouter } from "react-router-dom";
 import store from "./Redux/store";
 
 import { Provider } from "react-redux";
-import { PageContexProvider } from "./Contex/PageContex";
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Provider store={store}>
     <ChakraProvider>
       <BrowserRouter>
-        <PageContexProvider>
-          <App />
-        </PageContexProvider>
+        <App />
       </BrowserRouter>
     </ChakraProvider>
   </Provider>

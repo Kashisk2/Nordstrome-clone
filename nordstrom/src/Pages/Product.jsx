@@ -7,29 +7,95 @@ import {
   Select,
   SimpleGrid,
   Skeleton,
+  Spinner,
   Stack,
+  Text,
 } from "@chakra-ui/react";
-import React from "react";
-import { useContext } from "react";
+import React, { useRef } from "react";
+import { useState } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { PageContex } from "../Contex/PageContex";
+import { useSearchParams } from "react-router-dom";
 import { getData } from "../Redux/action";
 
+const getCurrpage = (val) => {
+  let value = Number(val);
+  if (typeof value !== "number" || value <= 0) {
+    value = 1;
+  }
+  if (!value) {
+    value = 1;
+  }
+  return value;
+};
+const getUrl = (currUrl, orderby, sorybyType) => {
+  return orderby ? `${currUrl}&_sort=${sorybyType}&_order=${orderby}` : currUrl;
+};
 export const Product = () => {
-  const { page, handleNextPage, handlePrevPage } = useContext(PageContex);
+  let [searchparam, setSearchParam] = useSearchParams();
+  const initPage = getCurrpage(searchparam.get("page"));
+  const [page, setPage] = useState(initPage);
+  const [length, setLength] = useState(0);
+  const [selectvalue, setSelectValuue] = useState(
+    searchparam.get("selectvalue")
+  );
+  const [sortby, setSortby] = useState(searchparam.get("sortby"));
+  const [sorybyType, setSortbyType] = useState(searchparam.get("sorybyType"));
   const dispatch = useDispatch();
   const { products, loading, error } = useSelector((state) => state);
 
+  const ref = useRef(null);
+  console.log(ref.__reactProps$1k6w6ta9zbc);
   useEffect(() => {
-    dispatch(getData(page));
-  }, [page]);
+    let url = getUrl(
+      `http://localhost:4001/products?_limit=20&_page=${page}`,
+      sortby,
+      sorybyType
+    );
+    dispatch(getData(url, setLength));
+  }, [page, sortby, sorybyType]);
+  // console.log(sortby);
+  useEffect(() => {
+    let paramObj = {
+      page,
+    };
+    if (sortby) {
+      paramObj.sortby = sortby;
+    }
+    if (sorybyType) {
+      paramObj.sorybyType = sorybyType;
+    }
+    if (selectvalue) {
+      paramObj.selectvalue = selectvalue;
+    }
+    setSearchParam(paramObj);
+  }, [page, sortby, sorybyType]);
 
   const handleId = (id) => {
     console.log(id);
   };
-  // console.log(products);
+  const handleChange = (e) => {
+    const { value, name } = e.target;
+    console.log(name, value);
+    setSelectValuue(value);
 
+    if (value === "rating") {
+      setSortby("desc");
+      setSortbyType("rating");
+    } else if (value === "pricedesc") {
+      setSortby("desc");
+      setSortbyType("price");
+    } else if (value === "pricease") {
+      setSortby("ase");
+      setSortbyType("price");
+    } else if (value === "discount") {
+      setSortby("desc");
+      setSortbyType("discountDisplayLabel");
+    } else if (value === "") {
+      setSortby();
+      setSortbyType();
+    }
+  };
   if (loading) {
     return (
       <Stack>
@@ -55,12 +121,19 @@ export const Product = () => {
   if (error) {
     return (
       <Box textAlign="center" m="15%">
+        <Spinner
+          thickness="10px"
+          speed="0.50s"
+          emptyColor="gray.200"
+          color="blue.500"
+          size="xl"
+        />
         <Heading>Somethings went wrong , please refresh the page.</Heading>
       </Box>
     );
   }
   return (
-    <Box>
+    <Box marginLeft="20%">
       <Box>
         <Image
           src="	https://n.nordstrommedia.com/id/748369e6-331e-453f-83f6-ba94c3c7bdae.png?h=417&w=1334"
@@ -69,16 +142,23 @@ export const Product = () => {
       </Box>
 
       <Flex justifyContent="space-between" padding="1% 5%">
-        <Heading as="h5" size="sm">
-          Sale & Clearance
-        </Heading>
-        <Select width="23%" placeholder="Select option">
+        <Box>
+          <Heading as="h5" size="sm">
+            Sale & Clearance
+          </Heading>
+          <Text m="20px"> {length} items</Text>
+        </Box>
+        <Select
+          width="23%"
+          value={selectvalue}
+          onChange={(e) => handleChange(e)}
+        >
+          <option value="">Sort by featured</option>
           <option value="rating">Sort by customer rating</option>
-          <option value="feature">Sort by featured</option>
           <option value="newest">Sort by newest</option>
-          <option value="priceoff">Sort by price off</option>
-          <option value="htl">Sort by price : High to Low</option>
-          <option value="lth">Sort by price : Low to High</option>
+          <option value="discount">Sort by price off</option>
+          <option value="pricedesc">Sort by price : High to Low</option>
+          <option value="pricease">Sort by price : Low to High</option>
         </Select>
       </Flex>
 
@@ -91,18 +171,19 @@ export const Product = () => {
             onClick={() => handleId(item.id)}
             // border="1px solid red"
           >
-            <Image width="80%" m="auto" src={item.searchImage} alt="picture" />
+            <Image width="100%" m="auto" src={item.searchImage} alt="picture" />
             <Flex width="80%" m="2% auto">
-              <Button bg="black" borderRadius="50%" m="1%" size="sm"></Button>
-              <Button bg="red" borderRadius="50%" m="1%" size="sm"></Button>
-              <Button bg="blue" borderRadius="50%" m="1%" size="sm"></Button>
-              <Button bg="yellow" borderRadius="50%" m="1%" size="sm"></Button>
+              <Button bg="black" borderRadius="50%" m="3%" size="xs"></Button>
+              <Button bg="red" borderRadius="50%" m="3%" size="xs"></Button>
+              <Button bg="blue" borderRadius="50%" m="3%" size="xs"></Button>
+              <Button bg="yellow" borderRadius="50%" m="3%" size="xs"></Button>
             </Flex>
             <Box>{item.brand}</Box>
             <Box>{item.product}</Box>
             <Box color="red">{item.price} ₹ </Box>
             <Box color="red">{item.discountDisplayLabel}</Box>
             <Box textDecoration="line-through">{item.mrp} ₹</Box>
+
             <Box>
               {item.rating} ({item.ratingCount})
             </Box>
@@ -110,11 +191,16 @@ export const Product = () => {
         ))}
       </SimpleGrid>
       <Box textAlign="center">
-        <Button disabled={page === 1} onClick={handlePrevPage}>
+        <Button disabled={page === 1} onClick={() => setPage(page - 1)}>
           Prev
         </Button>
         <Button>{page}</Button>
-        <Button onClick={handleNextPage}>Next</Button>
+        <Button
+          disabled={page === Math.ceil(length / 20)}
+          onClick={() => setPage(page + 1)}
+        >
+          Next
+        </Button>
       </Box>
     </Box>
   );
