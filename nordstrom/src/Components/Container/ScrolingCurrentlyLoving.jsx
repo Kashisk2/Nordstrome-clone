@@ -24,6 +24,20 @@ function ScrollingCurrent() {
 
   return (
     <Styled.Container>
+      <Text
+        fontSize={"21px"}
+        fontWeight={"700"}
+        letterSpacing="4.2px"
+        lineHeight={"23.94px"}
+        textAlign={'center'}
+        mt='20px'
+      >
+        CURRENTLY LOVING
+      </Text>
+      <Text mb={'20px'} textAlign={'center'} fontSize={"15px"} lineHeight={"21px"}>
+        Explore favorite looks from Instagram. Tag @Nordstrom to show us your
+        finds.
+      </Text>
       <Flex>
         <Styled.Button
           onClick={() => {
