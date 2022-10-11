@@ -1468,4 +1468,5 @@ const NewArivel = [
     systemAttributes: [],
   },
 ];
+console.log(NewArivel[0].images[0].src)
 export default NewArivel;

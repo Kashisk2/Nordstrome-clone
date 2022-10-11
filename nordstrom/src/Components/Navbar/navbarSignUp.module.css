@@ -1,6 +1,6 @@
 .dropbtn {
-  color: white;
-  padding: 16px;
+  color: black;
+  padding: 0px;
   font-size: 16px;
   border: none;
   cursor: pointer;
@@ -9,7 +9,9 @@
 
 .dropdown {
   position: relative;
+   /* position: absolute; */
   display: inline-block;
+  
 }
 .dropdownContent:before {
   position: absolute;
@@ -25,8 +27,9 @@
 
 .dropdownContent:after {
   position: absolute;
+  
   top: -6px;
-  right: 30px;
+  right: 40px;
   display: inline-block;
   border-right: 6px solid transparent;
   border-bottom: 6px solid black;
@@ -36,6 +39,7 @@
 .dropdownContent {
   display: none;
   position: absolute;
+  z-index: 1;
   right: 0;
   background-color: #f9f9f9;
   min-width: 160px;
