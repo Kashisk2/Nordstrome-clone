@@ -1,0 +1,55 @@
+.menuDropDown {
+  /* text-align: center; */
+}
+
+/* .menuDropDown li {
+  display: inline-block;
+  margin-right: 15px;
+  transition: all 1s ease-in-out;
+} */
+
+.menuDropDown :hover .submenu {
+  /* height: 500px; */
+  height: 500px;
+  margin-top: 20px;
+  z-index: 1;
+}
+ 
+
+/* .menuDropDown li:hover a {
+  color: #3862a0;
+} */
+/* 
+.menuDropDown li:hover a::before {
+  visibility: visible;
+  z-index: 1;
+   margin-top: 20px;
+  transform: scale(1, 1);
+} */
+
+.menuDropDown  .submenu {
+  overflow: hidden;
+  position: absolute;
+  margin-top: 20px;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  background-color: white;
+  height: 0;
+   line-height: 30px;
+   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  box-sizing: border-box;
+  transition: height 0.3s ease-in-out;
+  transition-delay: 0.1s;
+}
+/* 
+.menuDropDown li .submenu a {
+  color: #fff;
+  margin-top: 20px;
+  font-size: 16px;
+} */
+
+/* .menuDropDown li .submenu a:hover {
+  color: #fff;
+  text-decoration: underline;
+} */
