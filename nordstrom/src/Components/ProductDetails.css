@@ -4,18 +4,145 @@
     box-sizing: border-box;
 }
 .mainDivSection {
-    width: 100%;
-    height: 100%;
+    /* border: 2px solid green; */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     padding: 10px;
-    border: 2px solid green;
 }
-.mainImgDiv {
-    border: 2px solid blue;
+.imageSection {
+    /* border: 2px solid Purple; */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 80%;
+}
+.imgBox {
+    /* border: 2px dashed blue; */
+    margin: auto;
+    margin: 15px;
+    margin-right: 120px;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+}
+.imgTag  {
+    /* border: 2px solid red; */
+    width: 80px;
+    margin: 5px;
+}
+.frontImage {
+    width: 350px;
+    margin-top: 150px;
+    margin-right: 25px;
+}
+.detailsSection {
+    /* border: 2px solid red; */
+    padding: 20px;
+    width: 90%;
+    margin-left: -50px;
+}
+.detailsProductRating {
+    margin-top: 15px;
+}
+.detailsProductName {
+    margin-top: 20px;
+    font-size: x-large;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+.detailsProductBrand {
+    margin-top: 10px;
+    font-size: x-large;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;
+}
+.detailsProductPrice {
+    margin-top: 10px;
+    font-size: x-large;
+    font-weight: bolder;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: red;
+}
+.detailsProductDiscount {
+    margin-top: -10px;
+    color: red;
+}
+.detailsProductMrp {
+    margin-top: -5px;
+    font-size: large;
+    font-weight: 400;
+}
+.detailsProductDiscription {
+    margin-top: 10px;
+}
+.selectDiv {
+    margin-top: 50px;
+    font-size: x-large;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+.detailsProductSize, .detailsProductColor {
+    font-size: large;
+    font-weight: bolder;
+}
+.colorInCircle {
+    border-radius: 50%;
+    background-color: red;
+}
+.loadingBtn {
+    width: 100%;
+    margin-top: 100px;
+    color: black;
+    font-size: large;
+}
+/* .loadingBtn:hover {
+    background-color: black;
+    color: white;
+} */
+/* .mainWebBox#blur.active {
+    filter: blur(20px);
+    pointer-events: none;
+    user-select: none;
+} */
+
+/* reviewSection */
+.reviewMainSection {
+    /* border: 2px solid black; */
+    padding: 10px;
+}
+.reviewBox {
+    /* border: 2px solid black; */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 20px;
+    margin: 10px;
+}
+.reviewBoxPart1 {
+    /* border: 2px solid black; */
+    padding: 10px;
+    padding-right: 300px;
 }
 
-.detailsSection {
-    border: 2px solid red;
-    width: 50%;
-    height: 100%;
-    padding: 20px;
+.paraDiscription {
+    margin-top: 20px;
+}
+.headNameFree {
+    margin-top: 20px;
+    font-size: large;
+    font-weight: bolder;
+}
+.headNameFreenew {
+    margin-top: 5px;
+}
+.paraDiscriptionBtm {
+    margin-bottom: 20px;
+}
+.shipingName {
+    font-size: small;
+    font-weight: bolder;
+    margin-top: 15px;
+}
+.wishlist {
+    margin-top: 10px;
+    text-decoration: underline;
+    font-size: small;
+    font-weight: bolder;
 }
