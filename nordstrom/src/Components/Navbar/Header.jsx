@@ -17,7 +17,7 @@ export default function Header() {
 
       <Text
         p={"12px"}
-        fontSize={"16px"}
+        fontSize={{base:"12px",md:'14px', lg:"16px"}}
         lineHeight={"22.5px"}
         width={"1/3"}
         color={"white"}

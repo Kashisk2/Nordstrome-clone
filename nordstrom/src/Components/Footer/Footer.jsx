@@ -32,7 +32,7 @@ function Footer() {
   return (
     <Box p={"30px"} backgroundColor={"#f9f9f9"} width="100%">
       <Flex>
-        <Grid templateColumns={"repeat(5,1fr)"} gap="20px" w="72%" mb={"50px"}>
+        <Grid templateColumns={{ base: "repeat(1,1fr)", md:"repeat(3,1fr)", lg:"repeat(5,1fr)"}}gap="20px" w="72%" mb={"50px"}>
           <Coustemr />
           <About />
           <Store />

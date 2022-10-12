@@ -46,13 +46,13 @@ function FirstImageDiv() {
     <VStack width={"95%"} m={"auto"} mt={"30px"}>
       <Flex mb={"50px"} width={"100%"} justifyContent={"space-between"}>
         <Image
-          height={"14px"}
-          width={"auto"}
+          height={{ base: '10px', lg: '14px' }}
+          width={{ base: '200px', md: "250px", lg:'auto'}}
           src="https://n.nordstrommedia.com/id/c30eb052-a9da-4529-95ed-0d1568cc55ad.png?h=22&w=536"
         ></Image>
         <Box display={"flex"} alignItems={"center"} flexDirection={"column"}>
           <Text
-            fontSize={"21px"}
+            fontSize={{sm:'14px',lg:'15px',xl:"21px"}}
             color={"#383938"}
             lineHeight={"1.14"}
             fontWeight={"700"}
@@ -64,7 +64,9 @@ function FirstImageDiv() {
           </Text>
         </Box>
         <Image
-          height={"14px"}
+    
+          height={{ base: '10px',   lg: '14px' }}
+          width={{ base: '200px',md:"250px" , lg: 'auto' }}
           src="https://n.nordstrommedia.com/id/01471914-5c74-4e79-a258-af5f398b1a73.png?h=22&w=536"
         ></Image>
       </Flex>
