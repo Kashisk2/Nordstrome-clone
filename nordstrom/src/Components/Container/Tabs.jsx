@@ -14,13 +14,14 @@ import KidsProducs from "../../Images/KidsProducs.png";
 function TabsAll() {
   return (
     <Tabs colorScheme={"black"} width={"100%"}>
-      <TabList>
+      <TabList mt={'20px'} >
         <Flex width="55%" justifyContent={"space-around"}>
           <Tab
             width={"25%"}
             _active={{ backgroundColor: "transparent" }}
             borderBottom={"4px solid"}
             fontSize={"19px"}
+            
             lineHeight={"26.6px"}
           >
             Women
@@ -43,15 +44,7 @@ function TabsAll() {
           >
             Kids
           </Tab>
-           <Tab
-            width={"25%"}
-            _active={{ backgroundColor: "transparent" }}
-            borderBottom={"4px solid"}
-            fontSize={"19px"}
-            lineHeight={"26.6px"}
-          >
-            Men
-          </Tab>
+            
         </Flex>
       </TabList>
 
@@ -65,9 +58,7 @@ function TabsAll() {
         <TabPanel>
           <Image _hover={{ cursor: "pointer" }} src={KidsProducs} />
         </TabPanel>
-         <TabPanel>
-          <Image _hover={{ cursor: "pointer" }} src={MansProducs} />
-        </TabPanel>
+    
       </TabPanels>
     </Tabs>
   );

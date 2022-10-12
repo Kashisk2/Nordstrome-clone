@@ -74,7 +74,7 @@ function Scroling() {
           />
         </Styled.Button>
       </Flex>
-      <Image src="https://n.nordstrommedia.com/id/5ec3d3de-9e8c-4317-bc28-3b42b503268e.png?h=17&w=1608" />
+      <Image mt={'20px'} src="https://n.nordstrommedia.com/id/5ec3d3de-9e8c-4317-bc28-3b42b503268e.png?h=17&w=1608" />
     </Styled.Container>
   );
 }

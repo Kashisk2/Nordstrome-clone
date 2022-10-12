@@ -10,10 +10,11 @@ function TheThred() {
           fontWeight={"700"}
           letterSpacing="4.2px"
           lineHeight={"23.94px"}
+          mt='20px'
         >
           THE THREAD
         </Text>
-        <Text fontSize={"15px"} lineHeight={"21px"}>
+        <Text fontSize={"15px"}lineHeight={"21px"}>
           Introducing your new go-to destination for all things fashion, beauty
           and lifestyle at Nordstrom, from how-tos and style inspiration to
           exclusive interviews and more.
@@ -22,6 +23,7 @@ function TheThred() {
           fontSize={"15px"}
           lineHeight={"21px"}
           textDecoration={"underline"}
+          mb={'20px'} 
         >
           {" "}
           Get Inspired
