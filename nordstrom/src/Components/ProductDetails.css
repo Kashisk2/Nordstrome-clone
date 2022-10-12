@@ -18,8 +18,8 @@
 .imgBox {
     /* border: 2px dashed blue; */
     margin: auto;
-    margin: 15px;
-    margin-right: 120px;
+    margin: 5%;
+    margin-right: 10%;
     padding: 10px;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
@@ -30,15 +30,14 @@
     margin: 5px;
 }
 .frontImage {
-    width: 350px;
-    margin-top: 150px;
-    margin-right: 25px;
+    width: 100%;
+    margin-top: 50%;
+    margin-right: 30%;
 }
 .detailsSection {
     /* border: 2px solid red; */
     padding: 20px;
     width: 90%;
-    margin-left: -50px;
 }
 .detailsProductRating {
     margin-top: 15px;
@@ -93,15 +92,6 @@
     color: black;
     font-size: large;
 }
-/* .loadingBtn:hover {
-    background-color: black;
-    color: white;
-} */
-/* .mainWebBox#blur.active {
-    filter: blur(20px);
-    pointer-events: none;
-    user-select: none;
-} */
 
 /* reviewSection */
 .reviewMainSection {
@@ -118,7 +108,7 @@
 .reviewBoxPart1 {
     /* border: 2px solid black; */
     padding: 10px;
-    padding-right: 300px;
+    padding-right: 30px;
 }
 
 .paraDiscription {
@@ -145,4 +135,35 @@
     text-decoration: underline;
     font-size: small;
     font-weight: bolder;
+}
+
+
+
+
+@media screen and (min-width: 768px) and (max-width: 979px) {
+    .mainDivSection {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .reviewBox {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media screen   and (min-width: 0px) and (max-width: 767px) {
+    .mainDivSection {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .reviewBox {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .frontImage {
+        width: 100%;
+    }
+    .imageSection {
+        width: 100%;
+    }
+    .imgBox {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
