@@ -1,7 +1,13 @@
 import { SearchIcon } from '@chakra-ui/icons'
 import { Box, Input, InputGroup, InputLeftElement, Stack } from '@chakra-ui/react'
 import React from 'react'
-
+const breakpoints = {
+  sm: '320px',
+  md: '768px',
+  lg: '1080px',
+  xl: '1200px',
+  '2xl': '1536px',
+}
 function InputBox() {
   return (
        <Box>

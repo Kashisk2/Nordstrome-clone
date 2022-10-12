@@ -1,19 +1,22 @@
-import { Box, Center, Flex, Image, Spacer, Text } from "@chakra-ui/react";
+import { Box, Center, Flex, HStack, Image, Spacer, Text } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
     <Box
-      backgroundColor={"#3541b7"}
+      backgroundColor={"black"}
       display={"flex"}
-      px={"20px"}
+      height={'41px'}
+      px={"40px"}
+      
       justifyContent={"space-between"}
       alignItems={"center"}
     >
+      
       <Text></Text>
 
       <Text
-        p={"9px"}
+        p={"12px"}
         fontSize={"16px"}
         lineHeight={"22.5px"}
         width={"1/3"}

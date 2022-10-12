@@ -63,9 +63,16 @@ function NavbarTab() {
   //           </Box>
   //         </Portal>
   //       </Menu>
+  const breakpoints = {
+    sm: '320px',
+    md: '768px',
+    lg: '1080px',
+    xl: '1200px',
+    '2xl': '1536px',
+  }
   //   )
   return (
-     <Flex w={"90%"} mt={'500px'}   justifyContent={"space-between"} color={'#333333'}>
+     <Box w={"90%"} mt={'500px'}   display={'flex'} flexWrap={['wrap']} justifyContent={"space-between"} color={'#333333'}>
             
 
          
@@ -76,13 +83,13 @@ function NavbarTab() {
       <Box>
         <Button
           backgroundColor={"transparent"}
-          borderBottom="1px solid transparent"
+          borderBottom="2px solid transparent"
           borderRadius={'none'}
           fontWeight={'400'}
           _focus={{backgroundColor:'none'}}
           _hover={{
             cursor: "pointer",
-            borderBottom: "1px solid black",
+            borderBottom: "2px solid black",
             transition: " border-color 300ms",
             touchAction: "manipulation",
           }}
@@ -102,14 +109,14 @@ function NavbarTab() {
       <Box>
         <Button
           backgroundColor={"transparent"}
-          borderBottom="1px solid transparent"
+          borderBottom="2px solid transparent"
           borderRadius={'none'}
           fontWeight={'400'}
           color={' rgb(214, 31, 39)'}
           _focus={{backgroundColor:'none'}}
           _hover={{
             cursor: "pointer",
-            borderBottom: "1px solid  rgb(214, 31, 39)",
+            borderBottom: "2px solid  rgb(214, 31, 39)",
             transition: " border-color 300ms",
             touchAction: "manipulation",
           }}
@@ -129,13 +136,13 @@ function NavbarTab() {
       <Box>
         <Button
           backgroundColor={"transparent"}
-          borderBottom="1px solid transparent"
+          borderBottom="2px solid transparent"
           borderRadius={'none'}
           fontWeight={'400'}
           _focus={{backgroundColor:'none'}}
           _hover={{
             cursor: "pointer",
-            borderBottom: "1px solid black",
+            borderBottom: "2px solid black",
             transition: " border-color 300ms",
             touchAction: "manipulation",
           }}
@@ -155,13 +162,13 @@ function NavbarTab() {
       <Box>
         <Button
           backgroundColor={"transparent"}
-          borderBottom="1px solid transparent"
+          borderBottom="2px solid transparent"
           borderRadius={'none'}
           fontWeight={'400'}
           _focus={{backgroundColor:'none'}}
           _hover={{
             cursor: "pointer",
-            borderBottom: "1px solid black",
+            borderBottom: "2px solid black",
             transition: " border-color 300ms",
             touchAction: "manipulation",
           }}
@@ -181,13 +188,13 @@ function NavbarTab() {
       <Box>
         <Button
           backgroundColor={"transparent"}
-          borderBottom="1px solid transparent"
+          borderBottom="2px solid transparent"
           borderRadius={'none'}
           fontWeight={'400'}
           _focus={{backgroundColor:'none'}}
           _hover={{
             cursor: "pointer",
-            borderBottom: "1px solid black",
+            borderBottom: "2px solid black",
             transition: " border-color 300ms",
             touchAction: "manipulation",
           }}
@@ -207,13 +214,13 @@ function NavbarTab() {
       <Box>
         <Button
           backgroundColor={"transparent"}
-          borderBottom="1px solid transparent"
+          borderBottom="2px solid transparent"
           borderRadius={'none'}
           fontWeight={'400'}
           _focus={{backgroundColor:'none'}}
           _hover={{
             cursor: "pointer",
-            borderBottom: "1px solid black",
+            borderBottom: "2px solid black",
             transition: " border-color 300ms",
             touchAction: "manipulation",
           }}
@@ -233,13 +240,13 @@ function NavbarTab() {
       <Box>
         <Button
           backgroundColor={"transparent"}
-          borderBottom="1px solid transparent"
+          borderBottom="2px solid transparent"
           borderRadius={'none'}
           fontWeight={'400'}
           _focus={{backgroundColor:'none'}}
           _hover={{
             cursor: "pointer",
-            borderBottom: "1px solid black",
+            borderBottom: "2px solid black",
             transition: " border-color 300ms",
             touchAction: "manipulation",
           }}
@@ -260,13 +267,13 @@ Activewear
       <Box>
         <Button
           backgroundColor={"transparent"}
-          borderBottom="1px solid transparent"
+          borderBottom="2px solid transparent"
           borderRadius={'none'}
           fontWeight={'400'}
           _focus={{backgroundColor:'none'}}
           _hover={{
             cursor: "pointer",
-            borderBottom: "1px solid black",
+            borderBottom: "2px solid black",
             transition: " border-color 300ms",
             touchAction: "manipulation",
           }}
@@ -286,13 +293,13 @@ Activewear
       <Box>
         <Button
           backgroundColor={"transparent"}
-          borderBottom="1px solid transparent"
+          borderBottom="2px solid transparent"
           borderRadius={'none'}
           fontWeight={'400'}
           _focus={{backgroundColor:'none'}}
           _hover={{
             cursor: "pointer",
-            borderBottom: "1px solid black",
+            borderBottom: "2px solid black",
             transition: " border-color 300ms",
             touchAction: "manipulation",
           }}
@@ -312,13 +319,13 @@ Activewear
       <Box>
         <Button
           backgroundColor={"transparent"}
-          borderBottom="1px solid transparent"
+          borderBottom="2px solid transparent"
           borderRadius={'none'}
           fontWeight={'400'}
           _focus={{backgroundColor:'none'}}
           _hover={{
             cursor: "pointer",
-            borderBottom: "1px solid black",
+            borderBottom: "2px solid black",
             transition: " border-color 300ms",
             touchAction: "manipulation",
           }}
@@ -338,13 +345,13 @@ Activewear
       <Box>
         <Button
           backgroundColor={"transparent"}
-          borderBottom="1px solid transparent"
+          borderBottom="2px solid transparent"
           borderRadius={'none'}
           fontWeight={'400'}
           _focus={{backgroundColor:'none'}}
           _hover={{
             cursor: "pointer",
-            borderBottom: "1px solid black",
+            borderBottom: "2px solid black",
             transition: " border-color 300ms",
             touchAction: "manipulation",
           }}
@@ -361,7 +368,7 @@ The Thread
       </Box>
       
     </Box>
-     </Flex>
+     </Box>
   );
 }
 

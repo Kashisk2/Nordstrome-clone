@@ -8,7 +8,7 @@ import {
   InputGroup,
   InputLeftElement,
   InputRightElement,
-  Link,
+   
   Menu,
   MenuButton,
   MenuItem,
@@ -20,7 +20,7 @@ import {
 } from "@chakra-ui/react";
 
 import HolydaySales from "../../Images/HolydaySales.png";
-
+import {Link} from "react-router-dom"
 import { useRef } from "react";
 import InputBox from "./InputBox";
 import SignInButton from "./SignInButton";
@@ -32,18 +32,21 @@ export default function Navbar() {
       <VStack
         width={"95%"}
         m={"auto"}
-        mt={"25px"}
+        mt={"40px"}
         mb={"60px"}
         backgroundColor={"transparent"}
 
       >
         <Flex justifyContent={"space-between"} width={"100%"} mb={"15px"}>
           <Box>
+            <Link to="/">
+       
             <Image
               w={"198px"}
               h={"30px"}
               src="https://i.imgur.com/ubtddUO.png"
             />
+            </Link>
           </Box>
           <InputBox />
           <SignInButton />
