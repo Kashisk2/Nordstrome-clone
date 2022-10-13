@@ -8,7 +8,7 @@ import { BrowserRouter } from "react-router-dom";
 import {Provider} from "react-redux"
 import store from "./Redux/store";
 
-import { Provider } from "react-redux";
+// import { Provider } from "react-redux";
 import { ProSidebarProvider } from "react-pro-sidebar";
 import { StateContextProvider } from "./Contex/StateContext";
 
@@ -24,9 +24,15 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Provider store={store}>
     <ChakraProvider theme={theme}>
+
+      <ProSidebarProvider>
+
+      <StateContextProvider>
       <BrowserRouter>
         <App />
       </BrowserRouter>
+      </StateContextProvider>
+      </ProSidebarProvider>
     </ChakraProvider>
   </Provider>
 );

@@ -1,14 +1,19 @@
-import { Flex } from "@chakra-ui/react";
+import { Box, Center, Flex, Text } from "@chakra-ui/react";
 import "./App.css";
 import { FinalProduct } from "./Components/FinalProduct";
 import { SideNavbar } from "./Components/SideNavbar";
-
+import {ScrollToTop} from "react-scroll-to-top"
 import { Product } from "./Pages/Product";
+import { RiArrowUpSLine } from "react-icons/ri"
 
-function App() {
+import Footer from "./Components/Footer/Footer"
+import Header from "./Components/Navbar/Header"
+import Navbar from "./Components/Navbar/Navbar"
+import FirstImageDiv from "./Components/Container/Container"
+function App(){
   return (
     <div className="App">
-      <ScrollToTop
+      {/* <ScrollToTop 
         smooth={"true"}
         viewBox={"0 0 30 30"}
         
@@ -24,10 +29,11 @@ function App() {
           </Box>
         }
       />
-      <Header />
+      <Header/>
       <Navbar />
-      <FirstImageDiv />
-      <Footer />
+      <FirstImageDiv /> */}
+      {/* <Footer /> */}
+      <FinalProduct/>
     </div>
   );
 }
