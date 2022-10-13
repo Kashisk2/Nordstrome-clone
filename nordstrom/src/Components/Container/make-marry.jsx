@@ -1,4 +1,4 @@
-import { Box, Button, ButtonGroup, Flex, Text, VStack } from "@chakra-ui/react";
+import { Box, Button , Flex, Text, VStack } from "@chakra-ui/react";
 
 export default function MakeMarry() {
   return (
