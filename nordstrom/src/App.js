@@ -6,11 +6,7 @@ import { SideNavbar } from "./Components/SideNavbar";
 import { Product } from "./Pages/Product";
 
 function App() {
-  return (
-    <>
-      <FinalProduct />
-    </>
-  );
+  return <></>;
 }
 
 export default App;
