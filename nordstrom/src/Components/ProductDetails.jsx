@@ -28,14 +28,7 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 
-// function VerticallyCenter() {
 
-// return (
-// <>
-
-// </>
-// )
-// }
 
 export default function ProductDetails() {
   const [users, setUsers] = useState({});
@@ -44,7 +37,7 @@ export default function ProductDetails() {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const getUsers = async () => {
-    let response = await fetch("http://localhost:4000/products/2466435");
+    let response = await fetch("http://localhost:4000/products/9070277");
     let data = await response.json();
     // console.log(data);
     setUsers(data);
@@ -60,7 +53,7 @@ export default function ProductDetails() {
   return (
     <Box className="mainWebBox">
       <Box className="mainDivSection">
-        {/* imagesSection Start */}
+        {/* imagesSection Start -------------------------------------------------------*/}
         <Box className="imageSection">
           <Box className="imgBox">
             {imgs.map((elem) => (
@@ -71,9 +64,9 @@ export default function ProductDetails() {
             <Image src={users.searchImage} />
           </Box>
         </Box>
-        {/* imagesSection End */}
+        {/* imagesSection End ------------------------------------------------------------------*/}
 
-        {/* detailsSection */}
+        {/* detailsSection --------------------------------------------------------------*/}
 
         <Box className="detailsSection">
           <Box className="detailsProductRating">
@@ -140,7 +133,7 @@ export default function ProductDetails() {
                 <ModalCloseButton />
                 <ModalBody>
                   <HStack>
-                    <Box mr={5} width="60%">
+                    <Box mr={5} width="65%">
                       <Image width={300} src={users.searchImage} />
                     </Box>
                     <Box width="40%" mt="-10px">
@@ -179,10 +172,10 @@ export default function ProductDetails() {
           </Box>
           <Box className="wishlist">Add to wish list</Box>
         </Box>
-        {/* mainDetailsSection End */}
+        {/* mainDetailsSection End ---------------------------------------------------------*/}
       </Box>
 
-      {/* reviewSection starts here */}
+      {/* reviewSection starts here ------------------------------------------------------ */}
 
       <Box className="reviewMainSection">
         <Box className="reviewBox">

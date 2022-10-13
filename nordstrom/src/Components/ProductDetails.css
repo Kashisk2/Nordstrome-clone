@@ -20,19 +20,20 @@
     margin: auto;
     margin: 5%;
     margin-right: 10%;
+    margin-left: 10%;
     padding: 10px;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
 }
 .imgTag  {
     /* border: 2px solid red; */
-    width: 80px;
+    width: 30%;
     margin: 5px;
 }
 .frontImage {
-    width: 100%;
-    margin-top: 50%;
-    margin-right: 30%;
+    width: 130%;
+    margin-top: 30%;
+    margin-left: -30%;
 }
 .detailsSection {
     /* border: 2px solid red; */
@@ -73,7 +74,8 @@
     margin-top: 10px;
 }
 .selectDiv {
-    margin-top: 50px;
+    margin-top: 25px;
+    width: 80%;
     font-size: x-large;
     border: 1px solid gray;
     border-radius: 5px;
@@ -87,8 +89,8 @@
     background-color: red;
 }
 .loadingBtn {
-    width: 100%;
-    margin-top: 100px;
+    width: 80%;
+    margin-top: 7%;
     color: black;
     font-size: large;
 }
