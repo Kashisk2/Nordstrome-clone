@@ -12,11 +12,12 @@ import FirstImageDiv from "./Components/Container/Container";
 import { Product } from "./Pages/Product";
 import ProductDetails from "./Components/ProductDetails";
 import ScrollToTop from "react-scroll-to-top";
+import ProductDetails from './Components/ProductDetails';
 
 function App() {
   return (
     <div className="App">
-      <ScrollToTop
+      {/* <ScrollToTop
         smooth={"true"}
         viewBox={"0 0 30 30"}
         component={
@@ -33,7 +34,8 @@ function App() {
       <Header />
       <Navbar />
       <FirstImageDiv />
-      <Footer />
+      <Footer /> */}
+      <ProductDetails />
       {/* <Navbar /> */}
 
       {/* <ProductDetails /> */}
