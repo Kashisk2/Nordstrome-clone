@@ -1,10 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
+import ProductDetails from './Components/ProductDetails';
 
 function App() {
   return (
     <div className="App">
-      <ScrollToTop
+      {/* <ScrollToTop
         smooth={"true"}
         viewBox={"0 0 30 30"}
         
@@ -23,7 +24,8 @@ function App() {
       <Header />
       <Navbar />
       <FirstImageDiv />
-      <Footer />
+      <Footer /> */}
+      <ProductDetails />
     </div>
   );
 }
