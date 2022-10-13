@@ -11,69 +11,27 @@ import {
   Stack,
   Text,
 } from "@chakra-ui/react";
-import React, { useRef } from "react";
-import { useState } from "react";
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useSearchParams } from "react-router-dom";
-import { getData } from "../Redux/action";
+import React, { useContext } from "react";
+import { useSelector } from "react-redux";
+import { StateContext } from "../Contex/StateContext";
 
-const getCurrpage = (val) => {
-  let value = Number(val);
-  if (typeof value !== "number" || value <= 0) {
-    value = 1;
-  }
-  if (!value) {
-    value = 1;
-  }
-  return value;
-};
-const getUrl = (currUrl, orderby, sorybyType) => {
-  return orderby ? `${currUrl}&_sort=${sorybyType}&_order=${orderby}` : currUrl;
-};
 export const Product = () => {
-  let [searchparam, setSearchParam] = useSearchParams();
-  const initPage = getCurrpage(searchparam.get("page"));
-  const [page, setPage] = useState(initPage);
-  const [length, setLength] = useState(0);
-  const [selectvalue, setSelectValuue] = useState(
-    searchparam.get("selectvalue")
-  );
-  const [sortby, setSortby] = useState(searchparam.get("sortby"));
-  const [sorybyType, setSortbyType] = useState(searchparam.get("sorybyType"));
-  const dispatch = useDispatch();
   const { products, loading, error } = useSelector((state) => state);
-
-  const ref = useRef(null);
-  console.log(ref.__reactProps$1k6w6ta9zbc);
-  useEffect(() => {
-    let url = getUrl(
-      `http://localhost:4001/products?_limit=20&_page=${page}`,
-      sortby,
-      sorybyType
-    );
-    dispatch(getData(url, setLength));
-  }, [page, sortby, sorybyType]);
-  // console.log(sortby);
-  useEffect(() => {
-    let paramObj = {
-      page,
-    };
-    if (sortby) {
-      paramObj.sortby = sortby;
-    }
-    if (sorybyType) {
-      paramObj.sorybyType = sorybyType;
-    }
-    if (selectvalue) {
-      paramObj.selectvalue = selectvalue;
-    }
-    setSearchParam(paramObj);
-  }, [page, sortby, sorybyType]);
+  const {
+    setSortby,
+    setSortbyType,
+    selectvalue,
+    setSelectValuue,
+    length,
+    page,
+    setPage,
+  } = useContext(StateContext);
 
   const handleId = (id) => {
     console.log(id);
   };
+
+  // function for sorting
   const handleChange = (e) => {
     const { value, name } = e.target;
     console.log(name, value);
@@ -182,10 +140,22 @@ export const Product = () => {
             <Box>{item.product}</Box>
             <Box color="red">{item.price} ₹ </Box>
             <Box color="red">{item.discountDisplayLabel}</Box>
-            <Box textDecoration="line-through">{item.mrp} ₹</Box>
-
+            <Box textDecoration="line-through">{item.mrp} ₹ </Box>
             <Box>
-              {item.rating} ({item.ratingCount})
+              {Math.floor(item.rating) === 5 ? (
+                <Box>&#9733;&#9733;&#9733;&#9733;&#9733;</Box>
+              ) : Math.floor(item.rating) === 4 ? (
+                <Box>&#9733;&#9733;&#9733;&#9733;&#9734;</Box>
+              ) : Math.floor(item.rating) === 3 ? (
+                <Box>&#9733;&#9733;&#9733;&#9734;&#9734;</Box>
+              ) : Math.floor(item.rating) === 2 ? (
+                <Box>&#9733;&#9733;&#9734;&#9734;&#9734;</Box>
+              ) : Math.floor(item.rating) === 1 ? (
+                <Box>&#9733;&#9734;&#9734;&#9734;&#9734;</Box>
+              ) : (
+                <Box>&#9734;&#9734;&#9734;&#9734;&#9734;</Box>
+              )}{" "}
+              ({item.ratingCount})
             </Box>
           </Box>
         ))}
