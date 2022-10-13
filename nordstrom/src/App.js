@@ -1,12 +1,5 @@
-import logo from "./logo.svg";
-import "./App.css";
-import Header from "./Components/Navbar/Header";
-import Navbar from "./Components/Navbar/Navbar";
-import { Box, Center, extendTheme, Text } from "@chakra-ui/react";
-import FirstImageDiv from "./Components/Container/Container";
-import Footer from "./Components/Footer/Footer";
-import ScrollToTop from "react-scroll-to-top";
-import { RiArrowUpSLine } from "react-icons/ri";
+import logo from './logo.svg';
+import './App.css';
 
 function App() {
   return (
