@@ -14,6 +14,7 @@ import {
 import React, { useContext } from "react";
 import { useSelector } from "react-redux";
 import { StateContext } from "../Contex/StateContext";
+// import styles from ".product.module.css"
 
 export const Product = () => {
   const { products, loading, error } = useSelector((state) => state);
@@ -54,9 +55,11 @@ export const Product = () => {
       setSortbyType();
     }
   };
+
   if (loading) {
     return (
-      <Stack>
+      <Stack width="100%" marginLeft="20%" textAlign="center">
+        {/* <Text fontSize="30px">Loading...</Text> */}
         <Skeleton height="30px" />
         <Skeleton height="30px" />
         <Skeleton height="30px" />
@@ -78,7 +81,7 @@ export const Product = () => {
   }
   if (error) {
     return (
-      <Box textAlign="center" m="15%">
+      <Box textAlign="center" m="15%" marginLeft="25%">
         <Spinner
           thickness="10px"
           speed="0.50s"
@@ -130,6 +133,13 @@ export const Product = () => {
             // border="1px solid red"
           >
             <Image width="100%" m="auto" src={item.searchImage} alt="picture" />
+            {/* 
+            <Box
+              // style={styles.quickView}
+              _hover={{ color: "red", display: "none" }}
+            >
+              Quick View
+            </Box> */}
             <Flex width="80%" m="2% auto">
               <Button bg="black" borderRadius="50%" m="3%" size="xs"></Button>
               <Button bg="red" borderRadius="50%" m="3%" size="xs"></Button>

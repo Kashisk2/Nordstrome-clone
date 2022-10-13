@@ -6,16 +6,6 @@ import { getData } from "../Redux/action";
 export const StateContext = createContext();
 
 // for handle page url
-const getCurrpage = (val) => {
-  let value = Number(val);
-  if (typeof value !== "number" || value <= 0) {
-    value = 1;
-  }
-  if (!value) {
-    value = 1;
-  }
-  return value;
-};
 
 // for get updated urls which we are select by sort or filter
 const getUrl = (currUrl, orderby, sortbyType, genderName, brandName) => {
@@ -27,6 +17,8 @@ const getUrl = (currUrl, orderby, sortbyType, genderName, brandName) => {
     return `${currUrl}&_sort=${sortbyType}&_order=${orderby}&brand=${brandName}`;
   } else if (orderby && sortbyType) {
     return `${currUrl}&_sort=${sortbyType}&_order=${orderby}`;
+  } else if (genderName && brandName) {
+    return `${currUrl}&gender=${genderName}&brand=${brandName}`;
   } else if (genderName) {
     return `${currUrl}&gender=${genderName}`;
   } else if (brandName) {
@@ -39,11 +31,28 @@ const getUrl = (currUrl, orderby, sortbyType, genderName, brandName) => {
 export const StateContextProvider = ({ children }) => {
   let [searchparam, setSearchParam] =
     useSearchParams(); /*for genrate links in searchbar*/
+  const [length, setLength] = useState(0); /*for get length of product*/
+  console.log(length);
+  const getCurrpage = (val) => {
+    let value = Number(val);
+    if (typeof value !== "number" || value <= 0) {
+      value = 1;
+    }
+    if (!value) {
+      value = 1;
+    }
+
+    if (length < 20) {
+      value = 1;
+      console.log(length);
+    }
+    return value;
+  };
+
   const initPage = getCurrpage(
     searchparam.get("page")
   ); /*for page not update when refresh*/
   const [page, setPage] = useState(initPage); /*for get page*/
-  const [length, setLength] = useState(0); /*for get length of product*/
 
   //   for filtering of gender-----------------------------------------------------------
   const [genderName, setGenderName] = useState(
@@ -72,8 +81,6 @@ export const StateContextProvider = ({ children }) => {
   const [checkfilterBrand, setCheckfilterBrand] = useState({
     [keyBrand]: keyvalueBrand,
   }); /*for check of brand that check box checked or not*/
-
-  console.log(valueGender);
 
   //   for all sorting---------------------------------------------------------
   const [selectvalue, setSelectValuue] = useState(
