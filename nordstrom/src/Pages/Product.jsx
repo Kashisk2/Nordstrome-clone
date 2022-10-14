@@ -63,7 +63,7 @@ export const Product = () => {
 
   if (loading) {
     return (
-      <Stack width="100%" marginLeft="20%" textAlign="center">
+      <Stack width="100%"  textAlign="center">
         {/* <Text fontSize="30px">Loading...</Text> */}
         <Skeleton height="30px" />
         <Skeleton height="30px" />
@@ -99,7 +99,7 @@ export const Product = () => {
     );
   }
   return (
-    <Box marginLeft="20%">
+    <Box >
       <Box>
         <Image
           src="	https://n.nordstrommedia.com/id/748369e6-331e-453f-83f6-ba94c3c7bdae.png?h=417&w=1334"

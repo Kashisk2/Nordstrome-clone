@@ -19,10 +19,12 @@ import {
 } from "../../Features/Login/actions";
 import { useEffect, useState } from "react";
 import { registerSuccess } from "../../Features/Register/actions";
+// import { FormControl } from "@chakra-ui/react";
 
 export const Login = () => {
   const [form, setForm] = useState({});
   const [user, setUser] = useState([]);
+
   const [logStatus, setStatus] = useState(false);
 
   const { register } = useSelector((state) => ({
@@ -42,12 +44,14 @@ export const Login = () => {
 
   function findUser() {
     let userDet = users.filter((el) => el.email === form.email);
+    console.log(userDet)
+    localStorage.setItem("userData", JSON.stringify(userDet))
     setUser(userDet);
   }
 
   function getUsers() {
     dispatch(loginLoading());
-    fetch("/register")
+    fetch("http://localhost:4000/userData")
       .then((d) => d.json())
       .then((res) => {
         dispatch(loginSuccess(res));
@@ -57,28 +61,28 @@ export const Login = () => {
       });
   }
 
-  function postLoginData() {
-    dispatch(loginUserLoading());
-    fetch("/login", {
-      method: "POST",
-      body: JSON.stringify({
-        email: form.email,
-        password: form.password,
-        otp: Math.floor(1000 + Math.random() * 9000),
-        first_name: user[0].first_name,
-      }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((d) => d.json())
-      .then((res) => {
-        dispatch(loginUserSuccess(res));
-      })
-      .catch((err) => {
-        dispatch(loginUserError());
-      });
-  }
+  // function postLoginData() {
+  //   dispatch(loginUserLoading());
+  //   fetch("http://localhost:4000/userData", {
+  //     method: "POST",
+  //     body: JSON.stringify({
+  //       email: form.email,
+  //       password: form.password,
+  //       otp: Math.floor(1000 + Math.random() * 9000),
+  //       first_name: user[0].first_name,
+  //     }),
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //   })
+  //     .then((d) => d.json())
+  //     .then((res) => {
+  //       dispatch(loginUserSuccess(res));
+  //     })
+  //     .catch((err) => {
+  //       dispatch(loginUserError());
+  //     });
+  // }
 
   const handleSubmit = () => {
     if (user.length === 0) {
@@ -86,7 +90,7 @@ export const Login = () => {
     } else if (user[0].password != form.password) {
       alert("Invalid password");
     } else {
-      postLoginData();
+      // postLoginData();
       setStatus(true);
     }
   };
@@ -126,6 +130,8 @@ export const Login = () => {
   };
 
   if (logStatus) {
+    localStorage.setItem("userData",JSON.stringify(user[0]))
+    localStorage.setItem("logedin",true)
     return <Navigate to={"/"} />;
   }
 
@@ -159,6 +165,7 @@ export const Login = () => {
           sx={{ m: "auto", mt: "10px", mb: "10px", width: "350px" }}
           variant="outlined"
         >
+        
           <InputLabel
             htmlFor="outlined-adornment-password"
             sx={{ fontSize: "12px" }}
@@ -187,8 +194,7 @@ export const Login = () => {
             label="Password"
           />
         </FormControl>
-
-        <div className="staticTextThree">Forgot password?</div>
+                 <div className="staticTextThree">Forgot password?</div>
         <div className="staticTextFour">
           <input className="checkBox" type="checkbox" />
           <label> Keep me signed in.</label>

@@ -51,7 +51,7 @@ export const Register = () => {
       setPassword(false);
     } else {
       dispatch(registerLoading());
-      fetch("/register", {
+      fetch("http://localhost:4000/userData", {
         method: "POST",
         body: JSON.stringify(form),
         headers: {

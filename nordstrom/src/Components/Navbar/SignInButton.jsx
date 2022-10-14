@@ -2,21 +2,35 @@ import { Box, Button, Flex, Text, VStack } from "@chakra-ui/react";
 import React from "react";
 import styles from "./navbarSignUp.module.css";
 import { CheckIcon, ChevronDownIcon, SearchIcon } from "@chakra-ui/icons";
-import { AiOutlineShoppingCart, AiOutlineHeart,AiOutlineMail } from "react-icons/ai";
+import {
+  AiOutlineShoppingCart,
+  AiOutlineHeart,
+  AiOutlineMail,
+} from "react-icons/ai";
 import { BsFillCartCheckFill } from "react-icons/bs";
 import { GiWantedReward, GiSplitCross } from "react-icons/gi";
 import { FaShuttleVan } from "react-icons/fa";
 import { MdOutlinePayment } from "react-icons/md";
 import { IoMdOpen } from "react-icons/io";
-import { BiLock,BiStore } from "react-icons/bi";
+import { BiLock, BiStore } from "react-icons/bi";
+import { Link, Navigate } from "react-router-dom";
+import { useState } from "react";
 function SignInButton() {
+  const logedin = localStorage.getItem("logedin");
+  const userData = JSON.parse(localStorage.getItem("userData")) || {};
+  console.log(userData + "kashi");
+  const[userLogin,setUserLogin]=useState(false)
+  const handleLogout = () => {
+    localStorage.clear();
+     setUserLogin(true)
+  };
   return (
     <Box display={"flex"} alignItems={"center"} gap={"10px"}>
       <Box className={styles.dropdown} float={"right"}>
         <Button
           className={styles.dropbtn}
           p={"0px"}
-          mb={'0'}
+          mb={"0"}
           backgroundColor={"transparent"}
           _hover={{ backgroundColor: "transparent" }}
           color={"#515151"}
@@ -24,9 +38,10 @@ function SignInButton() {
           fontSize={"16px"}
           fontWeight={"400"}
         >
-          Sign up
+          {logedin ? userData.first_name : "Sign in"}
         </Button>
         <ChevronDownIcon ml={"5px"} />
+
         <Box
           boxShadow={"lg"}
           padding="20px"
@@ -34,17 +49,40 @@ function SignInButton() {
           className={styles.dropdownContent}
         >
           <VStack align={"start"}>
-            <Button
-              fontWeight={"400ox"}
-              width={"100%"}
-              backgroundColor={"black"}
-              color={"white"}
-              _hover={""}
-              borderRadius="none"
+            {logedin ? (
+              <Flex justifyContent={"space-between"} width={"100%"}>
+                <Text fontWeight={"700"}>{userData.first_name}'s Account</Text>
+                <Text onClick={ handleLogout } _hover={{ cursor: "pointer" }}>
+                  <Link to='/'>Sign out</Link>  
+                </Text>
+              </Flex>
+            ) : (
+              <Button
+                fontWeight={"400ox"}
+                width={"100%"}
+                backgroundColor={"black"}
+                color={"white"}
+                _hover={""}
+                borderRadius="none"
+              >
+                <Link _hover={{ backgroundColor: "black" }} to={"/login"}>
+                  <Text
+                    fontWeight={"400ox"}
+                    width={"100%"}
+                    backgroundColor={"black"}
+                    color={"white"}
+                  >
+                    Sign In|Create Account
+                  </Text>
+                </Link>
+              </Button>
+            )}
+
+            <Text
+              display={logedin ? "none" : "flex"}
+              fontWeight={"700"}
+              fontSize={"14px"}
             >
-              Sign In|Create Account
-            </Button>
-            <Text fontWeight={"700"} fontSize={"14px"}>
               Your Account
             </Text>
             <VStack align={"start"}>
@@ -161,7 +199,7 @@ function SignInButton() {
                 </Text>
               </Flex>
             </VStack>
-            <VStack align={'start'}>
+            <VStack align={"start"}>
               <Flex align={"center"} mt={"20px"} gap="10px">
                 <Text
                   color="#393939"
@@ -177,8 +215,8 @@ function SignInButton() {
                   Account settings
                 </Text>
               </Flex>
-               <Flex align={"center"} mt={"20px"} gap="10px">
-                <BiLock/>
+              <Flex align={"center"} mt={"20px"} gap="10px">
+                <BiLock />
                 <Text
                   color="#393939"
                   borderBottom="2px solid transparent"
@@ -190,12 +228,11 @@ function SignInButton() {
                     touchAction: "manipulation",
                   }}
                 >
-                 Password & Personal Info
-
+                  Password & Personal Info
                 </Text>
               </Flex>
-               <Flex align={"center"} mt={"20px"} gap="10px">
-                <AiOutlineMail/>
+              <Flex align={"center"} mt={"20px"} gap="10px">
+                <AiOutlineMail />
                 <Text
                   color="#393939"
                   borderBottom="2px solid transparent"
@@ -207,12 +244,11 @@ function SignInButton() {
                     touchAction: "manipulation",
                   }}
                 >
-                Email & Mail Preferences
-
+                  Email & Mail Preferences
                 </Text>
               </Flex>
-               <Flex align={"center"} mt={"20px"} gap="10px">
-                <BiStore/>
+              <Flex align={"center"} mt={"20px"} gap="10px">
+                <BiStore />
                 <Text
                   color="#393939"
                   borderBottom="2px solid transparent"
@@ -224,39 +260,38 @@ function SignInButton() {
                     touchAction: "manipulation",
                   }}
                 >
-                 Stores & Events
+                  Stores & Events
                 </Text>
               </Flex>
             </VStack>
-            <VStack align={'start'}>
-                 <Text
-                  color="#393939"
-                  borderBottom="2px solid transparent"
-                  fontSize={"14px"}
-                  fontWeight={'700'}
-                  _hover={{
-                    cursor: "pointer",
-                    borderBottom: "2px solid black",
-                    transition: " border-color 300ms",
-                    touchAction: "manipulation",
-                  }}
-                >
+            <VStack align={"start"}>
+              <Text
+                color="#393939"
+                borderBottom="2px solid transparent"
+                fontSize={"14px"}
+                fontWeight={"700"}
+                _hover={{
+                  cursor: "pointer",
+                  borderBottom: "2px solid black",
+                  transition: " border-color 300ms",
+                  touchAction: "manipulation",
+                }}
+              >
                 We're here to help, 24/7
-                </Text>
-                 <Text
-                  color="#393939"
-                  borderBottom="2px solid transparent"
-                  fontSize={"14px"}
-                
-                  _hover={{
-                    cursor: "pointer",
-                    borderBottom: "2px solid black",
-                    transition: " border-color 300ms",
-                    touchAction: "manipulation",
-                  }}
-                >
-               Contact Us
-                </Text>
+              </Text>
+              <Text
+                color="#393939"
+                borderBottom="2px solid transparent"
+                fontSize={"14px"}
+                _hover={{
+                  cursor: "pointer",
+                  borderBottom: "2px solid black",
+                  transition: " border-color 300ms",
+                  touchAction: "manipulation",
+                }}
+              >
+                Contact Us
+              </Text>
             </VStack>
           </VStack>
         </Box>

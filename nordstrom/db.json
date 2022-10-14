@@ -1,4 +1,20 @@
 {
+  "userData": [
+    {
+      "email": "kashiramshekhda2010@gmail.com",
+      "first_name": "Kashiram",
+      "last_name": "Shekhda",
+      "password": "Kashiram",
+      "id": 1
+    },
+    {
+      "email": "kashida2010@gmail.com",
+      "first_name": "Kashiram",
+      "last_name": "Shekhda",
+      "password": "Kashi@123",
+      "id": 2
+    }
+  ],
   "products": [
     {
       "landingPageUrl": "Watches/Daniel-Klein/Daniel-Klein-Women-Black-Analogue-Watch-DK11421-5/2466435/buy",

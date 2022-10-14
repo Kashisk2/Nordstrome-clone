@@ -2,18 +2,22 @@
 
 
 
-import { Box, ChakraProvider, extendTheme, Flex, Image, Link, Text } from '@chakra-ui/react'
+import { Box, ChakraProvider, extendTheme, Flex, Image,   Text } from '@chakra-ui/react'
 import React from 'react'
+import { Link } from 'react-router-dom'
 const breakpoints={
     mdl:'906px',
     lg:"1128px",
 }
 const theme =extendTheme({breakpoints})
 function MiddelText() {
+    const logedin = localStorage.getItem("logedin");
   return (
     <ChakraProvider theme={theme}>
 
-   
+          <Box display={logedin ? "none" : "flex" }>
+
+     
       <Flex mb={"50px"} width={"100%"} justifyContent={"space-between"}>
           <Image
               height={{base:'10px',lg:'14px'}}
@@ -31,7 +35,7 @@ function MiddelText() {
                   Shop what you love—faster and easier.
               </Text>
                   <Text mt={"8px"} textAlign={'center'} fontSize={"15px"} textDecoration={"underline"}>
-                  <Link>Sign In or Create an Account</Link>
+                  <Link to='/login'>Sign In or Create an Account</Link>
               </Text>
           </Box>
           <Image
@@ -40,6 +44,7 @@ function MiddelText() {
               src="https://n.nordstrommedia.com/id/01471914-5c74-4e79-a258-af5f398b1a73.png?h=22&w=536"
           ></Image>
       </Flex>
+          </Box>
       </ChakraProvider>
 
   )

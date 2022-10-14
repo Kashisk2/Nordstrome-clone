@@ -13,18 +13,13 @@ import { ProSidebarProvider } from "react-pro-sidebar";
 import { StateContextProvider } from "./Contex/StateContext";
 import store from "./store";
 
-const theme = extendTheme({
-  fonts: {
-    heading: `Brandon Text,Arial,sans-serif`,
-    body: `Brandon Text,Arial,sans-serif`,
-  },
-});
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <Provider store={store}>
-    <ChakraProvider theme={theme}>
+  
       <BrowserRouter>
         <ProSidebarProvider>
           <StateContextProvider>
@@ -32,7 +27,7 @@ root.render(
           </StateContextProvider>
         </ProSidebarProvider>
       </BrowserRouter>
-    </ChakraProvider>
+   
   </Provider>
 );
 
