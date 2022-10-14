@@ -12,6 +12,7 @@ import FirstImageDiv from "./Components/Container/Container";
 import { Product } from "./Pages/Product";
 import ProductDetails from "./Components/ProductDetails";
 import ScrollToTop from "react-scroll-to-top";
+// import ProductDetails from './Components/ProductDetails';
 
 function App() {
   return (
@@ -34,6 +35,8 @@ function App() {
       <Navbar />
       <FirstImageDiv />
       <Footer /> */}
+      {/* <Footer /> */}
+      {/* <ProductDetails /> */}
       {/* <Navbar /> */}
 
       {/* <ProductDetails /> */}

@@ -14,7 +14,7 @@ import {
   ModalOverlay,
   useDisclosure,
 } from "@chakra-ui/react";
-import styles from "react-responsive-carousel/lib/styles/carousel.min.css";
+
 import { useEffect, useState } from "react";
 import { BsFillHandbagFill } from "react-icons/bs";
 import { Carousel } from "react-responsive-carousel";

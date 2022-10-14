@@ -22,7 +22,7 @@ import { Link } from "react-router-dom";
 // import styles from ".product.module.css"
 
 export const Product = () => {
-  const { products, loading, error } = useSelector((state) => state);
+  const { products, loading, error } = useSelector((state) => state.product);
   const {
     setSortby,
     setSortbyType,
