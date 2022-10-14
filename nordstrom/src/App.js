@@ -7,21 +7,21 @@ import Footer from "./Components/Footer/Footer";
 import Header from "./Components/Navbar/Header";
 import { RiArrowUpSLine } from "react-icons/ri";
 
-import FirstImageDiv from "./Components/Container/Container";
+// import FirstImageDiv from "./Components/Container/Container";
 
 import { Product } from "./Pages/Product";
 import ProductDetails from "./Components/ProductDetails";
 import ScrollToTop from "react-scroll-to-top";
 // import ProductDetails from './Components/ProductDetails';
 
-import Footer from "./Components/Footer/Footer"
-import Header from "./Components/Navbar/Header"
-import Navbar from "./Components/Navbar/Navbar"
+// import Footer from "./Components/Footer/Footer"
+// import Header from "./Components/Navbar/Header"
+// import Navbar from "./Components/Navbar/Navbar"
 import FirstImageDiv from "./Components/Container/Container"
 function App(){
   return (
     <div className="App">
-      {/* <ScrollToTop 
+      <ScrollToTop 
         smooth={"true"}
         viewBox={"0 0 30 30"}
         component={
@@ -39,7 +39,7 @@ function App(){
       <Navbar />
       <FirstImageDiv />
       <Footer />
-      {/* <ProductDetails /> */}
+      {/* {/* <ProductDetails /> */}
       {/* <Navbar /> */}
 
       {/* <ProductDetails /> */}
