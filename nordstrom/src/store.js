@@ -1,8 +1,14 @@
+import { legacy_createStore as createStore, combineReducers } from "redux";
+import { reducer1 } from "../Register/reducer1";
+import { reducer2 } from "../Login/reducer2";
 
-import {combineReducers, legacy_createStore as createStore} from "redux"
-const rootReducer=combineReducers({
+const reducer = combineReducers({
+  registerState: reducer1,
+  loginState: reducer2,
+});
 
-})
-const store=createStore(rootReducer)
+let initialState = {};
 
-export default store
+const store = createStore(reducer, initialState);
+
+export default store;
