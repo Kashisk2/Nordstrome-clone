@@ -21,6 +21,7 @@ import { MotionConfig } from "framer-motion";
 import styles from "./Navbar.module.css";
 import Holyday from "./Holyday";
 import Sale from "./Sale";
+import WomenTab from "./WomenTab";
 function NavbarTab() {
   const [toggle, setToggle] = useState(false);
   const ref = useRef("0px");
@@ -152,7 +153,7 @@ function NavbarTab() {
 
         <ul className={styles.submenu}>
           <Box>
-            <Holyday />
+            <WomenTab/>
           </Box>
         </ul>
       </Box>

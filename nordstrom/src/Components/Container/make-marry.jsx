@@ -1,7 +1,9 @@
 import { Box, Button, ButtonGroup, Flex, Text, VStack } from "@chakra-ui/react";
+import FadeInSection from "../Fadein/Fadein";
 
 export default function MakeMarry(){
     return <>
+   
      <Flex width={'100%'}>
 
                 <Box position={'relative'} width={'100%'} height={'268px'} backgroundSize='100%'  backgroundPosition={'center'} backgroundRepeat={'no-repeat'} bgImage="url('https://n.nordstrommedia.com/id/058f9a9d-7da4-416a-be2b-62644d7dc5ba.png?h=300&amp;w=1608')">
@@ -21,5 +23,6 @@ export default function MakeMarry(){
 
                 </Box>
             </Flex>
+       
     </>
 }

@@ -21,6 +21,7 @@ import { FiSmartphone, FiInstagram } from "react-icons/fi";
 import { ImPinterest2, ImTwitter } from "react-icons/im";
 import { RiFacebookCircleLine } from "react-icons/ri";
 import { AiOutlinePlus } from "react-icons/ai";
+import FadeInSection from "../Fadein/Fadein";
 
 // console.log(styles.footer)
 const style = {};
@@ -30,9 +31,10 @@ const hoverStyle = {
 console.log(hoverStyle);
 function Footer() {
   return (
+    <FadeInSection>
     <Box p={"30px"} backgroundColor={"#f9f9f9"} width="100%">
       <Flex>
-        <Grid templateColumns={"repeat(5,1fr)"} gap="20px" w="72%" mb={"50px"}>
+        <Grid templateColumns={"repeat(5,1fr)"} gap="25px" w="72%" mb={"50px"}>
           <Coustemr />
           <About />
           <Store />
@@ -140,6 +142,7 @@ function Footer() {
         </Text>
       </HStack>
     </Box>
+      </FadeInSection>
   );
 }
 

@@ -15,7 +15,7 @@ import {
 
 function About() {
   return (
-    <VStack align={"start"}>
+    <VStack gap={'8px'} align={"start"}>
       <Text
         color="#393939"
         fontWeight={"700"}
