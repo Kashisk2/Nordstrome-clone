@@ -16,7 +16,7 @@ import ScrollToTop from "react-scroll-to-top";
 function App() {
   return (
     <div className="App">
-      <ScrollToTop
+      {/* <ScrollToTop
         smooth={"true"}
         viewBox={"0 0 30 30"}
         component={
@@ -33,13 +33,13 @@ function App() {
       <Header />
       <Navbar />
       <FirstImageDiv />
-      <Footer />
+      <Footer /> */}
       {/* <Navbar /> */}
 
       {/* <ProductDetails /> */}
       {/* <FirstImageDiv /> */}
 
-      {/* <FinalProduct /> */}
+      <FinalProduct />
     </div>
   );
 }

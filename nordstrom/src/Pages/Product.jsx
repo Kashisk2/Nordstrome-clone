@@ -1,6 +1,9 @@
+import styles from "./product.module.css";
+
 import {
   Box,
   Button,
+  color,
   Flex,
   Heading,
   Image,
@@ -14,6 +17,8 @@ import {
 import React, { useContext } from "react";
 import { useSelector } from "react-redux";
 import { StateContext } from "../Contex/StateContext";
+import { ProductModal } from "../Components/ProductModal";
+import { Link } from "react-router-dom";
 // import styles from ".product.module.css"
 
 export const Product = () => {
@@ -125,21 +130,22 @@ export const Product = () => {
 
       <SimpleGrid columns={[2, 3, 4]}>
         {products.map((item) => (
-          <Box
-            m="3%"
-            p="3%"
-            key={item.id + Date.now() + item.product}
-            onClick={() => handleId(item.id)}
-            // border="1px solid red"
-          >
-            <Image width="100%" m="auto" src={item.searchImage} alt="picture" />
-            {/* 
-            <Box
-              // style={styles.quickView}
-              _hover={{ color: "red", display: "none" }}
-            >
-              Quick View
-            </Box> */}
+          <Box m="3%" p="3%" key={item.id + Date.now() + item.product}>
+            <Box className={styles.container}>
+              <Link to={`${item.id}`}>
+                <Image
+                  className={styles.img}
+                  width="100%"
+                  m="auto"
+                  src={item.searchImage}
+                  alt="picture"
+                />
+              </Link>{" "}
+              <Box className={styles.quickView}>
+                <ProductModal />
+              </Box>
+            </Box>
+
             <Flex width="80%" m="2% auto">
               <Button bg="black" borderRadius="50%" m="3%" size="xs"></Button>
               <Button bg="red" borderRadius="50%" m="3%" size="xs"></Button>
@@ -178,6 +184,7 @@ export const Product = () => {
         <Button
           disabled={page === Math.ceil(length / 20)}
           onClick={() => setPage(page + 1)}
+          _hover={{ color: "blue" }}
         >
           Next
         </Button>
