@@ -18,7 +18,7 @@ import FadeInSection from "./Components/Fadein/Fadein";
 function App() {
   return (
     <div className="App">
-      <ScrollToTop
+      {/* <ScrollToTop
         smooth={"true"}
         viewBox={"0 0 30 30"}
         component={
@@ -38,14 +38,15 @@ function App() {
        
       <Navbar />
       <FirstImageDiv />
-      <Footer />
+      <Footer /> */}
+      {/* <Footer /> */}
       {/* <ProductDetails /> */}
       {/* <Navbar /> */}
 
       {/* <ProductDetails /> */}
       {/* <FirstImageDiv /> */}
 
-      {/* <FinalProduct /> */}
+      <FinalProduct />
     </div>
   );
 }

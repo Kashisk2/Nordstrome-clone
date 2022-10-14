@@ -1,18 +1,18 @@
-import { legacy_createStore as createStore, applyMiddleware } from "redux";
+// import { legacy_createStore as createStore, applyMiddleware } from "redux";
 // import thunk from "redux-thunk";
-import { productReducer } from "./reducer";
+// import { productReducer } from "./reducer";
 
-const thunkMiddleware = (store) => (next) => (action) => {
-  if (typeof action === "function") {
-    return action(store.dispatch);
-  }
-  next(action);
-};
+// // const thunkMiddleware = (store) => (next) => (action) => {
+// //   if (typeof action === "function") {
+// //     return action(store.dispatch);
+// //   }
+// //   next(action);
+// // };
 
-const middleware = applyMiddleware(thunkMiddleware);
+// const middleware = applyMiddleware(thunk);
 
-export const store = createStore(productReducer, middleware);
+// export const store = createStore(productReducer, middleware);
 
-export default store;
+// export default store;
 
-console.log(store);
+// console.log(store);
