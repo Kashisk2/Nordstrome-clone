@@ -4,19 +4,19 @@
     box-sizing: border-box;
 }
 .mainDivSection {
-    /* border: 2px solid green; */
+    border: 2px solid green;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     padding: 10px;
 }
 .imageSection {
-    /* border: 2px solid Purple; */
+    border: 2px solid Purple;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     width: 80%;
 }
 .imgBox {
-    /* border: 2px dashed blue; */
+    border: 2px dashed blue;
     margin: auto;
     margin: 5%;
     margin-right: 10%;
@@ -26,9 +26,9 @@
     grid-template-columns: repeat(1, 1fr);
 }
 .imgTag  {
-    /* border: 2px solid red; */
-    width: 30%;
-    margin: 5px;
+    border: 2px solid red;
+    width: 40%;
+    margin: 3px;
 }
 .frontImage {
     width: 130%;
@@ -36,7 +36,7 @@
     margin-left: -30%;
 }
 .detailsSection {
-    /* border: 2px solid red; */
+    border: 2px solid red;
     padding: 20px;
     width: 90%;
 }
@@ -97,18 +97,18 @@
 
 /* reviewSection */
 .reviewMainSection {
-    /* border: 2px solid black; */
+    border: 2px solid blue;
     padding: 10px;
 }
 .reviewBox {
-    /* border: 2px solid black; */
+    border: 2px solid black;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     padding: 20px;
     margin: 10px;
 }
 .reviewBoxPart1 {
-    /* border: 2px solid black; */
+    border: 2px solid black;
     padding: 10px;
     padding-right: 30px;
 }

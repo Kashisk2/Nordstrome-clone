@@ -1,0 +1,75 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.mainPaymentPage {
+    border: 2px solid green;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+    padding: 10px;
+    width: 100%;
+}
+.paymentCardDetails {
+    border: 2px solid orange;
+    display: grid;
+    padding: 10px;
+}
+.paymentHeading {
+    margin: 10px 20px;
+    font-weight: bolder;
+    font-size: 30px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+.cardLogo {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+.cardInputs1 {
+    width: 70%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+.cardInputs {
+    width: 32.1%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+.unionBox {
+    margin-left: 20px;
+}
+.textOffer {
+    margin: 50px 20px;
+}
+.Place-Btn {
+    width: 80%;
+    margin: 40px 0;
+    margin-left: 20px;
+    color: black;
+    border: none;
+}
+
+
+
+
+
+/* Total section of Payment */
+
+.paymentTotalDetails {
+    border: 2px solid red;
+    display: grid;
+    padding: 10px;
+}
