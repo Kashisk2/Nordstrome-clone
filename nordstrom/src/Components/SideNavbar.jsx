@@ -2,14 +2,14 @@ import { Box, Breadcrumb, BreadcrumbItem, BreadcrumbLink } from "@chakra-ui/reac
 import { useContext } from "react";
 import { Menu, MenuItem, Sidebar, SubMenu } from "react-pro-sidebar";
 import { StateContext } from "../Contex/StateContext";
-
+import StylesSideBar from "./SideNavbar.module.css"
 export const SideNavbar = () => {
   const { checkfilter, handleChange, handleChangeBrand, checkfilterBrand } =
     useContext(StateContext);
 
   return (
-    <Box position={'-webkit-sticky'}   top='0' width='20%'> 
-    <Sidebar  style={{zIndex:'0'}}>
+    <Box  width='20%'> 
+      <Sidebar className={StylesSideBar.sideNavbar} style={{zIndex:'0'}}>
       <Breadcrumb>
         <BreadcrumbItem>
           <BreadcrumbLink href="#">Home</BreadcrumbLink>

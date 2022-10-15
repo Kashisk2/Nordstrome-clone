@@ -3,6 +3,8 @@ import { FinalProduct } from "../Components/FinalProduct";
 import { Login } from "../Components/Login/Login";
 import { Register } from "../Components/Login/Register";
 import HomePage from "../Pages/HomePage";
+import LoginPage from "../Pages/LoginPage";
+import RegisterPage from "../Pages/RegisterPage";
 
 export default function RoutesAll(){
     return (
@@ -11,8 +13,8 @@ export default function RoutesAll(){
 
 
         <Route path="/" element={<HomePage/>}/>
-            <Route path="/login" element={<Login/>}/>
-            <Route path="/register" element={<Register/>}/>
+            <Route path="/login" element={<LoginPage/>}/>
+            <Route path="/register" element={<RegisterPage />}/>
             <Route path="/ProductPage" element={<FinalProduct />}/>
         </Routes>
     )

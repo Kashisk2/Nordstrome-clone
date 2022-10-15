@@ -1,6 +1,7 @@
 import {
   Box,
   Button,
+  ChakraProvider,
   Flex,
   Heading,
   Image,
@@ -28,7 +29,7 @@ import NavbarTab from "./NavbarTab";
 
 export default function Navbar() {
   return (
-    <>
+    <ChakraProvider>
       <VStack
         width={"95%"}
         m={"auto"}
@@ -57,6 +58,6 @@ export default function Navbar() {
         <NavbarTab />
         </VStack>
       </VStack>
-    </>
+    </ChakraProvider>
   );
 }
