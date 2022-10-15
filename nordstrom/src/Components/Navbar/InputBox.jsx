@@ -26,7 +26,7 @@ function InputBox() {
                   borderRadius={"0px"}
                   border={"1px solid #bbb"}
                   height={"45px"}
-                  width= {{base:'100px',sm:'200px',md:'300px',sk:'400px',lg:'655px'}}
+                  width= {{base:'300px',md:'400px',lg:'655px'}}
                   type="text"
                   placeholder="Search for products and brands"
                 />

@@ -25,6 +25,7 @@ function MiddelText() {
           <Image
               height={{base:'10px',lg:'14px'}}
               width={{base:'200px',mdl:'275px',lg:"auto"}}
+              display={{base:'none',mdl:'flex'}}
               src="https://n.nordstrommedia.com/id/c30eb052-a9da-4529-95ed-0d1568cc55ad.png?h=22&w=536"
           ></Image>
           <Box display={"flex"} justifyContent={'center'} alignItems={"center"} flexDirection={"column"}>
@@ -44,6 +45,7 @@ function MiddelText() {
           <Image
                   height={{ base: '10px', lg: '14px' }}
                   width={{ base: '200px', mdl: '275px', lg: "auto" }}
+                      display={{ base: 'none', mdl: 'flex' }}
               src="https://n.nordstrommedia.com/id/01471914-5c74-4e79-a258-af5f398b1a73.png?h=22&w=536"
           ></Image>
       </Flex>

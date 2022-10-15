@@ -15,7 +15,7 @@ import {
 
 function About() {
   return (
-    <VStack gap={'8px'} align={"start"}>
+    <VStack gap={'8px'} align={{ base: "center", sm: "start" }}>
       <Text
         color="#393939"
         fontWeight={"700"}

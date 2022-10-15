@@ -38,7 +38,7 @@ export default function Navbar() {
         backgroundColor={"transparent"}
 
       >
-        <Flex justifyContent={"space-between"} width={"100%"} mb={"15px"}>
+        <Flex justifyContent={'space-between'} alignItems={'center'} direction={{base:'column',md:'row'}} width={"100%"} gap={{base:'10px',md:'auto'}} mb={"15px"}>
           <Box>
             <Link to="/">
        
