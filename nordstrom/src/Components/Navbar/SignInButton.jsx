@@ -15,14 +15,17 @@ import { IoMdOpen } from "react-icons/io";
 import { BiLock, BiStore } from "react-icons/bi";
 import { Link, Navigate } from "react-router-dom";
 import { useState } from "react";
+import stylesSign from './Signin.module.css'
+import { useContext } from "react";
+import { SignUpContex } from "../../Contex/SignupContex";
 function SignInButton() {
   const logedin = localStorage.getItem("logedin");
   const userData = JSON.parse(localStorage.getItem("userData")) || {};
   console.log(userData + "kashi");
-  const[userLogin,setUserLogin]=useState(false)
+  const { handleLogin }=useContext(SignUpContex)
   const handleLogout = () => {
     localStorage.clear();
-     setUserLogin(true)
+     handleLogin()
   };
   return (
     <Box display={"flex"} alignItems={"center"} gap={"10px"}>
@@ -38,7 +41,7 @@ function SignInButton() {
           fontSize={"16px"}
           fontWeight={"400"}
         >
-          {logedin ? userData.first_name : "Sign in"}
+          {logedin ?"Hi"+" ,"+userData.first_name : "Sign in"}
         </Button>
         <ChevronDownIcon ml={"5px"} />
 
@@ -52,11 +55,13 @@ function SignInButton() {
             {logedin ? (
               <Flex justifyContent={"space-between"} width={"100%"}>
                 <Text fontWeight={"700"}>{userData.first_name}'s Account</Text>
-                <Text onClick={ handleLogout } _hover={{ cursor: "pointer" }}>
-                  <Link to='/'>Sign out</Link>  
+                <Text onClick={ handleLogout } _hover={{ cursor: "pointer" ,backgroundColor:'transparent' }}>
+                  <Link className={stylesSign.link}  to='/'>
+                    <Text padding={'0'}>Sign out</Text> </Link>  
                 </Text>
               </Flex>
             ) : (
+              <Link className={stylesSign.link} to={"/login"}>
               <Button
                 fontWeight={"400ox"}
                 width={"100%"}
@@ -65,17 +70,11 @@ function SignInButton() {
                 _hover={""}
                 borderRadius="none"
               >
-                <Link _hover={{ backgroundColor: "black" }} to={"/login"}>
-                  <Text
-                    fontWeight={"400ox"}
-                    width={"100%"}
-                    backgroundColor={"black"}
-                    color={"white"}
-                  >
+                  
                     Sign In|Create Account
-                  </Text>
-                </Link>
+                  
               </Button>
+                </Link>
             )}
 
             <Text

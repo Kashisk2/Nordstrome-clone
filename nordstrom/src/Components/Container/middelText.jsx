@@ -4,7 +4,9 @@
 
 import { Box, ChakraProvider, extendTheme, Flex, Image,   Text } from '@chakra-ui/react'
 import React from 'react'
+import { useContext } from 'react'
 import { Link } from 'react-router-dom'
+import { SignUpContex } from '../../Contex/SignupContex'
 const breakpoints={
     mdl:'906px',
     lg:"1128px",
@@ -12,10 +14,11 @@ const breakpoints={
 const theme =extendTheme({breakpoints})
 function MiddelText() {
     const logedin = localStorage.getItem("logedin");
+    const { userLogin }=useContext(SignUpContex)
   return (
     <ChakraProvider theme={theme}>
 
-          <Box display={logedin ? "none" : "flex" }>
+          <Box display={logedin && !userLogin ? "none" : "flex" }>
 
      
       <Flex mb={"50px"} width={"100%"} justifyContent={"space-between"}>

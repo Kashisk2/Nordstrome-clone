@@ -1,0 +1,7 @@
+.link{
+    width: 100%;
+    padding: 0px !important;
+}
+.link:hover{
+    background-color: transparent !important;
+}

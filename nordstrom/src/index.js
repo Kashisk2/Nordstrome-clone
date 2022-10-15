@@ -12,6 +12,7 @@ import { Provider } from "react-redux";
 import { ProSidebarProvider } from "react-pro-sidebar";
 import { StateContextProvider } from "./Contex/StateContext";
 import store from "./store";
+import { SignUpConetexProvide } from "./Contex/SignupContex";
 
 
 
@@ -19,7 +20,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <Provider store={store}>
-  
+    <SignUpConetexProvide>
       <BrowserRouter>
         <ProSidebarProvider>
           <StateContextProvider>
@@ -27,7 +28,7 @@ root.render(
           </StateContextProvider>
         </ProSidebarProvider>
       </BrowserRouter>
-   
+    </SignUpConetexProvide>
   </Provider>
 );
 

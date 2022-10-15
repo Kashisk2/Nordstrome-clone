@@ -1,5 +1,12 @@
 import React from "react";
-import { IconButton } from "@mui/material";
+import {
+  Button,
+  Dialog,
+  DialogActions,
+  DialogContentText,
+  DialogTitle,
+  IconButton,
+} from "@mui/material";
 import { OutlinedInput } from "@mui/material";
 import { InputLabel } from "@mui/material";
 import { InputAdornment } from "@mui/material";
@@ -9,6 +16,8 @@ import { VisibilityOff } from "@mui/icons-material";
 import "./Login.css";
 import { Link, Navigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+// import DialogContent from '@mui/material/DialogContent';
+import DialogContent from "@mui/material/DialogContent";
 import {
   loginLoading,
   loginError,
@@ -19,10 +28,16 @@ import {
 } from "../../Features/Login/actions";
 import { useEffect, useState } from "react";
 import { registerSuccess } from "../../Features/Register/actions";
+import { FaBuromobelexperte } from "react-icons/fa";
+import { useContext } from "react";
+import { SignUpContex } from "../../Contex/SignupContex";
 // import { FormControl } from "@chakra-ui/react";
-
+const intial={
+  email:"",
+  password:""
+}
 export const Login = () => {
-  const [form, setForm] = useState({});
+  const [form, setForm] = useState(intial);
   const [user, setUser] = useState([]);
 
   const [logStatus, setStatus] = useState(false);
@@ -44,14 +59,14 @@ export const Login = () => {
 
   function findUser() {
     let userDet = users.filter((el) => el.email === form.email);
-    console.log(userDet)
-    localStorage.setItem("userData", JSON.stringify(userDet))
+    console.log(userDet);
+    localStorage.setItem("userData", JSON.stringify(userDet));
     setUser(userDet);
   }
 
   function getUsers() {
     dispatch(loginLoading());
-    fetch("http://localhost:4000/userData")
+    fetch("http://localhost:4001/userData")
       .then((d) => d.json())
       .then((res) => {
         dispatch(loginSuccess(res));
@@ -63,7 +78,7 @@ export const Login = () => {
 
   // function postLoginData() {
   //   dispatch(loginUserLoading());
-  //   fetch("http://localhost:4000/userData", {
+  //   fetch("http://localhost:4001/userData", {
   //     method: "POST",
   //     body: JSON.stringify({
   //       email: form.email,
@@ -84,15 +99,25 @@ export const Login = () => {
   //     });
   // }
 
-  const handleSubmit = () => {
+  // const handleSubmit = () => {
+  //
+  // };
+  const [open, setOpen] = React.useState(false);
+  const { handleMiddle }=useContext(SignUpContex)
+  const handleClickOpen = () => {
     if (user.length === 0) {
-      alert("Invalid Email Id");
+      setOpen(true);
     } else if (user[0].password != form.password) {
-      alert("Invalid password");
+      setOpen(true);
     } else {
       // postLoginData();
+      handleMiddle()
       setStatus(true);
     }
+  };
+
+  const handleClose = () => {
+    setOpen(false);
   };
 
   const handleRegister = () => {
@@ -130,8 +155,8 @@ export const Login = () => {
   };
 
   if (logStatus) {
-    localStorage.setItem("userData",JSON.stringify(user[0]))
-    localStorage.setItem("logedin",true)
+    localStorage.setItem("userData", JSON.stringify(user[0]));
+    localStorage.setItem("logedin", true);
     return <Navigate to={"/"} />;
   }
 
@@ -165,7 +190,6 @@ export const Login = () => {
           sx={{ m: "auto", mt: "10px", mb: "10px", width: "350px" }}
           variant="outlined"
         >
-        
           <InputLabel
             htmlFor="outlined-adornment-password"
             sx={{ fontSize: "12px" }}
@@ -194,15 +218,42 @@ export const Login = () => {
             label="Password"
           />
         </FormControl>
-                 <div className="staticTextThree">Forgot password?</div>
+        <div className="staticTextThree">Forgot password?</div>
         <div className="staticTextFour">
           <input className="checkBox" type="checkbox" />
           <label> Keep me signed in.</label>
         </div>
 
-        <button onClick={handleSubmit} className="signInButton">
+        <button onClick={handleClickOpen} className="signInButton">
           Sign in
         </button>
+        <Dialog
+          open={open}
+          onClose={handleClose}
+         
+          aria-labelledby="alert-dialog-title"
+          aria-describedby="alert-dialog-description"
+        >
+          <DialogTitle width={'500px'} id="alert-dialog-title">
+            {"Alert"}
+          </DialogTitle>
+          <DialogContent>
+            <DialogContentText id="alert-dialog-description">
+              {form.email === "" || form.password === ""
+                ? "Please enter the Email and Password"
+                : user.length === 0
+                ? "Invalid email id"
+                : user[0].password != form.password
+                ? "Invalid Password"
+                : ""}
+            </DialogContentText>
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={handleClose} backgroundColor="red" autoFocus>
+              Try again
+            </Button>
+          </DialogActions>
+        </Dialog>
 
         <div className="staticTextTwo">
           Dont have an account?
