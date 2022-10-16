@@ -1,21 +1,13 @@
 import { SearchIcon } from '@chakra-ui/icons'
 import { Box, ChakraProvider, extendTheme, Input, InputGroup, InputLeftElement, Stack } from '@chakra-ui/react'
 import React from 'react'
-const breakpoints = {
-  sm: '320px',
-  md: '600px',
-  sk:'749px',
-  lg: '1046px',
-  xl: '1200px',
-  '2xl': '1536px',
-}
-const theme=extendTheme({breakpoints})
+ 
 function InputBox() {
   return (
-    <ChakraProvider theme={theme}>
+    <ChakraProvider>
      
-       <Box >
-            <Stack spacing={4}>
+       <Box width={{base:'100%',md:'auto'}}>
+            <Stack spacing={4} width={'100%'}>
               <InputGroup>
                 <InputLeftElement
                   pointerEvents="none"
@@ -26,7 +18,7 @@ function InputBox() {
                   borderRadius={"0px"}
                   border={"1px solid #bbb"}
                   height={"45px"}
-                  width= {{base:'300px',md:'400px',lg:'655px'}}
+                  width= {{base:'100%',md:'400px',lg:'655px'}}
                   type="text"
                   placeholder="Search for products and brands"
                 />

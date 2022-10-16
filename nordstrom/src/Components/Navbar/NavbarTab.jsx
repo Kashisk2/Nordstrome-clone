@@ -73,7 +73,7 @@ function NavbarTab() {
   }
   //   )
   return (
-     <Box w={"90%"} mt={'500px'}   display={'flex'} flexWrap={['wrap']} justifyContent={"space-between"} color={'#333333'}>
+     <Box w={"90%"} mt={'500px'}   display={{base:'none',md:'flex'}} flexWrap={['wrap']} justifyContent={"space-between"} color={'#333333'}>
             
 
          

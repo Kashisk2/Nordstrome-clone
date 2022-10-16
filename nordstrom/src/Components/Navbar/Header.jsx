@@ -5,7 +5,7 @@ export default function Header() {
   return (
     <Box
       backgroundColor={"black"}
-      display={"flex"}
+      display={{base:'none',md:"flex"}}
       height={'41px'}
       px={"40px"}
       

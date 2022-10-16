@@ -34,8 +34,8 @@ function Footer() {
   return (
     <FadeInSection>
     <Box p={"30px"} backgroundColor={"#f9f9f9"} width="100%">
-        <Flex direction={{ base: 'column', sm: 'row' }} alignItems={{ base: 'center', sm: 'flex-start' }} textAlign={{ base: 'center', sm: 'start' }} >
-          <Grid templateColumns={{ base: "repeat(1,1fr)", sm: "repeat(2,1fr)", md: "repeat(3,1fr)", lg:"repeat(5,1fr)"}} gap="25px" w="72%" mb={"50px"}>
+        <Flex direction={{ base: 'column', md: 'row' }} alignItems={{ base: 'center', md: 'flex-start' }} textAlign={{ base: 'center', md: 'start' }} >
+          <Grid templateColumns={{ base: "repeat(1,1fr)" , md: "repeat(3,1fr)", lg:"repeat(5,1fr)"}} gap="25px" w="72%" mb={"50px"}>
           <Coustemr />
           <About />
           <Store />
