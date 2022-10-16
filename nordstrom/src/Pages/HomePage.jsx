@@ -8,12 +8,25 @@ import Footer from "../Components/Footer/Footer";
 import { SignUpConetexProvide, SignUpContex } from "../Contex/SignupContex";
 import { useEffect, useState } from "react";
 import { useContext } from "react";
+const breakpoints = {
+    sm: '320px',
+    headrefont:'660px',
+    md: '768px',
+    lg: '960px',
+    xl: '1200px',
+    '2xl': '1536px',
+}
 const theme = extendTheme({
     fonts: {
         heading: `Brandon Text,Arial,sans-serif`,
         body: `Brandon Text,Arial,sans-serif`,
     },
+
+    breakpoints
+   
 });
+
+
 export default function HomePage(){
     const[loading,setLoading]=useState(true)
     // const { userLogin }=useContext(SignUpContex)

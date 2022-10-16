@@ -8,8 +8,8 @@ export const SideNavbar = () => {
     useContext(StateContext);
 
   return (
-    <Box  width='20%'> 
-      <Sidebar className={StylesSideBar.sideNavbar} style={{zIndex:'0'}}>
+    <Box width='20%' className={StylesSideBar.sideNavbar}> 
+      <Sidebar  style={{zIndex:0}} >
       <Breadcrumb>
         <BreadcrumbItem>
           <BreadcrumbLink href="#">Home</BreadcrumbLink>

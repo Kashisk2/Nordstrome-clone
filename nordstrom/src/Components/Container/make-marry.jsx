@@ -1,12 +1,21 @@
-import { Box, Button, ButtonGroup, Flex, Text, VStack } from "@chakra-ui/react";
+import { Box, Button, ButtonGroup, Flex, Image, Text, VStack } from "@chakra-ui/react";
 import FadeInSection from "../Fadein/Fadein";
+import marrayImage from "../../Images/marrayImage.png";
 
 export default function MakeMarry(){
-    return <>
+    return <> 
+    <Box display={{base:'flex',lg:'none'}}>
+            <Image src={marrayImage}/>
+    </Box>
    
-     <Flex width={'100%'}>
-
-                <Box position={'relative'} width={'100%'} height={'268px'} backgroundSize='100%'  backgroundPosition={'center'} backgroundRepeat={'no-repeat'} bgImage="url('https://n.nordstrommedia.com/id/058f9a9d-7da4-416a-be2b-62644d7dc5ba.png?h=300&amp;w=1608')">
+     <Flex  width={'100%'}>
+           
+                <Box display={
+                    {
+                        base:'none',
+                        lg:'flex'
+                    }
+                } position={'relative'} width={'100%'} height={'268px'} backgroundSize='100%'  backgroundPosition={'center'} backgroundRepeat={'no-repeat'} bgImage="url('https://n.nordstrommedia.com/id/058f9a9d-7da4-416a-be2b-62644d7dc5ba.png?h=300&amp;w=1608')">
                     <VStack right={'25%'} left={'25%'} top={'60%'} position={'absolute'}>
                         <Text fontSize={'21px'}>
                             The best gifts for everyone you love, all in one place.
