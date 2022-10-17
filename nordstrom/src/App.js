@@ -12,6 +12,7 @@ import FirstImageDiv from "./Components/Container/Container";
 import { Product } from "./Pages/Product";
 // import ProductDetails from "./Components/ProductDetails";
 import ScrollToTop from "react-scroll-to-top";
+import { Cartpage } from "../src/Pages/Cart/Cartpage";
 // import ProductDetails from './Components/ProductDetails';
 import { Payment } from "./Components/Payment";
 
@@ -43,7 +44,8 @@ function App() {
       {/* <ProductDetails /> */}
       {/* <FirstImageDiv /> */}
 
-      <FinalProduct />
+      {/* <FinalProduct /> */}
+      <Cartpage />
     </div>
   );
 }

@@ -3,7 +3,6 @@ import styles from "./product.module.css";
 import {
   Box,
   Button,
-  color,
   Flex,
   Heading,
   Image,
@@ -19,7 +18,13 @@ import { useSelector } from "react-redux";
 import { StateContext } from "../Contex/StateContext";
 import { ProductModal } from "../Components/ProductModal";
 import { Link } from "react-router-dom";
-// import styles from ".product.module.css"
+
+export const handlequickViewData = (item) => {
+  // console.log(item);
+  let quickViewData = item;
+
+  localStorage.setItem("quickViewData", JSON.stringify(quickViewData));
+};
 
 export const Product = () => {
   const { products, loading, error } = useSelector((state) => state.product);
@@ -33,9 +38,7 @@ export const Product = () => {
     setPage,
   } = useContext(StateContext);
 
-  const handleId = (id) => {
-    console.log(id);
-  };
+  products.map((ele) => (ele.count = 1));
 
   // function for sorting
   const handleChange = (e) => {
@@ -141,7 +144,10 @@ export const Product = () => {
                   alt="picture"
                 />
               </Link>{" "}
-              <Box className={styles.quickView}>
+              <Box
+                className={styles.quickView}
+                onClick={() => handlequickViewData(item)}
+              >
                 <ProductModal />
               </Box>
             </Box>

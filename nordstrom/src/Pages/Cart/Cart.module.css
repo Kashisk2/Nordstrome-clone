@@ -1,0 +1,25 @@
+.checkbox_round {
+  width: 1.3em;
+  height: 1.3em;
+  background-color: white;
+  border-radius: 50%;
+  vertical-align: middle;
+  border: 1px solid rgb(143, 135, 135);
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+  margin: 2% 0;
+  margin-right: 2%;
+}
+
+.checkbox_round:checked {
+  background-color: rgb(179, 163, 163);
+  border: 10px double black;
+}
+.blueColore {
+  color: #0e5faa;
+}
+.blueColore:hover {
+  color: #6c8399;
+}
