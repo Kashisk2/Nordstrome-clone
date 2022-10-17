@@ -27,8 +27,6 @@ import {
   ModalCloseButton,
   useDisclosure,
 } from "@chakra-ui/react";
-import abcd from "../Images/abcd.png";
-
 export default function ProductDetails() {
   const [users, setUsers] = useState([{}]);
   const [imgs, setImgs] = useState([]);
@@ -38,7 +36,7 @@ export default function ProductDetails() {
 
 
   const getUsers = async () => {
-    let response = await fetch("http://localhost:4000/products/9861607");
+    let response = await fetch("http://localhost:4001/products/9861607");
     let data = await response.json();
     setUsers(data);
     console.log(data);
@@ -167,7 +165,9 @@ export default function ProductDetails() {
                         <h1>{users.product}</h1>
                       </Box>
                       <Box fontSize={20} fontWeight="bold" mt={5}>
+                        
                         {users.brand}
+                      
                       </Box>
                       <Box className="detailsProductPrice">
                         <h1>INR {users.price}.00</h1>

@@ -6,11 +6,12 @@ import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 // import {Provider} from "react-redux"
-import store from "./Redux/store";
+// import store from "./Redux/store";
 
 import { Provider } from "react-redux";
 import { ProSidebarProvider } from "react-pro-sidebar";
 import { StateContextProvider } from "./Contex/StateContext";
+import store from "./store";
 
 const theme = extendTheme({
   fonts: {

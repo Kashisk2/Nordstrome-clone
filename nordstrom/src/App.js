@@ -12,7 +12,7 @@ import FirstImageDiv from "./Components/Container/Container";
 import { Product } from "./Pages/Product";
 // import ProductDetails from "./Components/ProductDetails";
 import ScrollToTop from "react-scroll-to-top";
-import ProductDetails from './Components/ProductDetails';
+// import ProductDetails from './Components/ProductDetails';
 import { Payment } from "./Components/Payment";
 
 function App() {
@@ -39,10 +39,11 @@ function App() {
       
       {/* <Navbar /> */}
       {/* <Payment /> */}
-      <ProductDetails />
+      {/* <Footer /> */}
+      {/* <ProductDetails /> */}
       {/* <FirstImageDiv /> */}
 
-      {/* <FinalProduct /> */}
+      <FinalProduct />
     </div>
   );
 }
