@@ -95,6 +95,15 @@ export const StateContextProvider = ({ children }) => {
     searchparam.get("sortbyType")
   ); /*for get sortbyType */
 
+  let cartDataArray = JSON.parse(localStorage.getItem("CartData")) || [];
+  let LaterDataArray = JSON.parse(localStorage.getItem("laterBag")) || [];
+  const [bagLength, setBagLength] = useState(
+    cartDataArray.length
+  ); /*length of bag for show on carpage tab */
+  const [laterBagLen, setLaterBagLen] = useState(
+    LaterDataArray.length
+  ); /*length of laterBag for show on carpage tab */
+
   //   useeffects for  get data ---------------------------------------------
   const dispatch = useDispatch();
   useEffect(() => {
@@ -204,6 +213,10 @@ export const StateContextProvider = ({ children }) => {
     handleChange,
     handleChangeBrand,
     checkfilterBrand,
+    bagLength,
+    setBagLength,
+    laterBagLen,
+    setLaterBagLen,
   };
 
   return (

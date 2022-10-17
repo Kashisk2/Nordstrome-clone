@@ -27,8 +27,8 @@
 }
 .imgTag  {
     /* border: 2px solid red; */
-    width: 30%;
-    margin: 5px;
+    width: 40%;
+    margin: 3px;
 }
 .frontImage {
     width: 130%;
@@ -97,7 +97,7 @@
 
 /* reviewSection */
 .reviewMainSection {
-    /* border: 2px solid black; */
+    /* border: 2px solid blue; */
     padding: 10px;
 }
 .reviewBox {

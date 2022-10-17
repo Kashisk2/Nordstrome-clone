@@ -2,7 +2,6 @@ import { StarIcon } from "@chakra-ui/icons";
 import {
   Box,
   Button,
-  Flex,
   HStack,
   Image,
   Modal,
@@ -15,31 +14,26 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { BsFillHandbagFill } from "react-icons/bs";
-import { Carousel } from "react-responsive-carousel";
+import Carousel from "react-elastic-carousel";
+
 import { useParams } from "react-router-dom";
+import { StateContext } from "../Contex/StateContext";
 
 export const ProductModal = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const [users, setUsers] = useState({});
-  const [imgs, setImgs] = useState([]);
 
-  // const id = useParams();
-  // console.log(id);
-  console.log("first");
+  let quickViewData = JSON.parse(localStorage.getItem("quickViewData"));
 
-  const getUsers = async () => {
-    let response = await fetch("http://localhost:4001/products/9070277");
-    let data = await response.json();
-    // console.log(data);
-    setUsers(data);
-    setImgs(data.images);
+  let cartArray = JSON.parse(localStorage.getItem("CartData")) || [];
+
+  const handleCartData = () => {
+    cartArray.push(quickViewData);
+    localStorage.setItem("CartData", JSON.stringify(cartArray));
+    onclose();
   };
-
-  useEffect(() => {
-    getUsers();
-  }, []);
+  // console.log(quickViewData);
 
   return (
     <Box>
@@ -62,19 +56,10 @@ export const ProductModal = () => {
           <ModalBody>
             <HStack>
               <Box mr={5} width="65%">
-                <Carousel
-                  showArrows={true}
-                  autoPlay
-                  // onChange={onChange}
-                  // onClickItem={onClickItem}
-                  // onClickThumb={onClickThumb}
-                >
-                  <div>
-                    {imgs.map((elem) => (
-                      <Image key={elem} src={elem.src} />
-                    ))}
-                    {/* <p className="legend">Legend 1</p> */}
-                  </div>
+                <Carousel>
+                  {quickViewData.images.map((elem) => (
+                    <Image key={elem} src={elem.src} height="200px" />
+                  ))}
                 </Carousel>
               </Box>
               <Box width="40%" mt="-10px">
@@ -83,33 +68,38 @@ export const ProductModal = () => {
                     <StarIcon
                       size={20}
                       key={i}
-                      color={i < users.rating ? "teal.500" : "gray.300"}
+                      color={i < quickViewData.rating ? "teal.500" : "gray.300"}
                     />
                   ))}
                 </Box>
                 <Box fontSize={15} fontWeight="bold" mt={5}>
-                  <h1>{users.product}</h1>
+                  <h1>{quickViewData.product}</h1>
                 </Box>
                 <Box fontSize={20} fontWeight="bold" mt={5}>
-                  {users.brand}
+                  {quickViewData.brand}
                 </Box>
                 <Box className="detailsProductPrice">
-                  <h1>INR {users.price}.00</h1>
+                  <h1>INR {quickViewData.price}.00</h1>
                 </Box>
                 <Box className="detailsProductDiscount">
-                  {users.discountDisplayLabel}
+                  {quickViewData.discountDisplayLabel}
                 </Box>
                 <Box className="detailsProductMrp">
                   <h3>
-                    <strike> INR {users.mrp}.00</strike>
+                    <strike> INR {quickViewData.mrp}.00</strike>
                   </h3>
                 </Box>
               </Box>
             </HStack>
           </ModalBody>
           <ModalFooter justifyContent="center">
-            <Button onClick={onClose} bg="orange" width="100%" color="black">
-              Checkout
+            <Button
+              onClick={handleCartData}
+              bg="orange"
+              width="100%"
+              color="black"
+            >
+              Add To Cart
             </Button>
           </ModalFooter>
         </ModalContent>

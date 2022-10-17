@@ -9,14 +9,16 @@ import Header from "./Components/Navbar/Header";
 import FirstImageDiv from "./Components/Container/Container";
 import {Login} from "./Components/Login/Login"
 import { Product } from "./Pages/Product";
-import ProductDetails from "./Components/ProductDetails";
+// import ProductDetails from "./Components/ProductDetails";
 import ScrollToTop from "react-scroll-to-top";
 import FadeInSection from "./Components/Fadein/Fadein";
 import { Register } from "./Components/Login/Register";
 import HomePage from "./Pages/HomePage";
 // import Routes from "./Routes/Routes";
 import RoutesAll from "./Routes/Routes";
+import { Cartpage } from "../src/Pages/Cart/Cartpage";
 // import ProductDetails from './Components/ProductDetails';
+import { Payment } from "./Components/Payment";
 
 function App() {
   return (
@@ -24,10 +26,10 @@ function App() {
 {/* <HomePage/> */}
 <RoutesAll/>
       {/* <Register/> */}
-      {/* {/* <Footer /> */}
-      {/* <ProductDetails /> */}
+      
       {/* <Navbar /> */}
-
+      {/* <Payment /> */}
+      {/* {/* <Footer /> */}
       {/* <ProductDetails /> */}
       {/* <FirstImageDiv /> */}
 
