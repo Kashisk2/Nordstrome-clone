@@ -27,25 +27,40 @@ import {
   ModalCloseButton,
   useDisclosure,
 } from "@chakra-ui/react";
-
 export default function ProductDetails() {
-  const [users, setUsers] = useState({});
+  const [users, setUsers] = useState([{}]);
   const [imgs, setImgs] = useState([]);
+  // const [item, setItem] = useState({});
 
   const { isOpen, onOpen, onClose } = useDisclosure();
 
+
   const getUsers = async () => {
-    let response = await fetch("http://localhost:4001/products/9070277");
+    let response = await fetch("http://localhost:4001/products/9861607");
     let data = await response.json();
-    // console.log(data);
     setUsers(data);
+    console.log(data);
     setImgs(data.images);
   };
-  console.log(imgs, "array");
+  // console.log(imgs, "array");
 
+  
   useEffect(() => {
     getUsers();
+    
   }, []);
+  
+  let storageLocal = JSON.parse(localStorage.getItem("lsRajTest")) || [];
+
+  // storeLocal();
+
+  const callLocal =  (display) => {
+    console.log("onlclik", display);
+    storageLocal.push(display)
+    localStorage.setItem("lsRajTest", JSON.stringify(storageLocal));
+    // storeLocal(display);
+    onClose();
+  }
 
   return (
     <Box className="mainWebBox">
@@ -53,7 +68,7 @@ export default function ProductDetails() {
         {/* imagesSection Start -------------------------------------------------------*/}
         <Box className="imageSection">
           <Box className="imgBox">
-            {imgs.map((elem) => (
+            {imgs.map((elem, ind) => (
               <Image className="imgTag" key={elem} src={elem.src} />
             ))}
           </Box>
@@ -132,6 +147,9 @@ export default function ProductDetails() {
                   <HStack>
                     <Box mr={5} width="65%">
                       <Image width={300} src={users.searchImage} />
+                      {/* {imgs.map((elem) => (
+                        <Image className="imgTagModal" key={elem} src={elem.src} />
+                      ))} */}
                     </Box>
                     <Box width="40%" mt="-10px">
                       <Box className="detailsProductRating">
@@ -147,7 +165,9 @@ export default function ProductDetails() {
                         <h1>{users.product}</h1>
                       </Box>
                       <Box fontSize={20} fontWeight="bold" mt={5}>
+                        
                         {users.brand}
+                      
                       </Box>
                       <Box className="detailsProductPrice">
                         <h1>INR {users.price}.00</h1>
@@ -165,7 +185,7 @@ export default function ProductDetails() {
                 </ModalBody>
                 <ModalFooter justifyContent="center">
                   <Button
-                    onClick={onClose}
+                    onClick={() => callLocal(users)}
                     bg="orange"
                     width="100%"
                     color="black"
@@ -259,6 +279,9 @@ export default function ProductDetails() {
             </Flex>
           </Box>
         </Box>
+      </Box>
+      <Box>
+        {/* <img src={abcd} /> */}
       </Box>
     </Box>
   );
