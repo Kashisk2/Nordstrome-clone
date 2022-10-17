@@ -1,4 +1,4 @@
-import { Box, Center, Flex, Text } from "@chakra-ui/react";
+import { Box, Center, ChakraProvider, Flex, Text } from "@chakra-ui/react";
 import "./App.css";
 import { FinalProduct } from "./Components/FinalProduct";
 import { SideNavbar } from "./Components/SideNavbar";
@@ -23,16 +23,18 @@ import { Payment } from "./Components/Payment";
 function App() {
   return (
     <div className="App">
-{/* <HomePage/> */}
-<RoutesAll/>
+      {/* <HomePage/> */}
+     
+      <RoutesAll />
       {/* <Register/> */}
-      
+
       {/* <Navbar /> */}
       {/* <Payment /> */}
       {/* {/* <Footer /> */}
-      {/* <ProductDetails /> */}
+      {/* <ChakraProvider>
+      <Product />
+      </ChakraProvider> */}
       {/* <FirstImageDiv /> */}
-
     </div>
   );
 }

@@ -9,15 +9,15 @@ import { SideNavbar } from "./SideNavbar";
 export const FinalProduct = () => {
   return (
     <ChakraProvider>
-<Box>
-  <Header/>
-<Navbar/>
-    <Flex>
-      <SideNavbar />
-      <Product />
-    </Flex>
-</Box>
-<Footer/>
+      <Box>
+        <Header />
+        <Navbar />
+        <Flex>
+          <SideNavbar />
+          <Product />
+        </Flex>
+      </Box>
+      <Footer />
     </ChakraProvider>
   );
 };

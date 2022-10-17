@@ -27,6 +27,20 @@
       "first_name": "Kashiram",
       "last_name": "Shekhda",
       "id": 4
+    },
+    {
+      "email": "op@gmail.com",
+      "password": "Kashiram",
+      "first_name": "Kashiram",
+      "last_name": "Shekhda",
+      "id": 5
+    },
+    {
+      "email": "eve.holt@reqres.in",
+      "password": "Masai123",
+      "first_name": "Masai",
+      "last_name": "School",
+      "id": 6
     }
   ],
   "products": [

@@ -54,7 +54,7 @@ function SignInButton() {
 
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = useRef();
-
+ 
   return (
     <Box
       display={"flex"}
@@ -83,7 +83,6 @@ function SignInButton() {
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton />
-        
 
           <DrawerBody>
             <VStack
@@ -92,104 +91,148 @@ function SignInButton() {
               align={"start"}
               fontSize={"18px"}
             >
-              <Text color="#393939"
+              <Text
+                color="#393939"
                 borderBottom="2px solid transparent"
                 _hover={{
                   cursor: "pointer",
                   borderBottom: "2px solid black",
                   transition: " border-color 300ms",
                   touchAction: "manipulation",
-                }}>Holyday Gifts</Text>
+                }}
+              >
+                Holyday Gifts
+              </Text>
               <Divider />
-              <Text color="#393939"
+              <Text
+                color="#393939"
                 borderBottom="2px solid transparent"
                 _hover={{
                   cursor: "pointer",
                   borderBottom: "2px solid black",
                   transition: " border-color 300ms",
                   touchAction: "manipulation",
-                }}>Sale</Text>
+                }}
+              >
+                Sale
+              </Text>
               <Divider />
-              <Text color="#393939"
+              <Text
+                color="#393939"
                 borderBottom="2px solid transparent"
                 _hover={{
                   cursor: "pointer",
                   borderBottom: "2px solid black",
                   transition: " border-color 300ms",
                   touchAction: "manipulation",
-                }}>Women</Text>
+                }}
+              >
+                Women
+              </Text>
               <Divider />
-              <Text color="#393939"
+              <Text
+                color="#393939"
                 borderBottom="2px solid transparent"
                 _hover={{
                   cursor: "pointer",
                   borderBottom: "2px solid black",
                   transition: " border-color 300ms",
                   touchAction: "manipulation",
-                }}>Men</Text>
+                }}
+              >
+                Men
+              </Text>
               <Divider />
-              <Text color="#393939"
+              <Text
+                color="#393939"
                 borderBottom="2px solid transparent"
                 _hover={{
                   cursor: "pointer",
                   borderBottom: "2px solid black",
                   transition: " border-color 300ms",
                   touchAction: "manipulation",
-                }}>Kids</Text>
+                }}
+              >
+                Kids
+              </Text>
               <Divider />
-              <Text color="#393939"
+              <Text
+                color="#393939"
                 borderBottom="2px solid transparent"
                 _hover={{
                   cursor: "pointer",
                   borderBottom: "2px solid black",
                   transition: " border-color 300ms",
                   touchAction: "manipulation",
-                }}>Young Adult</Text>
+                }}
+              >
+                Young Adult
+              </Text>
               <Divider />
-              <Text color="#393939"
+              <Text
+                color="#393939"
                 borderBottom="2px solid transparent"
                 _hover={{
                   cursor: "pointer",
                   borderBottom: "2px solid black",
                   transition: " border-color 300ms",
                   touchAction: "manipulation",
-                }}>Activewear</Text>
+                }}
+              >
+                Activewear
+              </Text>
               <Divider />
-              <Text color="#393939"
+              <Text
+                color="#393939"
                 borderBottom="2px solid transparent"
                 _hover={{
                   cursor: "pointer",
                   borderBottom: "2px solid black",
                   transition: " border-color 300ms",
                   touchAction: "manipulation",
-                }}>Home</Text>
+                }}
+              >
+                Home
+              </Text>
               <Divider />
-              <Text color="#393939"
+              <Text
+                color="#393939"
                 borderBottom="2px solid transparent"
                 _hover={{
                   cursor: "pointer",
                   borderBottom: "2px solid black",
                   transition: " border-color 300ms",
                   touchAction: "manipulation",
-                }}>Beauty</Text>
+                }}
+              >
+                Beauty
+              </Text>
               <Divider />
-              <Text color="#393939"
+              <Text
+                color="#393939"
                 borderBottom="2px solid transparent"
                 _hover={{
                   cursor: "pointer",
                   borderBottom: "2px solid black",
                   transition: " border-color 300ms",
                   touchAction: "manipulation",
-                }}>Designer</Text>
+                }}
+              >
+                Designer
+              </Text>
               <Divider />
-              <Text color="#393939"
+              <Text
+                color="#393939"
                 borderBottom="2px solid transparent"
                 _hover={{
                   cursor: "pointer",
                   borderBottom: "2px solid black",
                   transition: " border-color 300ms",
                   touchAction: "manipulation",
-                }}>The Thread</Text>
+                }}
+              >
+                The Thread
+              </Text>
             </VStack>
           </DrawerBody>
         </DrawerContent>
@@ -477,7 +520,9 @@ function SignInButton() {
           </Box>
         </Box>
         <Box className={styles.dropdown} float={"right"}>
+          <Link to={logedin ? "/cartpage" :"/login"}>
           <AiOutlineShoppingCart fontSize={"25px"} />
+          </Link>
         </Box>
       </Box>
     </Box>

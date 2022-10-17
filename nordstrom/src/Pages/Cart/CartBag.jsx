@@ -1,6 +1,7 @@
 import {
   Box,
   Button,
+  ChakraProvider,
   Checkbox,
   Flex,
   Image,
@@ -23,10 +24,10 @@ export const CartBag = () => {
 
   // data get in localStorage for bag by click add to cart
   let cartDataArray = JSON.parse(localStorage.getItem("CartData")) || [];
-
+  
   // initiae array which i get  from cartDataArray
   const [data, setData] = useState(cartDataArray);
-  // console.log(data);
+ 
   // for get length of data
   let totleItem = cartDataArray.length;
   // for get totle price in checkout button
@@ -74,10 +75,14 @@ export const CartBag = () => {
     localStorage.setItem("CartData", JSON.stringify(data));
     setCounting(data[index].count);
   };
+ 
+  
 
   // for showing this when  data is not available
   if (bagLength <= 0) {
     return (
+      <ChakraProvider>
+
       <Box>
         <Box m="3% 0">
           <Text fontSize="2rem">Your bag is empty</Text>
@@ -89,7 +94,9 @@ export const CartBag = () => {
             borderRadius={"none"}
             _hover={{ border: "none", bg: "#e3e3e3" }}
           >
+            <Link to={'/'}>
             Continue Shopping
+            </Link>
           </Button>
           <Box>
             <Text m="2% 0">Accepted Payment Methods</Text>
@@ -147,11 +154,15 @@ export const CartBag = () => {
           </SimpleGrid>
         </Box>
       </Box>
+      </ChakraProvider>
+
     );
   }
 
   // for showing data when available--------------------------------------------------
   return (
+      <ChakraProvider >
+
     <Box>
       <Box>
         <Text fontSize={"2rem"} m="2% 0">
@@ -274,7 +285,9 @@ export const CartBag = () => {
             color="white"
             _hover={{ bg: "rgb(41, 38, 38)" }}
           >
+            <Link to={'/paymentpage'}>
             Check Out
+            </Link>
           </Button>
         </Box>
       </SimpleGrid>
@@ -322,5 +335,7 @@ export const CartBag = () => {
         </SimpleGrid>
       </Box>
     </Box>
+    </ChakraProvider>
+
   );
 };

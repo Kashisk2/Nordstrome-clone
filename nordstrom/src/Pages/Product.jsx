@@ -25,6 +25,7 @@ export const handlequickViewData = (item) => {
 
   localStorage.setItem("quickViewData", JSON.stringify(quickViewData));
 };
+let cartArray = JSON.parse(localStorage.getItem("CartData")) || [];
 
 export const Product = () => {
   const { products, loading, error } = useSelector((state) => state.product);
@@ -39,7 +40,7 @@ export const Product = () => {
   } = useContext(StateContext);
 
   products.map((ele) => (ele.count = 1));
-
+  console.log(products)
   // function for sorting
   const handleChange = (e) => {
     const { value, name } = e.target;
@@ -66,6 +67,7 @@ export const Product = () => {
 
   if (loading) {
     return (
+    
       <Stack width="100%"  textAlign="center">
         {/* <Text fontSize="30px">Loading...</Text> */}
         <Skeleton height="30px" />
@@ -135,7 +137,7 @@ export const Product = () => {
         {products.map((item) => (
           <Box m="3%" p="3%" key={item.id + Date.now() + item.product}>
             <Box className={styles.container}>
-              <Link to={`${item.id}`}>
+              <Link to={`/ProductPage/${item.id}`}>
                 <Image
                   className={styles.img}
                   width="100%"
@@ -147,8 +149,10 @@ export const Product = () => {
               <Box
                 className={styles.quickView}
                 onClick={() => handlequickViewData(item)}
-              >
-                <ProductModal />
+              > 
+               <ProductModal item={item} />
+             
+                
               </Box>
             </Box>
 
