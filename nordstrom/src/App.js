@@ -10,9 +10,10 @@ import { RiArrowUpSLine } from "react-icons/ri";
 import FirstImageDiv from "./Components/Container/Container";
 
 import { Product } from "./Pages/Product";
-import ProductDetails from "./Components/ProductDetails";
+// import ProductDetails from "./Components/ProductDetails";
 import ScrollToTop from "react-scroll-to-top";
 // import ProductDetails from './Components/ProductDetails';
+import { Payment } from "./Components/Payment";
 
 function App() {
   return (
@@ -35,10 +36,10 @@ function App() {
       <Navbar />
       <FirstImageDiv />
       <Footer /> */}
-      {/* <Footer /> */}
-      {/* <ProductDetails /> */}
+      
       {/* <Navbar /> */}
-
+      {/* <Payment /> */}
+      {/* <Footer /> */}
       {/* <ProductDetails /> */}
       {/* <FirstImageDiv /> */}
 
