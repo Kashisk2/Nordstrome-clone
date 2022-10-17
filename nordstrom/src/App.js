@@ -1,17 +1,21 @@
-import { Box, Center, Flex, Text } from "@chakra-ui/react";
+import { Box, Center, ChakraProvider, Flex, Text } from "@chakra-ui/react";
 import "./App.css";
 import { FinalProduct } from "./Components/FinalProduct";
 import { SideNavbar } from "./Components/SideNavbar";
 import Navbar from "./Components/Navbar/Navbar";
 import Footer from "./Components/Footer/Footer";
 import Header from "./Components/Navbar/Header";
-import { RiArrowUpSLine } from "react-icons/ri";
 
 import FirstImageDiv from "./Components/Container/Container";
-
+import { Login } from "./Components/Login/Login";
 import { Product } from "./Pages/Product";
 // import ProductDetails from "./Components/ProductDetails";
 import ScrollToTop from "react-scroll-to-top";
+import FadeInSection from "./Components/Fadein/Fadein";
+import { Register } from "./Components/Login/Register";
+import HomePage from "./Pages/HomePage";
+// import Routes from "./Routes/Routes";
+import RoutesAll from "./Routes/Routes";
 import { Cartpage } from "../src/Pages/Cart/Cartpage";
 // import ProductDetails from './Components/ProductDetails';
 import { Payment } from "./Components/Payment";
@@ -19,33 +23,18 @@ import { Payment } from "./Components/Payment";
 function App() {
   return (
     <div className="App">
-      {/* <ScrollToTop
-        smooth={"true"}
-        viewBox={"0 0 30 30"}
-        component={
-          <Box>
-            <Center>
-              <RiArrowUpSLine size={"20px"} width={"400"} />
-            </Center>
-            <Text color={"#393939"} fontSize={"13px"}>
-              Top
-            </Text>
-          </Box>
-        }
-      />
-      <Header />
-      <Navbar />
-      <FirstImageDiv />
-      <Footer /> */}
+      {/* <HomePage/> */}
+
+      <RoutesAll />
+      {/* <Register/> */}
 
       {/* <Navbar /> */}
       {/* <Payment /> */}
-      {/* <Footer /> */}
-      {/* <ProductDetails /> */}
+      {/* {/* <Footer /> */}
+      {/* <ChakraProvider>
+      <Product />
+      </ChakraProvider> */}
       {/* <FirstImageDiv /> */}
-
-      {/* <FinalProduct /> */}
-      <Cartpage />
     </div>
   );
 }

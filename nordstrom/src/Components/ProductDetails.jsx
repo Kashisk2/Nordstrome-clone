@@ -10,6 +10,8 @@ import {
   ListItem,
   Flex,
   Circle,
+  ChakraProvider,
+  Center,
 } from "@chakra-ui/react";
 import { StarIcon } from "@chakra-ui/icons";
 import React, { useEffect, useState } from "react";
@@ -27,17 +29,25 @@ import {
   ModalCloseButton,
   useDisclosure,
 } from "@chakra-ui/react";
+import { Link, useParams } from "react-router-dom";
+import Navbar from "./Navbar/Navbar";
+import Footer from "./Footer/Footer";
+import ScrollToTop from "react-scroll-to-top";
+import { RiArrowUpSLine } from "react-icons/ri";
 export default function ProductDetails() {
   const [users, setUsers] = useState([{}]);
   const [imgs, setImgs] = useState([]);
   // const [item, setItem] = useState({});
+  const id=useParams()
+  console.log(id.id)
 
   const { isOpen, onOpen, onClose } = useDisclosure();
 
 
   const getUsers = async () => {
-    let response = await fetch("http://localhost:4001/products/9861607");
+    let response = await fetch(`http://localhost:4001/products/${id.id}`);
     let data = await response.json();
+    data.count=1;
     setUsers(data);
     console.log(data);
     setImgs(data.images);
@@ -50,19 +60,35 @@ export default function ProductDetails() {
     
   }, []);
   
-  let storageLocal = JSON.parse(localStorage.getItem("lsRajTest")) || [];
+  let storageLocal = JSON.parse(localStorage.getItem("CartData")) || [];
 
   // storeLocal();
 
   const callLocal =  (display) => {
     console.log("onlclik", display);
     storageLocal.push(display)
-    localStorage.setItem("lsRajTest", JSON.stringify(storageLocal));
+    localStorage.setItem("CartData", JSON.stringify(storageLocal));
     // storeLocal(display);
     onClose();
   }
 
   return (
+    <ChakraProvider>
+      <ScrollToTop
+        smooth={"true"}
+        viewBox={"0 0 30 30"}
+        component={
+          <Box>
+            <Center>
+              <RiArrowUpSLine size={"20px"} width={"400"} />
+            </Center>
+            <Text color={"#393939"} fontSize={"13px"}>
+              Top
+            </Text>
+          </Box>
+        }
+      />
+      <Navbar/>
     <Box className="mainWebBox">
       <Box className="mainDivSection">
         {/* imagesSection Start -------------------------------------------------------*/}
@@ -190,7 +216,9 @@ export default function ProductDetails() {
                     width="100%"
                     color="black"
                   >
+                      <Link to='/cartpage'>
                     Checkout
+                    </Link>
                   </Button>
                 </ModalFooter>
               </ModalContent>
@@ -284,5 +312,7 @@ export default function ProductDetails() {
         {/* <img src={abcd} /> */}
       </Box>
     </Box>
+<Footer/>
+    </ChakraProvider>
   );
 }

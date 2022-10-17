@@ -6,6 +6,7 @@ import { useState } from "react";
 import { StateContext } from "../../Contex/StateContext";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 export const CartLater = () => {
   // for get data in advertisements
@@ -15,6 +16,7 @@ export const CartLater = () => {
   let LaterDataArray = JSON.parse(localStorage.getItem("laterBag")) || [];
   // initiae array which i get  from LaterDataArray
   const [data, setData] = useState(LaterDataArray);
+ 
   // console.log(data);
   // for get length of data
   let totleItem = LaterDataArray.length;
@@ -22,7 +24,7 @@ export const CartLater = () => {
   //   length of later data send to cart page compound for showing length in tab
   const { laterBagLen, setLaterBagLen } = useContext(StateContext);
   setLaterBagLen(totleItem);
-
+   
   // remove data from later data
   const handleRemove = (id) => {
     const removeData = LaterDataArray.filter((item) => item.id !== id);
@@ -54,7 +56,9 @@ export const CartLater = () => {
             borderRadius={"none"}
             _hover={{ border: "none", bg: "#e3e3e3" }}
           >
+            <Link>
             Continue Shopping
+            </Link>
           </Button>
           <Box>
             <Text m="2% 0">Accepted Payment Methods</Text>

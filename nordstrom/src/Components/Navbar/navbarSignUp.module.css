@@ -32,7 +32,7 @@
   right: 40px;
   display: inline-block;
   border-right: 6px solid transparent;
-  border-bottom: 6px solid black;
+  border-bottom: 6px solid rgb(117, 115, 115);
   border-left: 6px solid transparent;
   content: "";
 }

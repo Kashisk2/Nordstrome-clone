@@ -1,17 +1,13 @@
 import { SearchIcon } from '@chakra-ui/icons'
-import { Box, Input, InputGroup, InputLeftElement, Stack } from '@chakra-ui/react'
+import { Box, ChakraProvider, extendTheme, Input, InputGroup, InputLeftElement, Stack } from '@chakra-ui/react'
 import React from 'react'
-const breakpoints = {
-  sm: '320px',
-  md: '768px',
-  lg: '1080px',
-  xl: '1200px',
-  '2xl': '1536px',
-}
+ 
 function InputBox() {
   return (
-       <Box>
-            <Stack spacing={4}>
+    <ChakraProvider>
+     
+       <Box width={{base:'100%',md:'auto'}}>
+            <Stack spacing={4} width={'100%'}>
               <InputGroup>
                 <InputLeftElement
                   pointerEvents="none"
@@ -22,13 +18,15 @@ function InputBox() {
                   borderRadius={"0px"}
                   border={"1px solid #bbb"}
                   height={"45px"}
-                  width={"655px"}
+                  width= {{base:'100%',md:'400px',lg:'655px'}}
                   type="text"
                   placeholder="Search for products and brands"
                 />
               </InputGroup>
             </Stack>
           </Box>
+
+    </ChakraProvider>
   )
 }
 

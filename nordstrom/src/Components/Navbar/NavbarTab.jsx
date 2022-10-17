@@ -21,6 +21,7 @@ import { MotionConfig } from "framer-motion";
 import styles from "./Navbar.module.css";
 import Holyday from "./Holyday";
 import Sale from "./Sale";
+import WomenTab from "./WomenTab";
 function NavbarTab() {
   const [toggle, setToggle] = useState(false);
   const ref = useRef("0px");
@@ -72,7 +73,7 @@ function NavbarTab() {
   }
   //   )
   return (
-     <Box w={"90%"} mt={'500px'}   display={'flex'} flexWrap={['wrap']} justifyContent={"space-between"} color={'#333333'}>
+     <Box w={"90%"} mt={'500px'}   display={{base:'none',md:'flex'}} flexWrap={['wrap']} justifyContent={"space-between"} color={'#333333'}>
             
 
          
@@ -152,7 +153,7 @@ function NavbarTab() {
 
         <ul className={styles.submenu}>
           <Box>
-            <Holyday />
+            <WomenTab/>
           </Box>
         </ul>
       </Box>

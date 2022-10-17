@@ -5,7 +5,7 @@ export default function Header() {
   return (
     <Box
       backgroundColor={"black"}
-      display={"flex"}
+      display={{base:'none',md:"flex"}}
       height={'41px'}
       px={"40px"}
       
@@ -16,14 +16,17 @@ export default function Header() {
       <Text></Text>
 
       <Text
-        p={"12px"}
-        fontSize={"16px"}
+        p={{base:'0px',headrefont:"12px"}}
+        fontSize={{ base: '10px', sm: '10px',headrefont:'12px',md:'14px',lg:'16px'}}
         lineHeight={"22.5px"}
         width={"1/3"}
         color={"white"}
         display={"flex"}
-        justifyContent={"flex-start"}
-        gap={"2px"}
+        flexDirection={{base:'column',headrefont:'row'}}
+        justifyContent={{base:'center',headrefont:"flex-start"}}
+        alignItems={'center'}
+    
+        gap={{base:'1px',headrefont:"2px"}}
       >
         <Text fontWeight={"700"}>
           Find the best gifts for everyone you love, all in one place.{" "}

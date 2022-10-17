@@ -3,7 +3,9 @@
   background-color: transparent;
   text-align: center;
   padding: 1%;
-  color: red;
+  /* color: red; */
+  /* width: 50%; */
+  
   display: none;
 }
 .quickView:hover {
