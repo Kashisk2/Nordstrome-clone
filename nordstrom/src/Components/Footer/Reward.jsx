@@ -14,7 +14,7 @@ import {
 } from "@chakra-ui/react";
 function Reward() {
   return (
-    <VStack align={"start"}>
+    <VStack gap={'8px'} align={{ base: "center", md: "start" }}>
       <Text
         color="#393939"
         fontWeight={"700"}

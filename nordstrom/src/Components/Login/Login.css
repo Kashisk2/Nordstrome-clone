@@ -6,9 +6,11 @@
 .formReg {
   margin: auto;
   margin-top: 100px;
+  margin-bottom: 100px;
   width: 450px;
   height: 400px;
   display: flex;
+  z-index: 0;
   flex-direction: column;
 }
 

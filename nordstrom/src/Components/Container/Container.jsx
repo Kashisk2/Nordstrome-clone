@@ -30,6 +30,8 @@ import ScrollingCurrent from "./ScrolingCurrentlyLoving";
 import GiftByRece from "./GiftByRece";
 import TrandinNow from "./TrandinNow";
 import MiddelImage from "./MiddelImage";
+import MiddelText from "./middelText";
+import FadeInSection from "../Fadein/Fadein";
 
 const imageData = [
   "https://i.postimg.cc/Gh3hF38D/Screenshot-2022-10-09-152831.png",
@@ -44,44 +46,47 @@ function FirstImageDiv() {
 
   return (
     <VStack width={"95%"} m={"auto"} mt={"30px"}>
-      <Flex mb={"50px"} width={"100%"} justifyContent={"space-between"}>
-        <Image
-          height={"14px"}
-          width={"auto"}
-          src="https://n.nordstrommedia.com/id/c30eb052-a9da-4529-95ed-0d1568cc55ad.png?h=22&w=536"
-        ></Image>
-        <Box display={"flex"} alignItems={"center"} flexDirection={"column"}>
-          <Text
-            fontSize={"21px"}
-            color={"#383938"}
-            lineHeight={"1.14"}
-            fontWeight={"700"}
-          >
-            Shop what you love—faster and easier.
-          </Text>
-          <Text mt={"8px"} fontSize={"15px"} textDecoration={"underline"}>
-            <Link>Sign In or Create an Account</Link>
-          </Text>
-        </Box>
-        <Image
-          height={"14px"}
-          src="https://n.nordstrommedia.com/id/01471914-5c74-4e79-a258-af5f398b1a73.png?h=22&w=536"
-        ></Image>
-      </Flex>
+      
 
-      <MakeMarry />
-      <AnimatatedImage imageData={imageData} />
+      <MiddelText/>
      
-      <GiftByRece/>
+      <MakeMarry />
+      <FadeInSection>
+      <AnimatatedImage imageData={imageData} />
+        </FadeInSection>
+      <FadeInSection>
+        <GiftByRece />
+      </FadeInSection>
+
+      <FadeInSection>
       <TabsAll />
+      </FadeInSection>
+     
+      <FadeInSection>
+      
       <BonusNote />
+      </FadeInSection>
+      <FadeInSection>
+       
       <TheThred />
+      </FadeInSection>
+      
+        
       <Scroling />
+      
+      <FadeInSection>
+     
       <TrandinNow/>
+      </FadeInSection>
+      <FadeInSection>
+    
       <MiddelImage/>
+      </FadeInSection>
       
      
       <ScrollingCurrent />
+    
+     
     </VStack>
   );
 }

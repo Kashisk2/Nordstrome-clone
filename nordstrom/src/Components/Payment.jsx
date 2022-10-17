@@ -1,17 +1,20 @@
-import { Box, Button, Flex, Spacer, Image } from "@chakra-ui/react";
+import { Box, Button, Flex, Spacer, Image, ChakraProvider, Grid } from "@chakra-ui/react";
 import { StarIcon } from "@chakra-ui/icons";
 import React from "react";
-import "../Components/Payment.css";
+import "./Payment.css";
 import { BsCart3 } from "react-icons/bs";
+import Navbar from "./Navbar/Navbar";
+import Footer from "./Footer/Footer";
 
 export const Payment = () => {
-  let getData = JSON.parse(localStorage.getItem("lsRajTest")) || [];
+  let getData = JSON.parse(localStorage.getItem("CartData")) || [];
   console.log(getData);
 
   let globalTotal = 6543;
 
   return (
-    <>
+    <ChakraProvider>
+      <Navbar/>
       <Box className="mainPaymentPage">
         <form className="paymentCardDetails">
           {/* <Box> */}
@@ -109,8 +112,8 @@ export const Payment = () => {
           <hr />
           <Flex className="promoCode" color="skyblue">Promo Code</Flex>
           <hr />
-
-          <Box className="ProductDetaislSection">
+  
+          <Grid width={'100%'}   maxH={'350px'} overflow={'scroll'} className="ProductDetaislSection">
             {getData.map((elem) => (
               <Box>
                 <Image key={elem} width={20} src={elem.searchImage} />
@@ -140,9 +143,10 @@ export const Payment = () => {
                 </Box>
               </Box>
             ))}
-          </Box>
+          </Grid>
         </Box>
       </Box>
-    </>
+      <Footer/>
+    </ChakraProvider>
   );
 };

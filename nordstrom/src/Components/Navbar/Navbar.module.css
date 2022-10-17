@@ -1,6 +1,4 @@
-.menuDropDown {
-  /* text-align: center; */
-}
+ 
 
 /* .menuDropDown li {
   display: inline-block;
@@ -11,6 +9,7 @@
 .menuDropDown :hover .submenu {
   /* height: 500px; */
   height: 500px;
+  background-color: white;
   margin-top: 20px;
   z-index: 1;
 }

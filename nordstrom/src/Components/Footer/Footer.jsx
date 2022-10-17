@@ -7,6 +7,7 @@ import {
   HStack,
   Image,
   ListItem,
+  Stack,
   Text,
   UnorderedList,
   VStack,
@@ -21,6 +22,7 @@ import { FiSmartphone, FiInstagram } from "react-icons/fi";
 import { ImPinterest2, ImTwitter } from "react-icons/im";
 import { RiFacebookCircleLine } from "react-icons/ri";
 import { AiOutlinePlus } from "react-icons/ai";
+import FadeInSection from "../Fadein/Fadein";
 
 // console.log(styles.footer)
 const style = {};
@@ -30,9 +32,10 @@ const hoverStyle = {
 console.log(hoverStyle);
 function Footer() {
   return (
+    <FadeInSection>
     <Box p={"30px"} backgroundColor={"#f9f9f9"} width="100%">
-      <Flex>
-        <Grid templateColumns={"repeat(5,1fr)"} gap="20px" w="72%" mb={"50px"}>
+        <Flex direction={{ base: 'column', md: 'row' }} alignItems={{ base: 'center', md: 'flex-start' }} textAlign={{ base: 'center', md: 'start' }} >
+          <Grid templateColumns={{ base: "repeat(1,1fr)" , md: "repeat(3,1fr)", lg:"repeat(5,1fr)"}} gap="25px" w="72%" mb={"50px"}>
           <Coustemr />
           <About />
           <Store />
@@ -41,6 +44,8 @@ function Footer() {
         </Grid>
         <Flex
           ml={"35px"}
+          mb={'30px'}
+          mr={'35px'}
           direction={"column"}
           justifyContent={"flex-start"}
           alignItems={"flex-start"}
@@ -72,7 +77,7 @@ function Footer() {
           </Flex>
         </Flex>
       </Flex>
-      <HStack gap={"50px"}>
+      <Stack direction={{base:"column",md:'row'}} align={'center'} gap={{base:"20px",md:"50px"}}>
         <Text
           fontSize={"13px"}
           color="#393939"
@@ -138,8 +143,9 @@ function Footer() {
         >
           ©2022 Nordstrom, Inc.
         </Text>
-      </HStack>
+      </Stack>
     </Box>
+      </FadeInSection>
   );
 }
 
