@@ -38,7 +38,7 @@ export default function ProductDetails() {
 
 
   const getUsers = async () => {
-    let response = await fetch("http://localhost:4000/products/2466435");
+    let response = await fetch("http://localhost:4000/products/9861607");
     let data = await response.json();
     setUsers(data);
     console.log(data);
@@ -55,7 +55,6 @@ export default function ProductDetails() {
   let storageLocal = JSON.parse(localStorage.getItem("lsRajTest")) || [];
 
   // storeLocal();
-  
 
   const callLocal =  (display) => {
     console.log("onlclik", display);
@@ -71,7 +70,7 @@ export default function ProductDetails() {
         {/* imagesSection Start -------------------------------------------------------*/}
         <Box className="imageSection">
           <Box className="imgBox">
-            {imgs.map((elem) => (
+            {imgs.map((elem, ind) => (
               <Image className="imgTag" key={elem} src={elem.src} />
             ))}
           </Box>

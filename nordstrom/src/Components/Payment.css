@@ -4,15 +4,15 @@
     box-sizing: border-box;
 }
 .mainPaymentPage {
-    border: 2px solid green;
+    /* border: 2px solid green; */
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 5px;
-    padding: 10px;
+    padding: 20px;
     width: 100%;
 }
 .paymentCardDetails {
-    border: 2px solid orange;
+    /* border: 2px solid orange; */
     display: grid;
     padding: 10px;
 }
@@ -21,17 +21,28 @@
     font-weight: bolder;
     font-size: 30px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-
+}
+.billingText {
+    /* margin-top: 20px; */
+    margin-left: 20px;
+    text-align: left;
+}
+.creditDebitDetails {
+    font-size: large;
+    font-weight: bolder;
+    /* margin-top: 20px; */
+    margin-left: 20px;
+    text-align: center;
 }
 .cardLogo {
-    margin-top: 20px;
+    /* margin-top: 20px; */
     margin-bottom: 20px;
     margin-left: 20px;
 }
 .cardInputs1 {
     width: 70%;
-    margin-top: 10px;
-    margin-bottom: 20px;
+    /* margin-top: 10px; */
+    /* margin-bottom: 20px; */
     margin-left: 20px;
     margin-right: 20px;
     border: 1px solid grey;
@@ -40,8 +51,8 @@
 }
 .cardInputs {
     width: 32.1%;
-    margin-top: 10px;
-    margin-bottom: 20px;
+    /* margin-top: 0px; */
+    /* margin-bottom: 20px; */
     margin-left: 20px;
     margin-right: 20px;
     border: 1px solid grey;
@@ -50,18 +61,36 @@
 }
 .unionBox {
     margin-left: 20px;
+    /* margin-bottom: 40px; */
 }
 .textOffer {
-    margin: 50px 20px;
+    margin-left: 20px;
 }
 .Place-Btn {
     width: 80%;
-    margin: 40px 0;
+    margin: 10px 0;
     margin-left: 20px;
     color: black;
     border: none;
 }
-
+.Place-Btn2 {
+    margin: 40px 0;
+    color: black;
+    border: none;
+}
+.spacerItemText {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.totalPrice {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: bolder;
+}
+.promoCode {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 
 
 
@@ -69,7 +98,50 @@
 /* Total section of Payment */
 
 .paymentTotalDetails {
-    border: 2px solid red;
+    /* border: 2px solid red; */
     display: grid;
-    padding: 10px;
+    padding: 20px;
+}
+.paymentHeading2 {
+    margin: 10px 20px;
+    font-weight: bold;
+    font-size: 30px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.ProductDetaislSection {
+    /* border: 2px solid red; */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 20px;
+    margin-top: 80px;
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 979px) {
+    .mainPaymentPage {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .ProductDetaislSection {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media screen and (min-width: 0px) and (max-width: 767px) {
+    .mainPaymentPage {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .ProductDetaislSection {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .cardInputs1 {
+        margin: 10px 10px;
+    }
+    .cardInputs {
+        margin: 10px 10px;
+    }
+    .unionBox {
+        margin: 10px 10px;
+    }
+    .creditDebitDetails {
+        margin: 20px;
+    }
 }
