@@ -37,6 +37,7 @@ import { RiArrowUpSLine } from "react-icons/ri";
 export default function ProductDetails() {
   const [users, setUsers] = useState([{}]);
   const [imgs, setImgs] = useState([]);
+  // const [size, setSize] = useState("");
   // const [item, setItem] = useState({});
   const id = useParams();
   console.log(id.id);
@@ -50,6 +51,7 @@ export default function ProductDetails() {
     setUsers(data);
     console.log(data);
     setImgs(data.images);
+    // setSize(data.sizes);
   };
   // console.log(imgs, "array");
 
@@ -91,7 +93,7 @@ export default function ProductDetails() {
           {/* imagesSection Start -------------------------------------------------------*/}
           <Box className="imageSection">
             <Box className="imgBox">
-              {imgs.map((elem, ind) => (
+              {imgs.map((elem) => (
                 <Image className="imgTag" key={elem} src={elem.src} />
               ))}
             </Box>
@@ -137,6 +139,10 @@ export default function ProductDetails() {
             </Box>
             <Box className="selectDiv">
               <Select placeholder="Size" className="detailsProductSize">
+                {/* {size.map((elem) => (
+                  <option value="option1">{elem}</option>
+                ))} */}
+
                 <option value="option1">X-small/Small</option>
                 <option value="option2">Medium</option>
                 <option value="option3">Large/X-Large</option>
