@@ -41,6 +41,13 @@
       "first_name": "Masai",
       "last_name": "School",
       "id": 6
+    },
+    {
+      "email": "abc@gmail.com",
+      "password": "123456",
+      "first_name": "abc",
+      "last_name": "xyz",
+      "id": 7
     }
   ],
   "products": [

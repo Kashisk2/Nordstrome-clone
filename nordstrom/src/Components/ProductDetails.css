@@ -8,6 +8,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     padding: 10px;
+    margin-top: -5%;
 }
 .imageSection {
     /* border: 2px solid Purple; */
@@ -32,7 +33,7 @@
 }
 .frontImage {
     width: 130%;
-    margin-top: 30%;
+    margin-top: 20%;
     margin-left: -30%;
 }
 .detailsSection {

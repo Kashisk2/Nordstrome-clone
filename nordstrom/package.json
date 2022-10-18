@@ -28,6 +28,7 @@
     "react-router-dom": "^6.4.1",
     "react-scripts": "5.0.1",
     "react-scroll-to-top": "^3.0.0",
+    "react-toastify": "^9.0.8",
     "redux": "^4.2.0",
     "redux-thunk": "^2.4.1",
     "sass": "^1.55.0",
