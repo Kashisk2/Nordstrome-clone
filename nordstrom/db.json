@@ -41,6 +41,13 @@
       "first_name": "Masai",
       "last_name": "School",
       "id": 6
+    },
+    {
+      "email": "nevil@gmail.com",
+      "password": "Kashiram@",
+      "first_name": "Kashiram",
+      "last_name": "Shekhda",
+      "id": 7
     }
   ],
   "products": [
