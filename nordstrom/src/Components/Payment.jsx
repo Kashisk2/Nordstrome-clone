@@ -24,7 +24,8 @@ export const Payment = () => {
   const [value3, setValue3] = useState("");
 
   let getData = JSON.parse(localStorage.getItem("CartData")) || [];
-  console.log(getData);
+  let totlePrice = JSON.parse(localStorage.getItem("totlePrice")) || 0;
+  console.log(totlePrice);
 
   const handle = useCallback(() => {
     if (value === "" || value2 === "" || value3 === "") {
@@ -107,7 +108,7 @@ export const Payment = () => {
                 setValue2(e.target.value);
               }}
               className="cardInputs"
-              type="number"
+              type="text"
               placeholder="MM/YY"
             />
             <input
@@ -170,14 +171,15 @@ export const Payment = () => {
             Place Order
           </Button>
           <Flex as="p" className="spacerItemText">
-            Items <Spacer />
-            5,151
+            Items <Spacer />₹{totlePrice}
           </Flex>
           <Flex as="p" className="spacerItemText">
-            Shipping <Spacer />₹ 3,080
+            Shipping <Spacer />
+            ₹3,080
           </Flex>
           <Flex as="p" className="spacerItemText">
-            Duties & Taxes <Spacer />₹ 3,463
+            Duties & Taxes <Spacer />
+            ₹3,463
           </Flex>
 
           {getData.map((elem) => {

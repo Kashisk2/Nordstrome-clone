@@ -33,7 +33,7 @@ export const StateContextProvider = ({ children }) => {
   let [searchparam, setSearchParam] =
     useSearchParams(); /*for genrate links in searchbar*/
   const [length, setLength] = useState(0); /*for get length of product*/
-  console.log(length);
+  // console.log(length);
   const getCurrpage = (val) => {
     let value = Number(val);
     if (typeof value !== "number" || value <= 0) {

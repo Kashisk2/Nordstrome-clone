@@ -35,6 +35,7 @@ import Navbar from "./Navbar/Navbar";
 import Footer from "./Footer/Footer";
 import ScrollToTop from "react-scroll-to-top";
 import { RiArrowUpSLine } from "react-icons/ri";
+import { AddShow } from "./AddShow";
 export default function ProductDetails() {
   const [users, setUsers] = useState([{}]);
   const [imgs, setImgs] = useState([]);
@@ -321,6 +322,8 @@ export default function ProductDetails() {
         </Box>
         <Box>{/* <img src={abcd} /> */}</Box>
       </Box>
+      <AddShow />
+
       <Footer />
     </ChakraProvider>
   );
