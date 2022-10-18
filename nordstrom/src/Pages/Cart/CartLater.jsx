@@ -4,19 +4,17 @@ import style from "./Cart.module.css";
 import React, { useContext } from "react";
 import { useState } from "react";
 import { StateContext } from "../../Contex/StateContext";
-import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
+import { AddShow } from "../../Components/AddShow";
 
 export const CartLater = () => {
   // for get data in advertisements
-  const { products } = useSelector((state) => state.product);
 
   // data get in localStorage for later by bag
   let LaterDataArray = JSON.parse(localStorage.getItem("laterBag")) || [];
   // initiae array which i get  from LaterDataArray
   const [data, setData] = useState(LaterDataArray);
- 
+
   // console.log(data);
   // for get length of data
   let totleItem = LaterDataArray.length;
@@ -24,7 +22,7 @@ export const CartLater = () => {
   //   length of later data send to cart page compound for showing length in tab
   const { laterBagLen, setLaterBagLen } = useContext(StateContext);
   setLaterBagLen(totleItem);
-   
+
   // remove data from later data
   const handleRemove = (id) => {
     const removeData = LaterDataArray.filter((item) => item.id !== id);
@@ -56,9 +54,7 @@ export const CartLater = () => {
             borderRadius={"none"}
             _hover={{ border: "none", bg: "#e3e3e3" }}
           >
-            <Link>
-            Continue Shopping
-            </Link>
+            <Link>Continue Shopping</Link>
           </Button>
           <Box>
             <Text m="2% 0">Accepted Payment Methods</Text>
@@ -73,48 +69,7 @@ export const CartLater = () => {
             </Text>
           </Box>
         </Box>
-        <Box>
-          <Text fontSize="3rem" mt="5%">
-            People also viewed
-          </Text>
-          <SimpleGrid columns={[3, 4, 5]}>
-            {products.map((item) => (
-              <Box m="3%" p="3%" key={item.id + Date.now() + item.product}>
-                <Box>
-                  <Link to={`${item.id}`}>
-                    <Image
-                      width="100%"
-                      // height="100px"
-                      m="auto"
-                      src={item.searchImage}
-                      alt="picture"
-                    />
-                  </Link>{" "}
-                </Box>
-
-                <Box>{item.product}</Box>
-                <Box>{item.price} ₹ </Box>
-
-                <Box>{item.sizes} </Box>
-                <Box>
-                  {Math.floor(item.rating) === 5 ? (
-                    <Box>&#9733;&#9733;&#9733;&#9733;&#9733;</Box>
-                  ) : Math.floor(item.rating) === 4 ? (
-                    <Box>&#9733;&#9733;&#9733;&#9733;&#9734;</Box>
-                  ) : Math.floor(item.rating) === 3 ? (
-                    <Box>&#9733;&#9733;&#9733;&#9734;&#9734;</Box>
-                  ) : Math.floor(item.rating) === 2 ? (
-                    <Box>&#9733;&#9733;&#9734;&#9734;&#9734;</Box>
-                  ) : Math.floor(item.rating) === 1 ? (
-                    <Box>&#9733;&#9734;&#9734;&#9734;&#9734;</Box>
-                  ) : (
-                    <Box>&#9734;&#9734;&#9734;&#9734;&#9734;</Box>
-                  )}{" "}
-                </Box>
-              </Box>
-            ))}
-          </SimpleGrid>
-        </Box>
+        <AddShow />
       </Box>
     );
   }
@@ -181,48 +136,7 @@ export const CartLater = () => {
         </Text>
       </Box>
 
-      <Box>
-        <Text fontSize="3rem" mt="5%">
-          People also viewed
-        </Text>
-        <SimpleGrid columns={[3, 4, 5]}>
-          {products.map((item) => (
-            <Box m="3%" p="3%" key={item.id + Date.now() + item.product}>
-              <Box>
-                <Link to={`${item.id}`}>
-                  <Image
-                    width="100%"
-                    // height="100px"
-                    m="auto"
-                    src={item.searchImage}
-                    alt="picture"
-                  />
-                </Link>{" "}
-              </Box>
-
-              <Box>{item.product}</Box>
-              <Box>{item.price} ₹ </Box>
-
-              <Box>{item.sizes} </Box>
-              <Box>
-                {Math.floor(item.rating) === 5 ? (
-                  <Box>&#9733;&#9733;&#9733;&#9733;&#9733;</Box>
-                ) : Math.floor(item.rating) === 4 ? (
-                  <Box>&#9733;&#9733;&#9733;&#9733;&#9734;</Box>
-                ) : Math.floor(item.rating) === 3 ? (
-                  <Box>&#9733;&#9733;&#9733;&#9734;&#9734;</Box>
-                ) : Math.floor(item.rating) === 2 ? (
-                  <Box>&#9733;&#9733;&#9734;&#9734;&#9734;</Box>
-                ) : Math.floor(item.rating) === 1 ? (
-                  <Box>&#9733;&#9734;&#9734;&#9734;&#9734;</Box>
-                ) : (
-                  <Box>&#9734;&#9734;&#9734;&#9734;&#9734;</Box>
-                )}{" "}
-              </Box>
-            </Box>
-          ))}
-        </SimpleGrid>
-      </Box>
+      <AddShow />
     </Box>
   );
 };

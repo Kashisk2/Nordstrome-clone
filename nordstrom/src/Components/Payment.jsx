@@ -1,4 +1,12 @@
-import { Box, Button, Flex, Spacer, Image, ChakraProvider, Grid } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Flex,
+  Spacer,
+  Image,
+  ChakraProvider,
+  Grid,
+} from "@chakra-ui/react";
 import { StarIcon } from "@chakra-ui/icons";
 import React from "react";
 import "./Payment.css";
@@ -8,13 +16,14 @@ import Footer from "./Footer/Footer";
 
 export const Payment = () => {
   let getData = JSON.parse(localStorage.getItem("CartData")) || [];
-  console.log(getData);
+  let totlePrice = JSON.parse(localStorage.getItem("totlePrice")) || 0;
+  console.log(totlePrice);
 
   let globalTotal = 6543;
 
   return (
     <ChakraProvider>
-      <Navbar/>
+      <Navbar />
       <Box className="mainPaymentPage">
         <form className="paymentCardDetails">
           {/* <Box> */}
@@ -89,19 +98,17 @@ export const Payment = () => {
           </Button>
           <Flex as="p" className="spacerItemText">
             Items <Spacer />
-            5,151
+            {totlePrice}
           </Flex>
           <Flex as="p" className="spacerItemText">
-            Shipping <Spacer />
-            ₹ 3,080
+            Shipping <Spacer />₹ 3,080
           </Flex>
           <Flex as="p" className="spacerItemText">
-            Duties & Taxes <Spacer />
-            ₹ 3,463
+            Duties & Taxes <Spacer />₹ 3,463
           </Flex>
 
           {getData.map((elem) => {
-            <Box display="none">{globalTotal+=elem.price}</Box>
+            <Box display="none">{(globalTotal += elem.price)}</Box>;
           })}
 
           <Flex className="totalPrice" as="Heading">
@@ -110,10 +117,17 @@ export const Payment = () => {
           </Flex>
 
           <hr />
-          <Flex className="promoCode" color="skyblue">Promo Code</Flex>
+          <Flex className="promoCode" color="skyblue">
+            Promo Code
+          </Flex>
           <hr />
-  
-          <Grid width={'100%'}   maxH={'350px'} overflow={'scroll'} className="ProductDetaislSection">
+
+          <Grid
+            width={"100%"}
+            maxH={"350px"}
+            overflow={"scroll"}
+            className="ProductDetaislSection"
+          >
             {getData.map((elem) => (
               <Box>
                 <Image key={elem} width={20} src={elem.searchImage} />
@@ -146,7 +160,7 @@ export const Payment = () => {
           </Grid>
         </Box>
       </Box>
-      <Footer/>
+      <Footer />
     </ChakraProvider>
   );
 };
