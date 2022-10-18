@@ -19,6 +19,7 @@ import { BsFillHandbagFill } from "react-icons/bs";
 import { GoMail } from "react-icons/go";
 import { ImGift } from "react-icons/im";
 import { SiGooglemessages } from "react-icons/si";
+import Carousel from "react-elastic-carousel";
 import {
   Modal,
   ModalOverlay,
@@ -38,6 +39,7 @@ import { AddShow } from "./AddShow";
 export default function ProductDetails() {
   const [users, setUsers] = useState([{}]);
   const [imgs, setImgs] = useState([]);
+  // const [size, setSize] = useState("");
   // const [item, setItem] = useState({});
   const id = useParams();
   console.log(id.id);
@@ -51,6 +53,7 @@ export default function ProductDetails() {
     setUsers(data);
     console.log(data);
     setImgs(data.images);
+    // setSize(data.sizes);
   };
   // console.log(imgs, "array");
 
@@ -92,7 +95,7 @@ export default function ProductDetails() {
           {/* imagesSection Start -------------------------------------------------------*/}
           <Box className="imageSection">
             <Box className="imgBox">
-              {imgs.map((elem, ind) => (
+              {imgs.map((elem) => (
                 <Image className="imgTag" key={elem} src={elem.src} />
               ))}
             </Box>
@@ -138,6 +141,10 @@ export default function ProductDetails() {
             </Box>
             <Box className="selectDiv">
               <Select placeholder="Size" className="detailsProductSize">
+                {/* {size.map((elem) => (
+                  <option value="option1">{elem}</option>
+                ))} */}
+
                 <option value="option1">X-small/Small</option>
                 <option value="option2">Medium</option>
                 <option value="option3">Large/X-Large</option>
@@ -178,10 +185,12 @@ export default function ProductDetails() {
                   <ModalBody>
                     <HStack>
                       <Box mr={5} width="65%">
-                        <Image width={300} src={users.searchImage} />
-                        {/* {imgs.map((elem) => (
-                        <Image className="imgTagModal" key={elem} src={elem.src} />
-                      ))} */}
+                        {/* <Image width={300} src={users.searchImage} /> */}
+                        <Carousel>
+                          {imgs.map((elem) => (
+                            <Image key={elem} src={elem.src} width="100%" />
+                          ))}
+                        </Carousel>
                       </Box>
                       <Box width="40%" mt="-10px">
                         <Box className="detailsProductRating">
@@ -214,16 +223,14 @@ export default function ProductDetails() {
                     </HStack>
                   </ModalBody>
                   <ModalFooter justifyContent="center">
-                    <Link to="/cartpage">
-                      <Button
-                        onClick={() => callLocal(users)}
-                        bg="orange"
-                        width="100%"
-                        color="black"
-                      >
-                        Checkout
-                      </Button>
-                    </Link>
+                    <Button
+                      onClick={() => callLocal(users)}
+                      bg="orange"
+                      width="100%"
+                      color="black"
+                    >
+                      <Link to="/cartpage">Checkout</Link>
+                    </Button>
                   </ModalFooter>
                 </ModalContent>
               </Modal>

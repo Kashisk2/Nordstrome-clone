@@ -8,53 +8,11 @@
       "id": 1
     },
     {
-      "email": "kashirams 0@gmail.com",
-      "password": "frdsgbdf",
-      "first_name": "Kashiram",
-      "last_name": "Shekhdagrbdh",
-      "id": 2
-    },
-    {
-      "email": "test@gmail.com",
-      "password": "Kashiram",
-      "first_name": "Kashiram",
-      "last_name": "Shekhda",
-      "id": 3
-    },
-    {
-      "email": "kashiramshekhda20@gmail.com",
-      "password": "Kashiram",
-      "first_name": "Kashiram",
-      "last_name": "Shekhda",
-      "id": 4
-    },
-    {
-      "email": "op@gmail.com",
-      "password": "Kashiram",
-      "first_name": "Kashiram",
-      "last_name": "Shekhda",
-      "id": 5
-    },
-    {
-      "email": "eve.holt@reqres.in",
-      "password": "Masai123",
-      "first_name": "Masai",
-      "last_name": "School",
-      "id": 6
-    },
-    {
       "email": "sachin@gmail.com",
       "password": "123456",
-      "first_name": "Sachin",
-      "last_name": "Patel",
-      "id": 7
-    },
-    {
-      "email": "sachinpatel@gmail.com",
-      "password": "123456",
-      "first_name": "SACHIN",
-      "last_name": "PATEL",
-      "id": 8
+      "first_name": "sachin",
+      "last_name": "patel",
+      "id": 2
     }
   ],
   "products": [

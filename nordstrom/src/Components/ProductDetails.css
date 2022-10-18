@@ -8,6 +8,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     padding: 10px;
+    margin-top: -5%;
 }
 .imageSection {
     /* border: 2px solid Purple; */
@@ -19,7 +20,8 @@
     /* border: 2px dashed blue; */
     margin: auto;
     margin: 5%;
-    margin-right: 10%;
+    margin-top: 10%;
+    /* margin-right: 10%; */
     margin-left: 10%;
     padding: 10px;
     display: grid;
@@ -27,13 +29,13 @@
 }
 .imgTag  {
     /* border: 2px solid red; */
-    width: 40%;
+    width: 60%;
     margin: 3px;
 }
 .frontImage {
-    width: 130%;
-    margin-top: 30%;
-    margin-left: -30%;
+    width: 420px;
+    margin-top: 20%;
+    margin-left: 10%;
 }
 .detailsSection {
     /* border: 2px solid red; */
@@ -140,7 +142,24 @@
 }
 
 
-
+@media screen and (min-width: 980px) and (max-width: 1024px){
+    .imageSection {
+        width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .imgBox {
+        grid-template-columns: repeat(2, 1fr);
+        margin: auto;
+        margin: -10px;
+    }
+    .imgTag {
+        margin-top: 20px;
+    }
+    .frontImage {
+        margin-left: -5%;
+        width: 300px;
+    }
+}
 
 @media screen and (min-width: 768px) and (max-width: 979px) {
     .mainDivSection {
@@ -148,6 +167,22 @@
     }
     .reviewBox {
         grid-template-columns: repeat(2, 1fr);
+    }
+    .imageSection {
+        width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .imgBox {
+        grid-template-columns: repeat(1, 1fr);
+        margin: auto;
+        margin: -10px;
+    }
+    .imgTag {
+        margin-top: 20px;
+    }
+    .frontImage {
+        margin-left: -5%;
+        width: 300px;
     }
 }
 
@@ -164,8 +199,18 @@
     }
     .imageSection {
         width: 100%;
+        grid-template-columns: repeat(1, 1fr);
     }
     .imgBox {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(6, 1fr);
+        margin: 0;
+        margin-bottom: -15%;
+    }
+    .imgTag {
+        margin: auto;
+        margin-top: 10px;
+    }
+    .frontImage {
+        margin-left: 0%;
     }
 }
