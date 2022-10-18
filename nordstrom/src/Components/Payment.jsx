@@ -27,10 +27,9 @@ export const Payment = () => {
   console.log(getData);
 
   const handle = useCallback(() => {
-    if (value === "" || value2 === "" || value3 === "") {  
+    if (value === "" || value2 === "" || value3 === "") {
       notify2();
-    }
-    else {
+    } else {
       notify();
     }
   }, [value, value2, value3]);
@@ -69,7 +68,6 @@ export const Payment = () => {
       <Navbar />
       <Box className="mainPaymentPage">
         <form className="paymentCardDetails">
-          {/* <Box> */}
           <hr />
           <h1 className="paymentHeading">Payment</h1>
           <hr />
@@ -156,7 +154,6 @@ export const Payment = () => {
               Place Order
             </Button>
           </Box>
-          {/* </Box> */}
         </form>
 
         <Box className="paymentTotalDetails">
