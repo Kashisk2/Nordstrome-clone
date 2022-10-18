@@ -1,23 +1,73 @@
-import { Box, Button, Flex, Spacer, Image, ChakraProvider, Grid } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Flex,
+  Spacer,
+  Image,
+  ChakraProvider,
+  Grid,
+} from "@chakra-ui/react";
 import { StarIcon } from "@chakra-ui/icons";
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Payment.css";
 import { BsCart3 } from "react-icons/bs";
 import Navbar from "./Navbar/Navbar";
 import Footer from "./Footer/Footer";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useState, useCallback } from "react";
 
 export const Payment = () => {
+  const [value, setValue] = useState("");
+  const [value2, setValue2] = useState("");
+  const [value3, setValue3] = useState("");
+
   let getData = JSON.parse(localStorage.getItem("CartData")) || [];
   console.log(getData);
+
+  const handle = useCallback(() => {
+    if (value === "" || value2 === "" || value3 === "") {
+      notify2();
+    } else {
+      notify();
+    }
+  }, [value, value2, value3]);
+
+  const CustomToast = () => {
+    return (
+      <Flex as="p" gap={10}>
+        <Flex as="p" fontWeight="bold" mt="5px">
+          {" "}
+          Order Successful!{" "}
+        </Flex>
+        <Link to="/">
+          <Button color="white" bg="#04B20A" border="1px solid white">
+            Ok
+          </Button>
+        </Link>
+      </Flex>
+    );
+  };
+
+  const notify = () => {
+    toast.success(<CustomToast />, {
+      position: "top-center",
+    });
+  };
+  const notify2 = () => {
+    toast.error("Please Enter Full Details!", {
+      position: "top-center",
+    });
+  };
 
   let globalTotal = 6543;
 
   return (
     <ChakraProvider>
-      <Navbar/>
+      <Navbar />
       <Box className="mainPaymentPage">
         <form className="paymentCardDetails">
-          {/* <Box> */}
           <hr />
           <h1 className="paymentHeading">Payment</h1>
           <hr />
@@ -41,14 +91,30 @@ export const Payment = () => {
           </Flex>
           <Box>
             <input
+              value={value}
+              onChange={(e) => {
+                setValue(e.target.value);
+              }}
               className="cardInputs1"
               type="number"
               placeholder="Card Number"
             />
           </Box>
           <Box>
-            <input className="cardInputs" type="number" placeholder="MM/YY" />
             <input
+              value={value2}
+              onChange={(e) => {
+                setValue2(e.target.value);
+              }}
+              className="cardInputs"
+              type="number"
+              placeholder="MM/YY"
+            />
+            <input
+              value={value3}
+              onChange={(e) => {
+                setValue3(e.target.value);
+              }}
               className="cardInputs"
               type="text"
               placeholder="Security Code"
@@ -72,19 +138,35 @@ export const Payment = () => {
               at any time.
             </Flex>
           </Box>
+
           <Box>
-            <Button bg="orange" className="Place-Btn">
+            <div>
+              <ToastContainer theme="colored" />
+            </div>
+
+            <Button
+              onClick={handle}
+              bg="#3D3D3D"
+              color="white"
+              _hover={{ bg: "black" }}
+              className="Place-Btn"
+            >
               Place Order
             </Button>
           </Box>
-          {/* </Box> */}
         </form>
 
         <Box className="paymentTotalDetails">
           <Flex as="p" className="paymentHeading2" gap={5}>
             <BsCart3 fontSize={43} /> Total payment
           </Flex>
-          <Button className="Place-Btn2" bg="Orange">
+          <Button
+            onClick={handle}
+            bg="#3D3D3D"
+            color="white"
+            _hover={{ bg: "black" }}
+            className="Place-Btn2"
+          >
             Place Order
           </Button>
           <Flex as="p" className="spacerItemText">
@@ -92,16 +174,14 @@ export const Payment = () => {
             5,151
           </Flex>
           <Flex as="p" className="spacerItemText">
-            Shipping <Spacer />
-            ₹ 3,080
+            Shipping <Spacer />₹ 3,080
           </Flex>
           <Flex as="p" className="spacerItemText">
-            Duties & Taxes <Spacer />
-            ₹ 3,463
+            Duties & Taxes <Spacer />₹ 3,463
           </Flex>
 
           {getData.map((elem) => {
-            <Box display="none">{globalTotal+=elem.price}</Box>
+            <Box display="none">{(globalTotal += elem.price)}</Box>;
           })}
 
           <Flex className="totalPrice" as="Heading">
@@ -110,10 +190,17 @@ export const Payment = () => {
           </Flex>
 
           <hr />
-          <Flex className="promoCode" color="skyblue">Promo Code</Flex>
+          <Flex className="promoCode" color="skyblue">
+            Promo Code
+          </Flex>
           <hr />
-  
-          <Grid width={'100%'}   maxH={'350px'} overflow={'scroll'} className="ProductDetaislSection">
+
+          <Grid
+            width={"100%"}
+            maxH={"350px"}
+            overflow={"scroll"}
+            className="ProductDetaislSection"
+          >
             {getData.map((elem) => (
               <Box>
                 <Image key={elem} width={20} src={elem.searchImage} />
@@ -146,7 +233,7 @@ export const Payment = () => {
           </Grid>
         </Box>
       </Box>
-      <Footer/>
+      <Footer />
     </ChakraProvider>
   );
 };
