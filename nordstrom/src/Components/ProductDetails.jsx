@@ -19,6 +19,7 @@ import { BsFillHandbagFill } from "react-icons/bs";
 import { GoMail } from "react-icons/go";
 import { ImGift } from "react-icons/im";
 import { SiGooglemessages } from "react-icons/si";
+import Carousel from "react-elastic-carousel";
 import {
   Modal,
   ModalOverlay,
@@ -183,10 +184,12 @@ export default function ProductDetails() {
                   <ModalBody>
                     <HStack>
                       <Box mr={5} width="65%">
-                        <Image width={300} src={users.searchImage} />
-                        {/* {imgs.map((elem) => (
-                        <Image className="imgTagModal" key={elem} src={elem.src} />
-                      ))} */}
+                        {/* <Image width={300} src={users.searchImage} /> */}
+                        <Carousel>
+                          {imgs.map((elem) => (
+                            <Image key={elem} src={elem.src} width="100%" />
+                          ))}
+                        </Carousel>
                       </Box>
                       <Box width="40%" mt="-10px">
                         <Box className="detailsProductRating">
@@ -226,7 +229,6 @@ export default function ProductDetails() {
                       color="black"
                     >
                       <Link to="/cartpage">Checkout</Link>
-                      
                     </Button>
                   </ModalFooter>
                 </ModalContent>
