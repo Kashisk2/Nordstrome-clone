@@ -1,4 +1,12 @@
-import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, IconButton } from "@mui/material";
+import {
+  Button,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
+  IconButton,
+} from "@mui/material";
 import React, { useRef } from "react";
 import { OutlinedInput } from "@mui/material";
 import { InputLabel } from "@mui/material";
@@ -17,19 +25,19 @@ import {
 } from "../../Features/Register/actions";
 // import { Header } from "../Home/Header";
 // import { Footer } from "../Home/Footer";
-const initial={
-  email:"",
-  password:"",
-  first_name:"",
-  last_name:""
-}
+const initial = {
+  email: "",
+  password: "",
+  first_name: "",
+  last_name: "",
+};
 export const Register = () => {
   const [form, setForm] = useState(initial);
   const [email, setEmail] = useState(true);
   const [fName, setfName] = useState(true);
   const [lName, setlName] = useState(true);
   const [password, setPassword] = useState(true);
-  const ref=useRef(null)
+  const ref = useRef(null);
 
   const { loading, register, error } = useSelector((state) => ({
     loading: state.registerState.loading,
@@ -50,15 +58,19 @@ export const Register = () => {
     setOpen(false);
   };
 
-  const handleClickOpen =async () => {
-   const res=await fetch("http://localhost:4001/userData")   
-   const res2=await res.json()
-   console.log(res2)
-   ref.current=  res2.findIndex((el) => el.email == form.email)
-   if(form.email==""||form.password==""||form.first_name==""||form.last_name==""){
-     setOpen(true);
-   }
-  else if (!form.email.match("[a-z0-9]+@[a-z]+.[a-z]{2,3}")) {
+  const handleClickOpen = async () => {
+    const res = await fetch("https://nordstrom-ojra.onrender.com/userData");
+    const res2 = await res.json();
+    console.log(res2);
+    ref.current = res2.findIndex((el) => el.email == form.email);
+    if (
+      form.email == "" ||
+      form.password == "" ||
+      form.first_name == "" ||
+      form.last_name == ""
+    ) {
+      setOpen(true);
+    } else if (!form.email.match("[a-z0-9]+@[a-z]+.[a-z]{2,3}")) {
       setEmail(false);
     } else if (form.first_name.length < 1) {
       setfName(false);
@@ -66,12 +78,11 @@ export const Register = () => {
       setlName(false);
     } else if (form.password.length < 6) {
       setPassword(false);
-    } else if (ref.current >=0){
+    } else if (ref.current >= 0) {
       setOpen(true);
-    }
-    else {
+    } else {
       dispatch(registerLoading());
-      fetch("http://localhost:4001/userData", {
+      fetch("https://nordstrom-ojra.onrender.com/userData", {
         method: "POST",
         body: JSON.stringify(form),
         headers: {
@@ -137,7 +148,6 @@ export const Register = () => {
         <FormControl
           size="medium"
           sx={{ m: "auto", mt: "20px", mb: "10px", width: "350px" }}
-      
           variant="outlined"
           error={email === false}
           helperText="Incorrect entry."
@@ -242,16 +252,22 @@ export const Register = () => {
         <Dialog
           open={open}
           onClose={handleClose}
-          
           aria-labelledby="alert-dialog-title"
           aria-describedby="alert-dialog-description"
         >
-          <DialogTitle width={'500px'} id="alert-dialog-title">
+          <DialogTitle width={"500px"} id="alert-dialog-title">
             {"Alert"}
           </DialogTitle>
           <DialogContent>
             <DialogContentText id="alert-dialog-description">
-              {ref.current >= 0 ? "Email Already Exist" : form.email == "" || form.password == "" || form.first_name == "" || form.last_name == "" ? "Please fill the all details":""}
+              {ref.current >= 0
+                ? "Email Already Exist"
+                : form.email == "" ||
+                  form.password == "" ||
+                  form.first_name == "" ||
+                  form.last_name == ""
+                ? "Please fill the all details"
+                : ""}
             </DialogContentText>
           </DialogContent>
           <DialogActions>

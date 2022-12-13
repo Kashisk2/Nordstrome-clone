@@ -108,7 +108,7 @@ export const StateContextProvider = ({ children }) => {
   const dispatch = useDispatch();
   useEffect(() => {
     let url = getUrl(
-      `http://localhost:4001/products?_limit=20&_page=${page}`,
+      `https://nordstrom-ojra.onrender.com/products?_limit=20&_page=${page}`,
       sortby,
       sortbyType,
       genderName,

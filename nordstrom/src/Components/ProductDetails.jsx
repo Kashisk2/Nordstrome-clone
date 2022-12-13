@@ -47,7 +47,9 @@ export default function ProductDetails() {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const getUsers = async () => {
-    let response = await fetch(`http://localhost:4001/products/${id.id}`);
+    let response = await fetch(
+      `https://nordstrom-ojra.onrender.com/products/${id.id}`
+    );
     let data = await response.json();
     data.count = 1;
     setUsers(data);

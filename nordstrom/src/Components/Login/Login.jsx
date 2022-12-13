@@ -32,10 +32,10 @@ import { FaBuromobelexperte } from "react-icons/fa";
 import { useContext } from "react";
 import { SignUpContex } from "../../Contex/SignupContex";
 // import { FormControl } from "@chakra-ui/react";
-const intial={
-  email:"",
-  password:""
-}
+const intial = {
+  email: "",
+  password: "",
+};
 export const Login = () => {
   const [form, setForm] = useState(intial);
   const [user, setUser] = useState([]);
@@ -66,7 +66,7 @@ export const Login = () => {
 
   function getUsers() {
     dispatch(loginLoading());
-    fetch("http://localhost:4001/userData")
+    fetch("https://nordstrom-ojra.onrender.com/userData")
       .then((d) => d.json())
       .then((res) => {
         dispatch(loginSuccess(res));
@@ -78,7 +78,7 @@ export const Login = () => {
 
   // function postLoginData() {
   //   dispatch(loginUserLoading());
-  //   fetch("http://localhost:4001/userData", {
+  //   fetch("https://nordstrom-ojra.onrender.com/userData", {
   //     method: "POST",
   //     body: JSON.stringify({
   //       email: form.email,
@@ -103,7 +103,7 @@ export const Login = () => {
   //
   // };
   const [open, setOpen] = React.useState(false);
-  const { handleMiddle }=useContext(SignUpContex)
+  const { handleMiddle } = useContext(SignUpContex);
   const handleClickOpen = () => {
     if (user.length === 0) {
       setOpen(true);
@@ -111,7 +111,7 @@ export const Login = () => {
       setOpen(true);
     } else {
       // postLoginData();
-      handleMiddle()
+      handleMiddle();
       setStatus(true);
     }
   };
@@ -230,11 +230,10 @@ export const Login = () => {
         <Dialog
           open={open}
           onClose={handleClose}
-         
           aria-labelledby="alert-dialog-title"
           aria-describedby="alert-dialog-description"
         >
-          <DialogTitle width={'500px'} id="alert-dialog-title">
+          <DialogTitle width={"500px"} id="alert-dialog-title">
             {"Alert"}
           </DialogTitle>
           <DialogContent>
