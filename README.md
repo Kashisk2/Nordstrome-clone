@@ -9,7 +9,7 @@ Our task is that we have to create a pixel perfext clone of the famous E-ecommer
 
 I am a student of a Full Stack Web Development course offered by Masai School. During our construct week, I was assigned a task to create a pixel-perfect clone of Nordstrom official website. I was given a team of three excluding me. After some meetings and discussions, we started working on it and completed all the given tasks in 5 days.
 
-**Deploy Link :- **https://nordstrom-clone-react.netlify.app/ 
+**Deploy Link :- **https://nordstrom-web-clone.netlify.app/ 
 
 ## Landing Page
 
