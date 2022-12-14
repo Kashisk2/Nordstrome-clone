@@ -59,7 +59,7 @@ export const Register = () => {
   };
 
   const handleClickOpen = async () => {
-    const res = await fetch("https://nordstrom-ojra.onrender.com/userData");
+    const res = await fetch("https://nordstrom-ojra.onrender.com/user");
     const res2 = await res.json();
     console.log(res2);
     ref.current = res2.findIndex((el) => el.email == form.email);
@@ -82,7 +82,7 @@ export const Register = () => {
       setOpen(true);
     } else {
       dispatch(registerLoading());
-      fetch("https://nordstrom-ojra.onrender.com/userData", {
+      fetch("https://nordstrom-ojra.onrender.com/user", {
         method: "POST",
         body: JSON.stringify(form),
         headers: {

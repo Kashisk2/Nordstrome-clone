@@ -65,311 +65,299 @@ function NavbarTab() {
   //         </Portal>
   //       </Menu>
   const breakpoints = {
-    sm: '320px',
-    md: '768px',
-    lg: '1080px',
-    xl: '1200px',
-    '2xl': '1536px',
-  }
+    sm: "320px",
+    md: "768px",
+    lg: "1080px",
+    xl: "1200px",
+    "2xl": "1536px",
+  };
   //   )
   return (
-     <Box w={"90%"} mt={'500px'}   display={{base:'none',md:'flex'}} flexWrap={['wrap']} justifyContent={"space-between"} color={'#333333'}>
-            
+    <Box
+      w={"90%"}
+      mt={"500px"}
+      display={{ base: "none", md: "flex" }}
+      flexWrap={["wrap"]}
+      justifyContent={"space-between"}
+      color={"#333333"}
+    >
+      <Box className={styles.menuDropDown}>
+        <Box>
+          <Button
+            backgroundColor={"transparent"}
+            borderBottom="2px solid transparent"
+            borderRadius={"none"}
+            fontWeight={"400"}
+            _focus={{ backgroundColor: "none" }}
+            _hover={{
+              cursor: "pointer",
+              borderBottom: "2px solid black",
+              transition: " border-color 300ms",
+              touchAction: "manipulation",
+            }}
+          >
+            HoliDay Gifts
+          </Button>
 
-         
-           
-         
-       
-    <Box className={styles.menuDropDown}>
-      <Box>
-        <Button
-          backgroundColor={"transparent"}
-          borderBottom="2px solid transparent"
-          borderRadius={'none'}
-          fontWeight={'400'}
-          _focus={{backgroundColor:'none'}}
-          _hover={{
-            cursor: "pointer",
-            borderBottom: "2px solid black",
-            transition: " border-color 300ms",
-            touchAction: "manipulation",
-          }}
-        >
-         HolyDay Gifts
-        </Button>
-
-        <ul className={styles.submenu}>
-          <Box>
-            <Holyday />
-          </Box>
-        </ul>
+          <ul className={styles.submenu}>
+            <Box>
+              <Holyday />
+            </Box>
+          </ul>
+        </Box>
       </Box>
-      
-    </Box>
-    <Box className={styles.menuDropDown}>
-      <Box>
-        <Button
-          backgroundColor={"transparent"}
-          borderBottom="2px solid transparent"
-          borderRadius={'none'}
-          fontWeight={'400'}
-          color={' rgb(214, 31, 39)'}
-          _focus={{backgroundColor:'none'}}
-          _hover={{
-            cursor: "pointer",
-            borderBottom: "2px solid  rgb(214, 31, 39)",
-            transition: " border-color 300ms",
-            touchAction: "manipulation",
-          }}
-        >
-        Sale
-        </Button>
+      <Box className={styles.menuDropDown}>
+        <Box>
+          <Button
+            backgroundColor={"transparent"}
+            borderBottom="2px solid transparent"
+            borderRadius={"none"}
+            fontWeight={"400"}
+            color={" rgb(214, 31, 39)"}
+            _focus={{ backgroundColor: "none" }}
+            _hover={{
+              cursor: "pointer",
+              borderBottom: "2px solid  rgb(214, 31, 39)",
+              transition: " border-color 300ms",
+              touchAction: "manipulation",
+            }}
+          >
+            Sale
+          </Button>
 
-        <ul className={styles.submenu}>
-          <Box>
-            <Sale />
-          </Box>
-        </ul>
+          <ul className={styles.submenu}>
+            <Box>
+              <Sale />
+            </Box>
+          </ul>
+        </Box>
       </Box>
-      
-    </Box>
-    <Box className={styles.menuDropDown}>
-      <Box>
-        <Button
-          backgroundColor={"transparent"}
-          borderBottom="2px solid transparent"
-          borderRadius={'none'}
-          fontWeight={'400'}
-          _focus={{backgroundColor:'none'}}
-          _hover={{
-            cursor: "pointer",
-            borderBottom: "2px solid black",
-            transition: " border-color 300ms",
-            touchAction: "manipulation",
-          }}
-        >
-        Women
-        </Button>
+      <Box className={styles.menuDropDown}>
+        <Box>
+          <Button
+            backgroundColor={"transparent"}
+            borderBottom="2px solid transparent"
+            borderRadius={"none"}
+            fontWeight={"400"}
+            _focus={{ backgroundColor: "none" }}
+            _hover={{
+              cursor: "pointer",
+              borderBottom: "2px solid black",
+              transition: " border-color 300ms",
+              touchAction: "manipulation",
+            }}
+          >
+            Women
+          </Button>
 
-        <ul className={styles.submenu}>
-          <Box>
-            <WomenTab/>
-          </Box>
-        </ul>
+          <ul className={styles.submenu}>
+            <Box>
+              <WomenTab />
+            </Box>
+          </ul>
+        </Box>
       </Box>
-      
-    </Box>
-    <Box className={styles.menuDropDown}>
-      <Box>
-        <Button
-          backgroundColor={"transparent"}
-          borderBottom="2px solid transparent"
-          borderRadius={'none'}
-          fontWeight={'400'}
-          _focus={{backgroundColor:'none'}}
-          _hover={{
-            cursor: "pointer",
-            borderBottom: "2px solid black",
-            transition: " border-color 300ms",
-            touchAction: "manipulation",
-          }}
-        >
-        Men
-        </Button>
+      <Box className={styles.menuDropDown}>
+        <Box>
+          <Button
+            backgroundColor={"transparent"}
+            borderBottom="2px solid transparent"
+            borderRadius={"none"}
+            fontWeight={"400"}
+            _focus={{ backgroundColor: "none" }}
+            _hover={{
+              cursor: "pointer",
+              borderBottom: "2px solid black",
+              transition: " border-color 300ms",
+              touchAction: "manipulation",
+            }}
+          >
+            Men
+          </Button>
 
-        <ul className={styles.submenu}>
-          <Box>
-            <Holyday />
-          </Box>
-        </ul>
+          <ul className={styles.submenu}>
+            <Box>
+              <Holyday />
+            </Box>
+          </ul>
+        </Box>
       </Box>
-      
-    </Box>
-    <Box className={styles.menuDropDown}>
-      <Box>
-        <Button
-          backgroundColor={"transparent"}
-          borderBottom="2px solid transparent"
-          borderRadius={'none'}
-          fontWeight={'400'}
-          _focus={{backgroundColor:'none'}}
-          _hover={{
-            cursor: "pointer",
-            borderBottom: "2px solid black",
-            transition: " border-color 300ms",
-            touchAction: "manipulation",
-          }}
-        >
-       Kids
-        </Button>
+      <Box className={styles.menuDropDown}>
+        <Box>
+          <Button
+            backgroundColor={"transparent"}
+            borderBottom="2px solid transparent"
+            borderRadius={"none"}
+            fontWeight={"400"}
+            _focus={{ backgroundColor: "none" }}
+            _hover={{
+              cursor: "pointer",
+              borderBottom: "2px solid black",
+              transition: " border-color 300ms",
+              touchAction: "manipulation",
+            }}
+          >
+            Kids
+          </Button>
 
-        <ul className={styles.submenu}>
-          <Box>
-            <Holyday />
-          </Box>
-        </ul>
+          <ul className={styles.submenu}>
+            <Box>
+              <Holyday />
+            </Box>
+          </ul>
+        </Box>
       </Box>
-      
-    </Box>
-    <Box className={styles.menuDropDown}>
-      <Box>
-        <Button
-          backgroundColor={"transparent"}
-          borderBottom="2px solid transparent"
-          borderRadius={'none'}
-          fontWeight={'400'}
-          _focus={{backgroundColor:'none'}}
-          _hover={{
-            cursor: "pointer",
-            borderBottom: "2px solid black",
-            transition: " border-color 300ms",
-            touchAction: "manipulation",
-          }}
-        >
-        Young Adult
-        </Button>
+      <Box className={styles.menuDropDown}>
+        <Box>
+          <Button
+            backgroundColor={"transparent"}
+            borderBottom="2px solid transparent"
+            borderRadius={"none"}
+            fontWeight={"400"}
+            _focus={{ backgroundColor: "none" }}
+            _hover={{
+              cursor: "pointer",
+              borderBottom: "2px solid black",
+              transition: " border-color 300ms",
+              touchAction: "manipulation",
+            }}
+          >
+            Young Adult
+          </Button>
 
-        <ul className={styles.submenu}>
-          <Box>
-            <Holyday />
-          </Box>
-        </ul>
+          <ul className={styles.submenu}>
+            <Box>
+              <Holyday />
+            </Box>
+          </ul>
+        </Box>
       </Box>
-      
-    </Box>
-    <Box className={styles.menuDropDown}>
-      <Box>
-        <Button
-          backgroundColor={"transparent"}
-          borderBottom="2px solid transparent"
-          borderRadius={'none'}
-          fontWeight={'400'}
-          _focus={{backgroundColor:'none'}}
-          _hover={{
-            cursor: "pointer",
-            borderBottom: "2px solid black",
-            transition: " border-color 300ms",
-            touchAction: "manipulation",
-          }}
-        >
-        
-Activewear
-        </Button>
+      <Box className={styles.menuDropDown}>
+        <Box>
+          <Button
+            backgroundColor={"transparent"}
+            borderBottom="2px solid transparent"
+            borderRadius={"none"}
+            fontWeight={"400"}
+            _focus={{ backgroundColor: "none" }}
+            _hover={{
+              cursor: "pointer",
+              borderBottom: "2px solid black",
+              transition: " border-color 300ms",
+              touchAction: "manipulation",
+            }}
+          >
+            Activewear
+          </Button>
 
-        <ul className={styles.submenu}>
-          <Box>
-            <Holyday />
-          </Box>
-        </ul>
+          <ul className={styles.submenu}>
+            <Box>
+              <Holyday />
+            </Box>
+          </ul>
+        </Box>
       </Box>
-      
-    </Box>
-    <Box className={styles.menuDropDown}>
-      <Box>
-        <Button
-          backgroundColor={"transparent"}
-          borderBottom="2px solid transparent"
-          borderRadius={'none'}
-          fontWeight={'400'}
-          _focus={{backgroundColor:'none'}}
-          _hover={{
-            cursor: "pointer",
-            borderBottom: "2px solid black",
-            transition: " border-color 300ms",
-            touchAction: "manipulation",
-          }}
-        >
-         Home
-        </Button>
+      <Box className={styles.menuDropDown}>
+        <Box>
+          <Button
+            backgroundColor={"transparent"}
+            borderBottom="2px solid transparent"
+            borderRadius={"none"}
+            fontWeight={"400"}
+            _focus={{ backgroundColor: "none" }}
+            _hover={{
+              cursor: "pointer",
+              borderBottom: "2px solid black",
+              transition: " border-color 300ms",
+              touchAction: "manipulation",
+            }}
+          >
+            Home
+          </Button>
 
-        <ul className={styles.submenu}>
-          <Box>
-            <Holyday />
-          </Box>
-        </ul>
+          <ul className={styles.submenu}>
+            <Box>
+              <Holyday />
+            </Box>
+          </ul>
+        </Box>
       </Box>
-      
-    </Box>
-    <Box className={styles.menuDropDown}>
-      <Box>
-        <Button
-          backgroundColor={"transparent"}
-          borderBottom="2px solid transparent"
-          borderRadius={'none'}
-          fontWeight={'400'}
-          _focus={{backgroundColor:'none'}}
-          _hover={{
-            cursor: "pointer",
-            borderBottom: "2px solid black",
-            transition: " border-color 300ms",
-            touchAction: "manipulation",
-          }}
-        >
-        Beauty
-        </Button>
+      <Box className={styles.menuDropDown}>
+        <Box>
+          <Button
+            backgroundColor={"transparent"}
+            borderBottom="2px solid transparent"
+            borderRadius={"none"}
+            fontWeight={"400"}
+            _focus={{ backgroundColor: "none" }}
+            _hover={{
+              cursor: "pointer",
+              borderBottom: "2px solid black",
+              transition: " border-color 300ms",
+              touchAction: "manipulation",
+            }}
+          >
+            Beauty
+          </Button>
 
-        <ul className={styles.submenu}>
-          <Box>
-            <Holyday />
-          </Box>
-        </ul>
+          <ul className={styles.submenu}>
+            <Box>
+              <Holyday />
+            </Box>
+          </ul>
+        </Box>
       </Box>
-      
-    </Box>
-    <Box className={styles.menuDropDown}>
-      <Box>
-        <Button
-          backgroundColor={"transparent"}
-          borderBottom="2px solid transparent"
-          borderRadius={'none'}
-          fontWeight={'400'}
-          _focus={{backgroundColor:'none'}}
-          _hover={{
-            cursor: "pointer",
-            borderBottom: "2px solid black",
-            transition: " border-color 300ms",
-            touchAction: "manipulation",
-          }}
-        >
-      Designer
-        </Button>
+      <Box className={styles.menuDropDown}>
+        <Box>
+          <Button
+            backgroundColor={"transparent"}
+            borderBottom="2px solid transparent"
+            borderRadius={"none"}
+            fontWeight={"400"}
+            _focus={{ backgroundColor: "none" }}
+            _hover={{
+              cursor: "pointer",
+              borderBottom: "2px solid black",
+              transition: " border-color 300ms",
+              touchAction: "manipulation",
+            }}
+          >
+            Designer
+          </Button>
 
-        <ul className={styles.submenu}>
-          <Box>
-            <Holyday />
-          </Box>
-        </ul>
+          <ul className={styles.submenu}>
+            <Box>
+              <Holyday />
+            </Box>
+          </ul>
+        </Box>
       </Box>
-      
-    </Box>
-    <Box className={styles.menuDropDown}>
-      <Box>
-        <Button
-          backgroundColor={"transparent"}
-          borderBottom="2px solid transparent"
-          borderRadius={'none'}
-          fontWeight={'400'}
-          _focus={{backgroundColor:'none'}}
-          _hover={{
-            cursor: "pointer",
-            borderBottom: "2px solid black",
-            transition: " border-color 300ms",
-            touchAction: "manipulation",
-          }}
-        >
-   
-The Thread
-        </Button>
+      <Box className={styles.menuDropDown}>
+        <Box>
+          <Button
+            backgroundColor={"transparent"}
+            borderBottom="2px solid transparent"
+            borderRadius={"none"}
+            fontWeight={"400"}
+            _focus={{ backgroundColor: "none" }}
+            _hover={{
+              cursor: "pointer",
+              borderBottom: "2px solid black",
+              transition: " border-color 300ms",
+              touchAction: "manipulation",
+            }}
+          >
+            The Thread
+          </Button>
 
-        <ul className={styles.submenu}>
-          <Box>
-            <Holyday />
-          </Box>
-        </ul>
+          <ul className={styles.submenu}>
+            <Box>
+              <Holyday />
+            </Box>
+          </ul>
+        </Box>
       </Box>
-      
     </Box>
-     </Box>
   );
 }
 

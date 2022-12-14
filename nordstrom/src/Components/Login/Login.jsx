@@ -66,7 +66,7 @@ export const Login = () => {
 
   function getUsers() {
     dispatch(loginLoading());
-    fetch("https://nordstrom-ojra.onrender.com/userData")
+    fetch("https://nordstrom-ojra.onrender.com/user")
       .then((d) => d.json())
       .then((res) => {
         dispatch(loginSuccess(res));
