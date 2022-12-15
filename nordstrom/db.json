@@ -13,6 +13,13 @@
       "first_name": "sachin",
       "last_name": "patel",
       "id": 2
+    },
+    {
+      "email": "abc@gmail.com",
+      "password": "123456",
+      "first_name": "abc",
+      "last_name": "def",
+      "id": 3
     }
   ],
   "products": [

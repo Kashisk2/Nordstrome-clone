@@ -1,5 +1,5 @@
 import { Box, Center, ChakraProvider, extendTheme, Text } from "@chakra-ui/react";
-import React from "react";
+import React from "react";  
 import { RiArrowUpSLine } from "react-icons/ri";
 import ScrollToTop from "react-scroll-to-top";
 import Footer from "../Components/Footer/Footer";
