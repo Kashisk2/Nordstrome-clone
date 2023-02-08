@@ -101,7 +101,7 @@ function SignInButton() {
                   touchAction: "manipulation",
                 }}
               >
-                Holyday Gifts
+                Holiday Gifts
               </Text>
               <Divider />
               <Text
@@ -338,7 +338,7 @@ function SignInButton() {
                       touchAction: "manipulation",
                     }}
                   >
-                    Whishlist
+                    Wishlist
                   </Text>
                 </Flex>
                 <Flex align={"center"} gap="10px">
